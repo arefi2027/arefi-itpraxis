@@ -1,36 +1,36 @@
 {
- "version": "2.3.2",
+ "version": "2.3.3",
  "page": "https://github.com/arefi2027/arefi-itpraxis/releases/latest",
  "notes": {
-  "de": "Arefi ITPraxis 2.3.2: Herstellerdokumentation je Gerät auf Englisch, Deutsch und Persisch. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
-  "en": "Arefi ITPraxis 2.3.2: vendor documentation per device in English, German and Persian. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
-  "fa": "Arefi ITPraxis 2.3.2: راهنمای سازنده برای هر دستگاه به انگلیسی، آلمانی و فارسی. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
+  "de": "Arefi ITPraxis 2.3.3: Herstellerinfos je Gerät direkt im Programm auf Persisch, Deutsch und Englisch (offline, mit Quellen); Textfehler auf der Installationsseite behoben. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
+  "en": "Arefi ITPraxis 2.3.3: vendor information per device inside the app in Persian, German and English (offline, with sources); text layout fixes on the install page. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
+  "fa": "Arefi ITPraxis 2.3.3: اطلاعات سازنده برای هر دستگاه داخل برنامه به فارسی، آلمانی و انگلیسی (آفلاین و با منبع)؛ رفع به‌هم‌ریختگی متن در صفحهٔ نصب. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
  },
  "downloads": {
   "windows": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.2/ArefiITPraxis-Setup-2.3.2.exe",
-   "sha256": "feb4f9c6f04e6f4095d60292828d1feab138a665adf0ba2a702e293fe16ef635",
-   "size": 9529856
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/ArefiITPraxis-Setup-2.3.3.exe",
+   "sha256": "fcd97d1aa9618bc3bc9dbb56cc76a6be37c4ad3a7aefbaa8335fda89b1e79e5a",
+   "size": 9560064
   },
   "mac": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.2/ArefiITPraxis-2.3.2-macOS.zip",
-   "sha256": "df5a60fc3e9c770f693d3333d86294c5c2cae6940d44a10ac449ea7247209303",
-   "size": 8642881
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/ArefiITPraxis-2.3.3-macOS.zip",
+   "sha256": "74d1f6212f1e69de01a9d018013e0c5e9ec9bae261771006890b10b65d037e00",
+   "size": 8670271
   },
   "linux-deb": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.2/arefi-itpraxis_2.3.2_amd64.deb",
-   "sha256": "f46c6fc6ee728c60853c4aa1216f342ac185bc57f73aa6ad5e754067b07727aa",
-   "size": 4306420
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis_2.3.3_amd64.deb",
+   "sha256": "7fdddb60be66c6a369b56f50eec277ebba22872d8ee1fc284b6982cc630d36d0",
+   "size": 4318270
   },
   "linux-deb-arm64": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.2/arefi-itpraxis_2.3.2_arm64.deb",
-   "sha256": "8b62c85c501bc9b8746f2ee73b5dff296f0e2e70402e286283ab56ea71898df8",
-   "size": 4054986
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis_2.3.3_arm64.deb",
+   "sha256": "cab2f0df976a53c0a9ecc9d599e6246da3decf7ff746aead0b3bcbc70d116bd9",
+   "size": 4068580
   },
   "linux-tar": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.2/arefi-itpraxis-2.3.2-linux-amd64.tar.gz",
-   "sha256": "81f8de1c500f41b65033ba05c229f07a93b055a5756b017f1d46f7e0bd492d0c",
-   "size": 4292960
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis-2.3.3-linux-amd64.tar.gz",
+   "sha256": "f1f3672d5b1d28b881d90768661cb7f47ca95adb24d0ae437be5eb881a9e6f0e",
+   "size": 4304586
   }
  }
 }
