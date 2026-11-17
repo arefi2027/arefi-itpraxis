@@ -1,0 +1,209 @@
+/* Arefi ITPraxis – Lektionsansicht
+   Palette: ink #18343d · teal #16776c · deep #112d35 · mist #eef4f3 · ok #2f7d4f / #e9f5ed · line #dae4e7 */
+
+/* Programmgesteuerter Fokus auf <main> soll keinen Rahmen um die ganze Seite zeichnen */
+main:focus, main:focus-visible, [tabindex="-1"]:focus:not(:focus-visible) { outline: none }
+.lesson-work:focus { outline: none }
+
+.lv { --lv-ink: #18343d; --lv-soft: #3d5960; --lv-teal: #16776c; --lv-deep: #112d35; --lv-mist: #eef4f3; --lv-ok: #2f7d4f; --lv-ok-bg: #e9f5ed; --lv-line: #dae4e7; color: var(--lv-ink) }
+.lv .crumb { font-size: 15px; margin-bottom: 14px; flex-wrap: wrap; gap: 8px }
+.lv .crumb a { color: var(--lv-teal) }
+
+/* Kopf */
+.lv-head { margin: 0 0 26px; max-width: 900px }
+.lv-head h1 { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em }
+.lv-goal { font-size: 19px; line-height: 1.6; color: var(--lv-soft); margin: 0 0 16px; max-width: 70ch }
+.lv-meta { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 }
+.lv-meta li { display: inline-flex; align-items: center; gap: 7px; font-size: 15px; color: var(--lv-soft); background: #fff; border: 1px solid var(--lv-line); border-radius: 999px; padding: 5px 13px }
+.lv-meta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2 }
+.lv-meta .status { display: inline; background: none; padding: 0; font-size: 15px }
+.lv-meta li:has(.status) { padding-block: 5px }
+.lv-prereq { margin: 14px 0 0; font-size: 16px; background: #fdf5e7; border: 1px solid #f0dcb6; border-radius: 10px; padding: 10px 14px; color: #6b4a14 }
+.lv-prereq a { color: #8a5310 }
+
+/* Drei Phasen als zusammenhängender Ablauf */
+.lv-phases { margin: 0 0 24px }
+.lv-phases ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: #fff; border: 1px solid var(--lv-line); border-radius: 14px; overflow: hidden }
+.lv-phases li + li { border-inline-start: 1px solid var(--lv-line) }
+.lv-phases button { width: 100%; height: 100%; display: flex; gap: 12px; align-items: center; text-align: start; background: none; border: 0; padding: 14px 18px; cursor: pointer; color: var(--lv-ink); font: inherit }
+.lv-phases button:hover { background: var(--lv-mist) }
+.lv-phase-no { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 15px; border: 2px solid var(--lv-line); color: var(--lv-soft); background: #fff }
+.lv-phase-no svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 3 }
+.lv-phase-txt { display: grid; gap: 1px; min-width: 0 }
+.lv-phase-txt b { font-size: 16px; font-weight: 650 }
+.lv-phase-txt small { font-size: 13.5px; color: var(--lv-soft) }
+.lv-phases li.is-done .lv-phase-no { border-color: var(--lv-ok); color: var(--lv-ok); background: var(--lv-ok-bg) }
+.lv-phases li.is-active button { background: var(--lv-deep); color: #fff }
+.lv-phases li.is-active .lv-phase-txt small { color: #b9d3cf }
+.lv-phases li.is-active .lv-phase-no { background: #d7f5a9; border-color: #d7f5a9; color: var(--lv-deep) }
+.lv-phases button:focus-visible { outline: 3px solid #bf741e; outline-offset: -3px }
+
+/* Raster Inhalt + Seitenleiste */
+html[dir] .lv .lv-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: start }
+.lv .lesson-content { gap: 20px }
+html[dir] .lv .lv-aside { position: sticky; top: 18px; display: grid; gap: 16px; align-content: start }
+
+/* Praxisbezug-Kasten (aus workplace.js) */
+.lv .work-lesson { margin: 0; background: var(--lv-mist); border: 1px solid #d3e3e0; border-inline-start: 4px solid var(--lv-teal); box-shadow: none }
+.lv .work-lesson h2 { font-size: 15px; font-weight: 650; color: var(--lv-teal); margin: 0 0 4px }
+.lv .work-lesson-task { font-size: 18px; line-height: 1.55; margin: 0 0 14px; font-weight: 600 }
+.lv .work-lesson-grid { gap: 14px 24px }
+.lv .work-lesson-grid > div { background: #fff; border-radius: 10px; padding: 12px 14px }
+.lv .work-lesson-grid dt { font-size: 14px }
+.lv .work-lesson-grid dd { font-size: 15.5px; line-height: 1.65; color: var(--lv-ink) }
+.lv .work-links { font-size: 14.5px; margin: 12px 0 0; line-height: 1.7 }
+
+/* Arbeitsbereich */
+.lv-work { padding: 0 !important; overflow: hidden }
+.lv-work > .lv-section-head, .lv-work > .lv-criteria, .lv-work > .lv-task, .lv-work > .lv-expect, .lv-work > details, .lv-work > label, .lv-work > textarea, .lv-work > p, .lv-work > .btn { margin-inline: 26px }
+.lv-work > .lv-section-head { margin-top: 24px }
+.lv-work > :last-child { margin-bottom: 24px }
+.lv-section-head h2 { font-size: 24px; margin: 0 0 6px }
+.lv-section-head p { margin: 0 0 8px; color: var(--lv-soft); line-height: 1.7; max-width: 68ch }
+
+.lv-learn { display: grid; grid-template-columns: 240px minmax(0, 1fr) }
+.lv-outline { list-style: none; margin: 0; padding: 22px 14px; background: #f7faf9; border-inline-end: 1px solid var(--lv-line); position: relative }
+.lv-outline li { position: relative }
+.lv-outline li:not(:last-child)::after { content: ""; position: absolute; inset-inline-start: 26px; top: 40px; bottom: -6px; width: 2px; background: var(--lv-line) }
+.lv-outline li.is-seen:not(:last-child)::after { background: #9cc8b0 }
+.lv-outline button { width: 100%; display: flex; align-items: flex-start; gap: 11px; background: none; border: 0; border-radius: 10px; padding: 8px; text-align: start; cursor: pointer; font: inherit; color: var(--lv-soft); margin-bottom: 6px }
+.lv-outline button:hover { background: #eaf1ef }
+.lv-dot { flex: none; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 14px; font-weight: 700; background: #fff; border: 2px solid var(--lv-line); color: var(--lv-soft); position: relative; z-index: 1 }
+.lv-dot svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 3 }
+.lv-otitle { font-size: 15px; line-height: 1.45; padding-top: 3px }
+.lv-outline li.is-seen .lv-dot { border-color: #9cc8b0; color: var(--lv-ok); background: var(--lv-ok-bg) }
+.lv-outline li.is-current button { background: #fff; box-shadow: 0 1px 0 var(--lv-line), 0 0 0 1px var(--lv-line); color: var(--lv-ink) }
+.lv-outline li.is-current .lv-dot { background: var(--lv-teal); border-color: var(--lv-teal); color: #fff }
+.lv-outline li.is-current .lv-otitle { font-weight: 650 }
+.lv-outline button:focus-visible { outline: 3px solid #bf741e; outline-offset: 1px }
+
+.lv-step { padding: 24px 30px 22px; min-width: 0 }
+.lv-step-top { display: flex; align-items: center; gap: 14px; margin-bottom: 8px }
+.lv-count { font-size: 14px; font-weight: 650; color: var(--lv-teal); white-space: nowrap }
+.lv-bar { flex: 1; height: 5px; border-radius: 5px; background: #e8efed; overflow: hidden; max-width: 220px }
+.lv-bar span { display: block; height: 100%; background: var(--lv-teal); border-radius: 5px }
+.lv-step-title { font-size: 26px; line-height: 1.3; margin: 0 0 18px }
+
+.lv-block + .lv-block, .lv-block + .lv-expect { margin-top: 20px }
+.lv-label { font-size: 14px; font-weight: 650; color: var(--lv-teal); margin: 0 0 8px; letter-spacing: .01em }
+.lv-text, .lv-task p, .lv-fault p { font-size: 17px; line-height: 1.75; color: var(--lv-ink); max-width: 68ch }
+.lv-text p { margin: 0 0 10px; color: var(--lv-ink); font-size: 17px; line-height: 1.75 }
+.lv-text ul:not(.lv-points), .lv-text ol { padding-inline-start: 22px; margin: 6px 0 10px }
+.lv-text li { color: var(--lv-ink); font-size: 17px; line-height: 1.7; margin-bottom: 4px }
+.lv-text code { background: #eef3f2; border-radius: 5px; padding: 1px 6px; font-size: .9em; color: var(--lv-deep) }
+.lv-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px }
+.lv-points li { position: relative; padding: 8px 0; padding-inline-start: 24px; border-bottom: 1px dashed #e3ebe9; margin: 0 }
+.lv-points li:last-child { border-bottom: 0 }
+.lv-points li::before { content: ""; position: absolute; inset-inline-start: 4px; top: 19px; width: 8px; height: 8px; border-radius: 2px; background: var(--lv-teal); opacity: .75 }
+
+.lv-command { margin-top: 0 }
+.lv-command pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14.5px; line-height: 1.75; padding: 14px 16px }
+.lv-command .command-head { font-size: 13.5px }
+.lv-command .copy-btn { display: inline-flex; align-items: center; gap: 6px }
+.lv-command .copy-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2 }
+
+.lv-expect { display: flex; gap: 12px; align-items: flex-start; background: var(--lv-ok-bg); border: 1px solid #cfe7d7; border-radius: 12px; padding: 14px 16px; margin-top: 20px }
+.lv-expect-icon { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--lv-ok); color: #fff; display: grid; place-items: center }
+.lv-expect-icon svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 3 }
+.lv-expect b { display: block; font-size: 15px; color: #23613c; margin-bottom: 2px }
+.lv-expect p { margin: 0; font-size: 16px; line-height: 1.7; color: #1f4430 }
+
+.lv-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--lv-line) }
+.lv-nav .btn { margin: 0 }
+.lv .lv-step .lv-hint { font-size: 13.5px; line-height: 1.6; color: var(--lv-soft); margin: 10px 0 0 }
+
+/* Prüfen */
+.lv-criteria { display: grid; gap: 10px; margin-top: 6px; margin-bottom: 24px }
+.lv-criterion { border: 1px solid var(--lv-line) !important; border-radius: 12px; padding: 14px 16px !important; background: #fff; font-size: 16.5px !important; line-height: 1.65 !important; align-items: flex-start }
+.lv-criterion:has(input:checked) { background: var(--lv-ok-bg); border-color: #b9dcc5 !important }
+.lv-criterion input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--lv-ok); flex: none }
+
+/* Selbstständig lösen */
+.lv-task { background: var(--lv-mist); border-radius: 12px; padding: 14px 18px; margin-top: 4px }
+.lv-task p { margin: 0 }
+.lv-work .lv-more { margin-top: 16px; margin-bottom: 4px }
+.lv-work .note-label { display: block; margin-top: 20px }
+.lv-work textarea { width: calc(100% - 52px); min-height: 130px }
+
+/* Störung */
+.lv-fault h2 { font-size: 20px; margin: 0 0 12px }
+.lv-fault-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 14px }
+.lv-fault-grid > div { background: #fdf5e7; border-radius: 10px; padding: 12px 14px }
+.lv-fault-grid .lv-label { color: #9a5b12 }
+.lv-fault-grid p { margin: 0; font-size: 16px }
+.lv-checklist { margin: 0; padding-inline-start: 22px; display: grid; gap: 6px }
+.lv-checklist li { font-size: 16px; line-height: 1.65; color: var(--lv-ink); padding-inline-start: 4px }
+
+/* Nachschlagen */
+.lv-full-step { padding: 22px 0; border-top: 1px solid var(--lv-line) }
+.lv-full-step:first-of-type { margin-top: 14px }
+.lv-full-step h3 { display: flex; gap: 10px; align-items: center; font-size: 19px; margin: 0 0 14px }
+.lv-why p { font-size: 16.5px; line-height: 1.75; margin: 12px 0 }
+
+/* Seitenleiste */
+.lv-side-card { padding: 18px 18px !important }
+.lv-side-card h3 { font-size: 16px; margin: 0 0 10px }
+.lv-pct { display: flex; align-items: baseline; justify-content: space-between; gap: 10px }
+.lv-pct b { font-size: 28px; line-height: 1; color: var(--lv-teal) }
+.lv-pct span { font-size: 14px; color: var(--lv-soft) }
+.lv-progress .track { margin: 10px 0 10px }
+.lv-progress .micro { line-height: 1.6 }
+.lv-ai { width: 100%; margin: 12px 0 0 !important }
+.lv-aside textarea { width: 100%; min-height: 120px; font-size: 15px }
+.lv-terms { margin: 0; display: grid; gap: 10px }
+.lv-terms dt { font-weight: 650; font-size: 15px }
+.lv-terms dd { margin: 0; font-size: 14.5px; color: var(--lv-soft) }
+.lv-aside .language-card { padding: 18px !important }
+
+.lv .lesson-bottom { margin-top: 4px }
+.lv .lesson-bottom .btn { margin: 0 }
+
+/* Persisch */
+html[dir=rtl] .lv-head h1 { letter-spacing: 0 }
+html[dir=rtl] .lv-text, html[dir=rtl] .lv-text p, html[dir=rtl] .lv-text li { font-size: 17.5px; line-height: 1.95 }
+html[dir=rtl] .lv-label, html[dir=rtl] .lv-count { letter-spacing: 0 }
+html[dir=rtl] .lv-points li::before { top: 21px }
+html[dir=rtl] .lv-nav .btn svg:has(use[href="#i-arrow"]) { transform: scaleX(-1) }
+bdi[dir=ltr] { unicode-bidi: isolate }
+
+/* Mittlere Breiten */
+@media (max-width: 1440px) {
+  html[dir] .lv .lv-layout { grid-template-columns: minmax(0, 1fr) }
+  html[dir] .lv .lv-aside { position: static; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) }
+}
+@media (max-width: 860px) {
+  .lv-learn { grid-template-columns: 1fr }
+  .lv-outline { display: flex; gap: 6px; overflow-x: auto; padding: 12px; border-inline-end: 0; border-bottom: 1px solid var(--lv-line); scroll-snap-type: x proximity }
+  .lv-outline li { flex: none; scroll-snap-align: start }
+  .lv-outline li::after { display: none }
+  .lv-outline button { margin: 0; align-items: center; padding: 6px 10px 6px 6px; max-width: 220px }
+  .lv-outline li:not(.is-current) .lv-otitle { display: none }
+  .lv-step { padding: 20px 18px }
+  .lv-step-title { font-size: 22px }
+  .lv-phases ol { grid-template-columns: 1fr }
+  .lv-phases li + li { border-inline-start: 0; border-top: 1px solid var(--lv-line) }
+  .lv-phases button { padding: 11px 14px }
+  .lv-work > .lv-section-head, .lv-work > .lv-criteria, .lv-work > .lv-task, .lv-work > .lv-expect, .lv-work > details, .lv-work > label, .lv-work > textarea, .lv-work > p, .lv-work > .btn { margin-inline: 18px }
+  .lv-work textarea { width: calc(100% - 36px) }
+  .lv-goal { font-size: 17px }
+}
+@media (prefers-reduced-motion: reduce) { .lv * { transition: none !important } }
+
+/* Breite des Arbeitsbereichs statt Fensterbreite entscheidet */
+.lv-work, .lv .work-lesson { container-type: inline-size }
+@container (max-width: 720px) {
+  .lv-learn { grid-template-columns: 1fr }
+  .lv-outline { display: flex; gap: 6px; overflow-x: auto; padding: 12px; border-inline-end: 0; border-bottom: 1px solid var(--lv-line) }
+  .lv-outline li { flex: none }
+  .lv-outline li::after { display: none }
+  .lv-outline button { margin: 0; align-items: center; padding: 6px 10px 6px 6px; max-width: 240px }
+  .lv-outline li:not(.is-current) .lv-otitle { display: none }
+  .lv-step { padding: 20px 18px }
+}
+@container (min-width: 760px) { .lv .work-lesson-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) } }
+@container (max-width: 759px) { .lv .work-lesson-grid { grid-template-columns: 1fr } }
+.lv-aside .lv-side-card:has(#module-note) textarea { min-height: 110px }
+@media (max-width: 1440px) {
+  html[dir] .lv .lv-aside { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start }
+  html[dir] .lv .lv-aside > details { grid-column: 1 / -1 }
+}
