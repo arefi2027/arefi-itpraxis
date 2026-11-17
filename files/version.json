@@ -1,36 +1,36 @@
 {
- "version": "2.1.0",
+ "version": "2.3.0",
  "page": "https://github.com/arefi2027/arefi-itpraxis/releases/latest",
  "notes": {
-  "de": "Arefi ITPraxis 2.1: neu gestaltete Lektionen mit Schrittübersicht, gegliederten Anweisungen, gut lesbaren Befehlen, klarem Erfolgskasten und besserer Darstellung auf dem Handy.",
-  "en": "Arefi ITPraxis 2.1: redesigned lessons with a step outline, structured instructions, readable commands, a clear success box and a better phone layout.",
-  "fa": "Arefi ITPraxis 2.1: درس‌ها با نمای تازه: فهرست گام‌ها، دستورهای مرتب، فرمان‌های خوانا، کادر روشن «نشانهٔ موفقیت» و نمایش بهتر روی گوشی؛ واژه‌های انگلیسی در متن فارسی دیگر به هم نمی‌ریزند."
+  "de": "Arefi ITPraxis 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
+  "en": "Arefi ITPraxis 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
+  "fa": "Arefi ITPraxis 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
  },
  "downloads": {
   "windows": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.1.0/ArefiITPraxis-Setup-2.1.0.exe",
-   "sha256": "72b16db525a2b400c3c971618aa452b4e34065ed7d224dff661d05ee8fc52a5d",
-   "size": 9425920
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.0/ArefiITPraxis-Setup-2.3.0.exe",
+   "sha256": "f220687c510cd984a0178176ba5b274fd935b5c567a9c5ab9376684e33150b2f",
+   "size": 9522176
   },
   "mac": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.1.0/ArefiITPraxis-2.1.0-macOS.zip",
-   "sha256": "23411bba98b5dfad74d78604849e02d71314be02771d9950806b9e657975c954",
-   "size": 8574334
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.0/ArefiITPraxis-2.3.0-macOS.zip",
+   "sha256": "711fd1bfb22c7364c10431fdf0816aa7bc2dbc12f70a7371e08c1ebdba59b27e",
+   "size": 8640734
   },
   "linux-deb": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.1.0/arefi-itpraxis_2.1.0_amd64.deb",
-   "sha256": "ca0c9e719041a6cd5206751807cedc93135db066a8bdc3b52382ea09fc8ab989",
-   "size": 4272996
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.0/arefi-itpraxis_2.3.0_amd64.deb",
+   "sha256": "6d224cc9b8374195b809539280f600f68ed11fcd89cf624152547f7e55920315",
+   "size": 4304652
   },
   "linux-deb-arm64": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.1.0/arefi-itpraxis_2.1.0_arm64.deb",
-   "sha256": "b3bc7794c1d8b1e3d34d798046fe497355adafd807a39194fac81e2c9718331a",
-   "size": 4021376
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.0/arefi-itpraxis_2.3.0_arm64.deb",
+   "sha256": "d57e1ffd8e98e728e0bebf3f55a7aff50f6bfb0f07661d7e52523b79fc31c2ca",
+   "size": 4052724
   },
   "linux-tar": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.1.0/arefi-itpraxis-2.1.0-linux-amd64.tar.gz",
-   "sha256": "8fa7d4ce9c9b2d964371e0e6e11516a44ccc77fa549d93292ae186f81ebce549",
-   "size": 4259724
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.0/arefi-itpraxis-2.3.0-linux-amd64.tar.gz",
+   "sha256": "80c7ee5514c9310834710f4d1315ddfaca1da17d16e31d40d429a38b85691662",
+   "size": 4291239
   }
  }
 }
