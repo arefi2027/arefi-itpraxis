@@ -1,36 +1,36 @@
 {
- "version": "2.3.3",
+ "version": "2.4.0",
  "page": "https://github.com/arefi2027/arefi-itpraxis/releases/latest",
  "notes": {
-  "de": "Arefi ITPraxis 2.3.3: Herstellerinfos je Gerät direkt im Programm auf Persisch, Deutsch und Englisch (offline, mit Quellen); Textfehler auf der Installationsseite behoben. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
-  "en": "Arefi ITPraxis 2.3.3: vendor information per device inside the app in Persian, German and English (offline, with sources); text layout fixes on the install page. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
-  "fa": "Arefi ITPraxis 2.3.3: اطلاعات سازنده برای هر دستگاه داخل برنامه به فارسی، آلمانی و انگلیسی (آفلاین و با منبع)؛ رفع به‌هم‌ریختگی متن در صفحهٔ نصب. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
+  "de": "Arefi ITPraxis 2.4: neue Lernstrecke Windows Server 2025 mit 17 Modulen (Wissen, Laborübung, Interviewfragen, Buchnotizen). 2.3.3: Herstellerinfos je Gerät direkt im Programm auf Persisch, Deutsch und Englisch (offline, mit Quellen); Textfehler auf der Installationsseite behoben. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
+  "en": "Arefi ITPraxis 2.4: new Windows Server 2025 course with 17 modules (knowledge, lab exercise, interview questions, book notes). 2.3.3: vendor information per device inside the app in Persian, German and English (offline, with sources); text layout fixes on the install page. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
+  "fa": "Arefi ITPraxis 2.4: دورهٔ جامع ویندوز سرور ۲۰۲۵ با ۱۷ ماژول (دانش، تمرین آزمایشگاهی، پرسش مصاحبه، یادداشت کتاب). 2.3.3: اطلاعات سازنده برای هر دستگاه داخل برنامه به فارسی، آلمانی و انگلیسی (آفلاین و با منبع)؛ رفع به‌هم‌ریختگی متن در صفحهٔ نصب. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
  },
  "downloads": {
   "windows": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/ArefiITPraxis-Setup-2.3.3.exe",
-   "sha256": "fcd97d1aa9618bc3bc9dbb56cc76a6be37c4ad3a7aefbaa8335fda89b1e79e5a",
-   "size": 9560064
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.4.0/ArefiITPraxis-Setup-2.4.0.exe",
+   "sha256": "76d9199a5ce0f3c586212dae15ba22bf51bb0eab9327b64af6cf214b5340bcba",
+   "size": 9735168
   },
   "mac": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/ArefiITPraxis-2.3.3-macOS.zip",
-   "sha256": "74d1f6212f1e69de01a9d018013e0c5e9ec9bae261771006890b10b65d037e00",
-   "size": 8670271
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.4.0/ArefiITPraxis-2.4.0-macOS.zip",
+   "sha256": "6fb19eee151716c72048b9b56585eec5561be89a82ae75e63d6049a59afec8f6",
+   "size": 8787830
   },
   "linux-deb": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis_2.3.3_amd64.deb",
-   "sha256": "7fdddb60be66c6a369b56f50eec277ebba22872d8ee1fc284b6982cc630d36d0",
-   "size": 4318270
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.4.0/arefi-itpraxis_2.4.0_amd64.deb",
+   "sha256": "36fa5226fa64822195d762560f2d98de70c0687c675825071257e15977c52913",
+   "size": 4377606
   },
   "linux-deb-arm64": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis_2.3.3_arm64.deb",
-   "sha256": "cab2f0df976a53c0a9ecc9d599e6246da3decf7ff746aead0b3bcbc70d116bd9",
-   "size": 4068580
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.4.0/arefi-itpraxis_2.4.0_arm64.deb",
+   "sha256": "b92b76e519cba7d6839f05a520ffa5ac8f45ab8598893900a956764ec917335f",
+   "size": 4126748
   },
   "linux-tar": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.3.3/arefi-itpraxis-2.3.3-linux-amd64.tar.gz",
-   "sha256": "f1f3672d5b1d28b881d90768661cb7f47ca95adb24d0ae437be5eb881a9e6f0e",
-   "size": 4304586
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.4.0/arefi-itpraxis-2.4.0-linux-amd64.tar.gz",
+   "sha256": "9f59098fb49f53d253ae728dbe65982468558baebd023a66aff6ec9e2e45334f",
+   "size": 4364092
   }
  }
 }
