@@ -1,5 +1,7 @@
-**Arefi ITPraxis 2.5.0 (Vorabversion)**
+**Arefi ITPraxis 2.6.0 (Vorabversion) – Stufe 1 von 4 der neuen Lernstrecken**
 
-- Neue Lernstrecke **Linux-Server** mit 16 Modulen, gegliedert nach den Themen von „Linux-Server – Das umfassende Handbuch“ (Rheinwerk): systemd, Pakete/Updates, LVM, Rechte/ACL/sudo, netplan, SSH-Härtung, Bash-Skripte und Timer, Backup, nginx/TLS, Samba/NFS, AD-Anbindung mit SSSD, Docker, Ansible, Monitoring, Härtung. Jedes Modul auf Persisch, Deutsch und Englisch mit Laborübung (LNX01, Ubuntu Server 24.04), Prüfpunkten, typischen Fehlern, Interviewfragen, offiziellen Quellen und Feldern für Buchseite und Notiz. Kein Buchtext enthalten.
-- Darstellung: Kursseiten auf dem Handy (Notizbox überlagerte den Inhalt), lange Pfade im persischen Text, Serverraum-Kennzahlen und KI-Tutor-Formular auf Tablets, Codekopf in der Gerätebibliothek.
-- Updates sind signiert (Ed25519).
+- Neue Seite **„Alle Lernstrecken“** im Menü: alle Kurse mit Fortschritt an einem Ort.
+- Neue Lernstrecke **Netzwerk und Speicher** (10 Module, fa/de/en): RAID und Rebuild, NAS/SAN/iSCSI/Snapshots, Subnetting und VLSM, IPv6, VLAN/Trunk/Inter-VLAN-Routing, STP und LACP, statisches Routing/OSPF/NAT/DHCP-Relay, VPN (WireGuard/IPsec/OpenVPN), Firewall/DMZ/Reverse Proxy, Firmen-WLAN mit 802.1X/RADIUS.
+- Jedes Modul hat jetzt zusätzlich **Fehlersuche (Symptom → Ursache und Lösung)** und eine **Entscheidungshilfe (wann was)**.
+- **Subnetting-Trainer**: unbegrenzte Aufgaben (Adresse analysieren, Präfix für Hostanzahl, gleiches Netz?, Rechner) mit Lösungsweg und Statistik.
+- Darstellung: Formeln und Zahlen im persischen Text werden korrekt von links nach rechts angezeigt.

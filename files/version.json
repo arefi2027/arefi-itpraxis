@@ -1,36 +1,36 @@
 {
- "version": "2.5.0",
+ "version": "2.6.0",
  "page": "https://github.com/arefi2027/arefi-itpraxis/releases/latest",
  "notes": {
-  "de": "Arefi ITPraxis 2.5: neue Lernstrecke Linux-Server mit 16 Modulen (Ubuntu Server 24.04: systemd, Pakete, LVM, Rechte, netplan, SSH, Skripte, Backup, nginx/TLS, Samba/NFS, AD-Anbindung, Docker, Ansible, Monitoring, Härtung); Darstellung der Kurse auf dem Handy und einiger Seiten auf Tablets korrigiert. 2.4: neue Lernstrecke Windows Server 2025 mit 17 Modulen (Wissen, Laborübung, Interviewfragen, Buchnotizen). 2.3.3: Herstellerinfos je Gerät direkt im Programm auf Persisch, Deutsch und Englisch (offline, mit Quellen); Textfehler auf der Installationsseite behoben. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
-  "en": "Arefi ITPraxis 2.5: new Linux Server course with 16 modules (Ubuntu Server 24.04: systemd, packages, LVM, permissions, netplan, SSH, scripting, backup, nginx/TLS, Samba/NFS, AD join, Docker, Ansible, monitoring, hardening); fixed course layout on phones and some pages on tablets. 2.4: new Windows Server 2025 course with 17 modules (knowledge, lab exercise, interview questions, book notes). 2.3.3: vendor information per device inside the app in Persian, German and English (offline, with sources); text layout fixes on the install page. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
-  "fa": "Arefi ITPraxis 2.5: دورهٔ جامع لینوکس سرور با ۱۶ ماژول (Ubuntu Server 24.04: systemd، بسته‌ها، LVM، دسترسی‌ها، netplan، SSH، اسکریپت، پشتیبان، nginx و TLS، Samba و NFS، اتصال به AD، Docker، Ansible، پایش، سخت‌سازی)؛ رفع به‌هم‌ریختگی دوره‌ها در گوشی و چند صفحه در تبلت. 2.4: دورهٔ جامع ویندوز سرور ۲۰۲۵ با ۱۷ ماژول (دانش، تمرین آزمایشگاهی، پرسش مصاحبه، یادداشت کتاب). 2.3.3: اطلاعات سازنده برای هر دستگاه داخل برنامه به فارسی، آلمانی و انگلیسی (آفلاین و با منبع)؛ رفع به‌هم‌ریختگی متن در صفحهٔ نصب. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
+  "de": "Arefi ITPraxis 2.6: neue Kursübersicht „Alle Lernstrecken“, Lernstrecke Netzwerk und Speicher (RAID, iSCSI, Subnetting, IPv6, VLAN, STP/LACP, Routing/NAT, VPN, Firewall/DMZ, WLAN 802.1X) mit Fehlersuche und Entscheidungshilfe je Modul, interaktiver Subnetting-Trainer. 2.5: neue Lernstrecke Linux-Server mit 16 Modulen (Ubuntu Server 24.04: systemd, Pakete, LVM, Rechte, netplan, SSH, Skripte, Backup, nginx/TLS, Samba/NFS, AD-Anbindung, Docker, Ansible, Monitoring, Härtung); Darstellung der Kurse auf dem Handy und einiger Seiten auf Tablets korrigiert. 2.4: neue Lernstrecke Windows Server 2025 mit 17 Modulen (Wissen, Laborübung, Interviewfragen, Buchnotizen). 2.3.3: Herstellerinfos je Gerät direkt im Programm auf Persisch, Deutsch und Englisch (offline, mit Quellen); Textfehler auf der Installationsseite behoben. 2.3.1: Startfehler „Port 18764 wird benutzt“ unter Windows behoben (automatischer Ersatzport). 2.3: neue Gerätebibliothek mit 12 Geräten (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – Menüs, Beispielbefehle, Prüfschritte, Herstellerlinks und je eine Praxisübung pro Gerät mit abhakbaren Erfolgskriterien, in drei Sprachen.",
+  "en": "Arefi ITPraxis 2.6: new “All courses” overview, networking and storage course (RAID, iSCSI, subnetting, IPv6, VLAN, STP/LACP, routing/NAT, VPN, firewall/DMZ, WLAN 802.1X) with troubleshooting and decision guide per module, interactive subnetting trainer. 2.5: new Linux Server course with 16 modules (Ubuntu Server 24.04: systemd, packages, LVM, permissions, netplan, SSH, scripting, backup, nginx/TLS, Samba/NFS, AD join, Docker, Ansible, monitoring, hardening); fixed course layout on phones and some pages on tablets. 2.4: new Windows Server 2025 course with 17 modules (knowledge, lab exercise, interview questions, book notes). 2.3.3: vendor information per device inside the app in Persian, German and English (offline, with sources); text layout fixes on the install page. 2.3.1: fixed the Windows start error “port 18764 is used” (automatic fallback port). 2.3: new hardware library with 12 devices (Cisco, Fortinet, Aruba, Dell, OPNsense, MikroTik, Ubiquiti, Palo Alto, HPE iLO, UniFi, Synology) – menus, example commands, verification steps, vendor links and a hands-on practice exercise per device with success criteria, in three languages.",
+  "fa": "Arefi ITPraxis 2.6: صفحهٔ «همهٔ دوره‌ها»، دورهٔ شبکه و ذخیره‌سازی (RAID، iSCSI، Subnetting، IPv6، VLAN، STP و LACP، مسیریابی و NAT، VPN، Firewall و DMZ، WLAN با 802.1X) با عیب‌یابی و راهنمای تصمیم در هر ماژول، و تمرین‌ساز تعاملی Subnetting. 2.5: دورهٔ جامع لینوکس سرور با ۱۶ ماژول (Ubuntu Server 24.04: systemd، بسته‌ها، LVM، دسترسی‌ها، netplan، SSH، اسکریپت، پشتیبان، nginx و TLS، Samba و NFS، اتصال به AD، Docker، Ansible، پایش، سخت‌سازی)؛ رفع به‌هم‌ریختگی دوره‌ها در گوشی و چند صفحه در تبلت. 2.4: دورهٔ جامع ویندوز سرور ۲۰۲۵ با ۱۷ ماژول (دانش، تمرین آزمایشگاهی، پرسش مصاحبه، یادداشت کتاب). 2.3.3: اطلاعات سازنده برای هر دستگاه داخل برنامه به فارسی، آلمانی و انگلیسی (آفلاین و با منبع)؛ رفع به‌هم‌ریختگی متن در صفحهٔ نصب. 2.3.1: خطای شروع «پورت 18764 اشغال است» در ویندوز برطرف شد (پورت جایگزین خودکار). 2.3: کتابخانهٔ تجهیزات با ۱۲ دستگاه (Cisco، Fortinet، Aruba، Dell، OPNsense، MikroTik، Ubiquiti، Palo Alto، HPE iLO، UniFi، Synology): منوها، فرمان‌های نمونه، روش بررسی، پیوند به راهنمای سازنده و برای هر دستگاه یک تمرین عملی با معیارهای موفقیت، به سه زبان."
  },
  "downloads": {
   "windows": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.5.0/ArefiITPraxis-Setup-2.5.0.exe",
-   "sha256": "5fbda1f21af47ccc8396f1e7d0b8c1f4267650fff3b9afbb705fd45428db9f15",
-   "size": 9867264
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.6.0/ArefiITPraxis-Setup-2.6.0.exe",
+   "sha256": "68ea4c61acd931bb1239acbf3cdd45a87e93ca14bd761ebbf5037b22f66274f1",
+   "size": 10049024
   },
   "mac": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.5.0/ArefiITPraxis-2.5.0-macOS.zip",
-   "sha256": "a91e5503dc0fc0860f096de34a9c44c40ae56a80bd9f0ffe39224a506c4f33eb",
-   "size": 8877827
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.6.0/ArefiITPraxis-2.6.0-macOS.zip",
+   "sha256": "eeb08757e0d8aeaf1cbbd36959eb54442d5c9e39ff92295878b690fa8d83f527",
+   "size": 9003047
   },
   "linux-deb": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.5.0/arefi-itpraxis_2.5.0_amd64.deb",
-   "sha256": "82989784e051735588cb0097f0de238fc69d247e8bd8ade46f5fe4bd631b9be5",
-   "size": 4420330
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.6.0/arefi-itpraxis_2.6.0_amd64.deb",
+   "sha256": "104f7089fc28de4e02f1ab742c41126454d8672e0f07f3fc84409efec5e5fc4f",
+   "size": 4486360
   },
   "linux-deb-arm64": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.5.0/arefi-itpraxis_2.5.0_arm64.deb",
-   "sha256": "021ed9cf182a290d3852832100dcff7095aabf64fbb92a45b95dbee06d924271",
-   "size": 4169920
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.6.0/arefi-itpraxis_2.6.0_arm64.deb",
+   "sha256": "20f600a9d63ab9c7750055e3517cfcce84935387362827ce4df2c79005b7816d",
+   "size": 4236462
   },
   "linux-tar": {
-   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.5.0/arefi-itpraxis-2.5.0-linux-amd64.tar.gz",
-   "sha256": "bc8392831045864a82575ccb55bd413480fd0b4ef0a4169c0ad9ec15bafd1594",
-   "size": 4406992
+   "url": "https://github.com/arefi2027/arefi-itpraxis/releases/download/v2.6.0/arefi-itpraxis-2.6.0-linux-amd64.tar.gz",
+   "sha256": "83d963bb4a8210a20a165de2a2834f26a4eff0a2b6059211ceb00c48ba8119fc",
+   "size": 4472964
   }
  }
 }
