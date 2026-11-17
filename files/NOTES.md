@@ -1,7 +1,6 @@
-**Arefi ITPraxis 2.6.0 (Vorabversion) – Stufe 1 von 4 der neuen Lernstrecken**
+**Arefi ITPraxis 2.7.0 (Vorabversion) – Stufe 2 von 4**
 
-- Neue Seite **„Alle Lernstrecken“** im Menü: alle Kurse mit Fortschritt an einem Ort.
-- Neue Lernstrecke **Netzwerk und Speicher** (10 Module, fa/de/en): RAID und Rebuild, NAS/SAN/iSCSI/Snapshots, Subnetting und VLSM, IPv6, VLAN/Trunk/Inter-VLAN-Routing, STP und LACP, statisches Routing/OSPF/NAT/DHCP-Relay, VPN (WireGuard/IPsec/OpenVPN), Firewall/DMZ/Reverse Proxy, Firmen-WLAN mit 802.1X/RADIUS.
-- Jedes Modul hat jetzt zusätzlich **Fehlersuche (Symptom → Ursache und Lösung)** und eine **Entscheidungshilfe (wann was)**.
-- **Subnetting-Trainer**: unbegrenzte Aufgaben (Adresse analysieren, Präfix für Hostanzahl, gleiches Netz?, Rechner) mit Lösungsweg und Statistik.
-- Darstellung: Formeln und Zahlen im persischen Text werden korrekt von links nach rechts angezeigt.
+- Neue Lernstrecke **Microsoft 365, Entra ID und Intune** (6 Module, fa/de/en): Benutzer, Gruppen, Lizenzen und On-/Offboarding mit Microsoft Graph PowerShell; MFA, Conditional Access und Break-Glass; Exchange Online mit Nachrichtenverfolgung; Teams/SharePoint/OneDrive mit Freigaben und Wiederherstellung; Intune (Compliance, BitLocker, Win32-Apps); Windows Autopilot.
+- Neue Lernstrecke **Virtualisierung, Backup und Monitoring** (7 Module): Proxmox VE, VMware vSphere, Cluster und HA, Veeam mit unveränderbarem Repository, Wiederherstellung mit RPO/RTO und Notfallplan, Checkmk, SNMPv3 und zentrales Syslog.
+- Jedes Modul mit Praxislabor, Fehlersuche (Symptom → Ursache und Lösung), Entscheidungshilfe und Interviewfragen.
+- Darstellung: Pfeile im persischen Text zeigen in Leserichtung, lange Start-Buttons umbrechen auf dem Handy.
