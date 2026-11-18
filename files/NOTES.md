@@ -1,13 +1,14 @@
-## Arefi ITPraxis 2.15.1 (Vorabversion)
+## Arefi ITPraxis 2.16.0 (Vorabversion)
 
-**Deutsch**
-- iPhone und iPad: Safari zeigt automatisch eine Anleitung „Zum Home-Bildschirm“ in drei Schritten (auch für iOS 26 mit „Als Web-App öffnen“ und für Links, die in anderen Apps wie WhatsApp oder Telegram geöffnet wurden). „Später“ blendet sie für 7 Tage aus, „Nicht mehr anzeigen“ dauerhaft.
-- Eigener Abschnitt „iPhone und iPad“ auf der Seite „Installieren und Updates“ mit Adresse, Schritten, Hinweis zum getrennten Speicher und Knopf „Anleitung auf diesem Gerät zeigen“.
-- Name „ITPraxis“ unter dem Symbol auf dem Home-Bildschirm; kein ungewolltes Hineinzoomen in Eingabefelder auf dem iPhone; Schriftgröße bleibt im Querformat stabil.
-- Geprüft auf iPhone- und iPad-Formaten (Hoch- und Querformat, iPad Pro): keine Überbreite auf Start, Inhaltsverzeichnis, Störungshandbuch, Kursen, Supportfällen und Projektmappe.
+**Deutsch – Netzwerke planen**
+- Vier vollständige Projektmappen mit denselben zehn Planungsbereichen: Privat/Home-Office, kleine Firma (18), mittlere Firma (120, Fertigung + Filiale), große Firma (800, zwei Rechenzentren, sechs Filialen).
+- Je Mappe: Netzplan (logisch und physisch), VLAN- und IP-Plan, Erreichbarkeit, Sicherheit, Verfügbarkeitsrechnung, Qualität mit Abnahmekriterien, Kosten und TCO mit recherchierten Preisen (Quelle und Datum), Betrieb, Recht für Deutschland und Österreich (DSGVO, NIS2UmsuCG, NISG 2026, ArbVG/BetrVG).
+- Vergleichsmappe: alle vier Netztypen je Bereich nebeneinander, mit Sprung in jede Mappe.
+- 13 neue Lektionen: Bedarf und Netzplan, Netztyp wählen, VLAN/IP, Erreichbarkeit, Sicherheit, Verfügbarkeit, Qualität, Verkabelung/PoE/USV, Kosten/TCO, Projektphasen, PSP und Netzplantechnik, Umsetzung und Abnahme, Recht DE/AT.
+- Kapitel 3.4 heißt jetzt „Netzwerke planen: Netzplan, Sicherheit, Verfügbarkeit, Kosten und Projekt“; Projektdokumente sind über die Suche auffindbar.
 
 **فارسی**
-- iPhone و iPad: راهنمای خودکار «افزودن به صفحهٔ اصلی» در Safari، بخش جداگانه در صفحهٔ نصب، نام «ITPraxis» زیر نماد و رفع بزرگ‌نمایی ناخواسته.
+- چهار پوشهٔ کامل طراحی شبکه (خانه، شرکت کوچک، متوسط، بزرگ) با ده بخش یکسان، پوشهٔ مقایسه و ۱۳ درس تازه؛ فصل ۳٫۴ با نام روشن و جستجو در سندها.
 
 **English**
-- iPhone and iPad: automatic “Add to Home Screen” guide in Safari, dedicated section on the install page, “ITPraxis” as Home Screen name and no unwanted zoom into input fields.
+- Four complete network-planning folders (home, small, medium, large) with the same ten areas, a comparison folder and 13 new lessons; clearly named chapter 3.4 and searchable documents.
