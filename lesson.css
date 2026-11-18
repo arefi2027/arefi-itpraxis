@@ -207,3 +207,8 @@ bdi[dir=ltr] { unicode-bidi: isolate }
   html[dir] .lv .lv-aside { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start }
   html[dir] .lv .lv-aside > details { grid-column: 1 / -1 }
 }
+
+/* Allgemeine Text-Sicherungen (2.3.3) */
+.setup-index{white-space:nowrap;height:auto!important;line-height:1.5;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+main pre, main pre code{white-space:pre-wrap;overflow-wrap:anywhere}
+main h1, main h2, main h3, main h4, main p, main li, main dd, main dt, main label, main summary{overflow-wrap:break-word}

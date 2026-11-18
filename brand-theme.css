@@ -1,0 +1,113 @@
+/* Arefi ITPraxis – Markenfarben und Startseite (nach allen anderen Stylesheets laden) */
+:root{--nav:#0F2340;--ink:#13243A;--teal:#13706A;--lime:#F2B27A;--ax-ink:#0F2340;--ax-copper:#D4772C;--ax-copper2:#F2A35B;--ax-fiber:#2FB4A8;--ax-mist:#EEF3F6}
+.sidebar{color:#C9D5E2;background:linear-gradient(165deg,#0F2340,#132C50);border-inline-end:1px solid #1E3A63}
+.sidebar nav a.active,nav a.active{color:#FFD2A6;background:#ffffff14;border-inline-start:3px solid var(--ax-copper)}
+.sidebar nav a:hover{background:#1C3557}
+.btn{background:var(--teal)}
+:focus-visible{outline-color:var(--ax-copper)}
+
+/* Wortmarke in der Seitenleiste */
+.arefi-symbol{color:inherit}
+.arefi-symbol svg{width:46px;height:46px}
+.arefi-wordmark{font-size:25px;letter-spacing:-.4px;color:#fff;font-weight:800}
+.arefi-wordmark em{font-style:normal;font-weight:600;color:var(--ax-copper2)}
+.arefi-wordmark>span{display:block;font-size:11.5px;letter-spacing:.2px;margin-top:6px;color:#9FB3C8;font-weight:500}
+
+/* Startseite: Hero */
+.ax-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--ax-ink);background-image:radial-gradient(circle at 85% 20%,#1F4F86 0,transparent 55%);color:#E7EEF5;border-radius:20px;padding:40px 44px;margin:0 0 26px;overflow:hidden}
+.ax-lockup{font-family:ArefiNeo,"Segoe UI",Arial,sans-serif;display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.ax-lockup .ax-mark{width:58px;height:58px;flex:none}
+.ax-lockup b{display:block;font-size:26px;font-weight:800;letter-spacing:-.4px;color:#fff;line-height:1.1}
+.ax-lockup b span{color:var(--ax-copper2);font-weight:600}
+.ax-lockup small{display:block;font-size:13px;color:#9FB3C8;margin-top:4px}
+.ax-hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.12;letter-spacing:-.6px;color:#fff;margin:0 0 16px;max-width:17ch}
+html[lang=fa] .ax-hero h1{letter-spacing:0;line-height:1.45;max-width:22ch}
+.ax-hero p{font-size:17px;line-height:1.65;color:#C9D5E2;max-width:60ch;margin:0 0 26px}
+.ax-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;margin-bottom:28px}
+.ax-cta{display:inline-flex;flex-direction:column;justify-content:center;background:var(--ax-copper);color:#1B1206;text-decoration:none;font-weight:800;font-size:17px;padding:12px 22px;border-radius:10px;min-height:52px;box-sizing:border-box}
+.ax-cta small{font-weight:600;font-size:13px;opacity:.85;margin-top:2px}
+.ax-cta:hover{background:var(--ax-copper2)}
+.ax-cta2{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:12px 20px;border-radius:10px;border:1.5px solid #3B5A80;min-height:52px;box-sizing:border-box}
+.ax-cta2:hover{border-color:var(--ax-fiber);background:#14304F}
+.ax-cta:focus-visible,.ax-cta2:focus-visible,.ax-path a:focus-visible{outline:3px solid var(--ax-copper2);outline-offset:3px}
+.ax-facts{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid #23406A;display:flex;flex-wrap:wrap;gap:14px 34px}
+.ax-facts li{display:flex;flex-direction:column}
+.ax-facts b{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.ax-facts span{font-size:13px;color:#9FB3C8;margin-top:6px}
+.ax-net{width:100%;max-width:400px;justify-self:end;height:auto}
+html[dir=rtl] .ax-net{justify-self:start;transform:scaleX(-1)}
+
+/* Startseite: Berufsziele */
+.ax-paths{margin:0 0 30px}
+.ax-paths h2{font-size:24px;margin:0 0 6px;color:var(--ink)}
+.ax-paths>p{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.ax-path-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.ax-path{background:#fff;border:1px solid var(--line);border-top:4px solid var(--ax-ink);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column}
+.ax-path:nth-child(2){border-top-color:var(--ax-fiber)}
+.ax-path:nth-child(3){border-top-color:var(--ax-copper)}
+.ax-path:nth-child(4){border-top-color:#2A63A3}
+.ax-path:nth-child(5){border-top-color:#7A5AC2}
+.ax-path h3{margin:0 0 6px;font-size:18px;color:var(--ink)}
+.ax-path p{margin:0 0 12px;font-size:14px;line-height:1.55;color:var(--muted)}
+.ax-path ol{margin:0 0 14px;padding-inline-start:20px;display:grid;gap:7px;font-size:14px}
+.ax-path li{line-height:1.4}
+.ax-path li a{color:var(--ink);text-decoration:none;border-bottom:1px solid #C9D5E2}
+.ax-path li a:hover{border-bottom-color:var(--ax-copper)}
+.ax-path li span{color:var(--muted);font-size:12px;margin-inline-start:6px;white-space:nowrap}
+.ax-path li.is-done a{color:#2B7A4B}
+.ax-bar{height:6px;border-radius:3px;background:var(--ax-mist);overflow:hidden;margin-top:auto}
+.ax-bar span{display:block;height:100%;background:var(--ax-fiber)}
+.ax-next{display:block;margin-top:10px;font-size:14px;font-weight:700;color:var(--teal);text-decoration:none}
+a.ax-next:hover{text-decoration:underline}
+
+/* Alte Einleitung unter dem Hero ausblenden (Inhalt bleibt darunter erreichbar) */
+.ax-paths~.intro{display:none}
+
+/* Kursübersicht */
+.kh-order{font-size:14px;color:var(--muted);margin-top:6px}
+
+@media (max-width:900px){
+ .ax-hero{grid-template-columns:1fr;padding:28px 22px}
+ .ax-net{display:none}
+}
+@media (max-width:560px){
+ .ax-hero{border-radius:14px;padding:24px 18px}
+ .ax-lockup{margin-bottom:18px}
+ .ax-cta,.ax-cta2{width:100%}
+ .ax-facts{gap:12px 22px}
+ .ax-facts b{font-size:23px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+
+/* Kopfzeilen-Werkzeuge: Suche und Design */
+.ax-tools{display:flex;gap:8px;align-items:center;margin-inline-start:12px}
+.ax-tools button{display:inline-flex;align-items:center;gap:8px;height:38px;border:1px solid var(--line);background:var(--paper,#fff);color:var(--ink);border-radius:9px;padding:0 12px;font:inherit;font-size:14px;cursor:pointer}
+.ax-tools button:hover{border-color:var(--ax-copper)}
+.ax-tools svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.ax-tools kbd{font:600 11px ui-monospace,Consolas,monospace;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--muted)}
+.ax-t-theme{padding:0 10px!important}
+.ax-t-theme .ax-sun{display:none}
+html[data-theme=dark] .ax-t-theme .ax-sun{display:inline}
+html[data-theme=dark] .ax-t-theme .ax-moon{display:none}
+.ax-search{width:min(760px,94vw);max-height:82vh;padding:0;border:1px solid var(--line);border-radius:16px;background:var(--paper,#fff);color:var(--ink);box-shadow:0 24px 60px #0f234040}
+.ax-search::backdrop{background:#0b1626a6}
+.ax-s-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:inherit}
+.ax-s-head svg{width:20px;height:20px;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
+.ax-s-head input{flex:1;border:0;outline:0;font:inherit;font-size:18px;background:transparent;color:inherit;min-width:0}
+.ax-s-close{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+.ax-s-hint,.ax-s-count{margin:10px 18px 0;font-size:13px;color:var(--muted)}
+.ax-s-list{list-style:none;margin:8px 0 0;padding:0 8px 12px;overflow:auto;max-height:62vh}
+.ax-s-list a{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;color:inherit}
+.ax-s-list a:hover,.ax-s-list a:focus-visible{background:var(--ax-mist);outline:2px solid var(--ax-copper);outline-offset:-2px}
+html[data-theme=dark] .ax-s-list a:hover,html[data-theme=dark] .ax-s-list a:focus-visible{background:#1A2E4A}
+.ax-s-list b{display:block;font-size:15px}
+.ax-s-list small{display:block;font-size:12px;color:var(--muted);margin:2px 0 4px}
+.ax-s-list span{display:block;font-size:13px;line-height:1.55;color:var(--muted)}
+.ax-s-list mark{background:#F2B27A66;color:inherit;border-radius:3px;padding:0 1px}
+@media (max-width:760px){.ax-tools kbd,.ax-t-search span{display:none}.ax-tools{margin-inline-start:6px}}
+@media (min-width:761px){.topbar:has(.ax-tools){grid-template-columns:auto minmax(0,1fr) auto auto}}
+@media (max-width:1499px){.ax-tools kbd,.ax-t-search span{display:none}.ax-t-search{padding:0 10px!important}}
+@media (min-width:761px) and (max-width:1499px){.topbar:has(.ax-tools) .top-meta .live-dot~*{display:none}}
+.ax-paths .ax-path p{font-size:14px;line-height:1.55;margin:0 0 12px}
+.ax-paths>p{font-size:16px}
+@media (min-width:761px) and (max-width:1799px){.topbar:has(.ax-tools) .top-meta{font-size:0!important}.topbar:has(.ax-tools) .top-meta .pill{font-size:13px}}

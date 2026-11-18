@@ -1,0 +1,48 @@
+.hl-page{max-width:1260px;margin-inline:auto}.hl-notice{padding:14px 18px;border:1px solid #b1c5ca;border-radius:12px;background:var(--surface,#eff6f7);margin:18px 0;line-height:1.9}.hl-filters{display:grid;gap:12px;margin:20px 0}.hl-filters input{width:100%;padding:15px 18px;border:1px solid #8ba6ac;border-radius:12px;background:var(--card,#fff);color:var(--ink,#18313b);font:inherit}.hl-categories,.hl-topic-tabs{display:flex;gap:8px;flex-wrap:wrap}.hl-categories button,.hl-topic-tabs button{font:inherit;border:1px solid #a3b9bd;border-radius:9px;padding:9px 14px;background:var(--card,#fff);color:var(--ink,#18313b);cursor:pointer}.hl-categories button.active,.hl-topic-tabs button.active{background:#17676e;color:#fff;border-color:#17676e}.hl-layout{display:grid;grid-template-columns:minmax(180px,245px) minmax(0,1fr);gap:18px;align-items:start}.hl-device-list{display:flex;flex-direction:column;gap:9px;max-height:76vh;overflow:auto}.hl-device{font:inherit;text-align:start;display:grid;gap:5px;background:var(--card,#fff);color:var(--ink,#18313b);border:1px solid #b0c2c8;padding:14px;border-radius:12px;cursor:pointer}.hl-device span{font-weight:650}.hl-device small,.hl-sub{opacity:.77;font-size:.88em;line-height:1.6}.hl-device.selected{border:2px solid #18707a;background:#e4f4f3;color:#103c44}.hl-detail{background:var(--card,#fff);color:var(--ink,#18313b);border:1px solid #b1c6ca;border-radius:16px;padding:22px;min-width:0}.hl-devicehead{display:flex;align-items:start;justify-content:space-between;gap:15px}.hl-detail h2{margin:7px 0}.hl-detail h3{margin:22px 0 12px}.hl-doc{background:#17676e;color:#fff!important;text-decoration:none;padding:10px 15px;border-radius:9px;font-size:.86em;max-width:180px;line-height:1.6}.hl-illustration{margin:18px 0;background:#e9f1f4;border:1px solid #c4d5d9;border-radius:12px;padding:9px}.hl-illustration small{color:#445d64;display:block;text-align:center;margin:5px}.hl-lab{background:var(--surface,#f1f5f6);border-radius:12px;padding:12px;text-align:center}.hl-topology{display:flex;align-items:center;justify-content:center;gap:12px;direction:ltr;color:#2c6874}.hl-topology>div{display:grid;gap:2px;font-size:27px}.hl-topology small{font-size:11px;color:#395963}.hl-lab>small{display:block;margin-top:5px}.hl-lesson{margin-top:18px}.hl-path{padding:12px;border-radius:8px;background:var(--surface,#eff4f5);overflow-wrap:anywhere;line-height:1.7}.hl-lesson ol{padding-inline-start:25px;line-height:2}.hl-codeheader{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:20px}.hl-codeheader button{font:inherit;cursor:pointer;border:1px solid #a4c3ca;background:#e5f5f6;color:#234751;border-radius:8px;padding:7px 13px}.hl-code,.hl-verify{white-space:pre-wrap;word-break:break-word;background:#142a34;color:#eef7f8;padding:18px;border-radius:10px;line-height:1.75;text-align:left;font-size:.92em;unicode-bidi:plaintext}.hl-warn{border-inline-start:4px solid #b77b24;padding:12px 16px;background:rgba(183,123,36,.09);border-radius:5px;line-height:1.8}.hl-detail a:focus-visible,.hl-page button:focus-visible{outline:3px solid #faad49;outline-offset:3px}@media(max-width:820px){.hl-layout{grid-template-columns:1fr}.hl-device-list{max-height:unset;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.hl-devicehead{flex-wrap:wrap}.hl-detail{padding:15px}}@media(max-width:480px){.hl-device-list{grid-template-columns:1fr}.hl-topology{gap:4px}.hl-illustration{padding:2px}.hl-doc{max-width:unset}}
+
+/* 2.3: Dokumentations-Button bricht sauber um, statt abgeschnitten zu werden */
+.hl-devicehead{flex-wrap:wrap}
+.hl-doc{max-width:none!important;flex:0 0 auto;white-space:nowrap;align-self:flex-start}
+@media (max-width:560px){.hl-doc{white-space:normal}}
+
+/* Praxisübungen */
+.hl-topic-tabs .hl-tab-ex{border-style:dashed}
+.hl-topic-tabs .hl-tab-ex.active{border-style:solid}
+.hl-ex-badge{display:inline-block;margin:0 0 12px;padding:4px 12px;border-radius:999px;background:#fdf1dc;color:#7a4b0c;font-weight:650;font-size:.9em}
+.hl-ex-goal{background:#eef4f3;border-inline-start:4px solid #16776c;border-radius:10px;padding:12px 16px;margin-bottom:14px}
+.hl-ex-goal b{display:block;color:#16776c;font-size:.92em;margin-bottom:2px}
+.hl-ex-goal p{margin:0;line-height:1.7}
+.hl-solution{margin:16px 0;border:1px solid #dae4e7;border-radius:10px;padding:10px 14px;background:#fbfcfc}
+.hl-solution summary{cursor:pointer;font-weight:650;color:#16776c}
+.hl-solution[open] summary{margin-bottom:10px}
+.hl-ex-crit h3 span{font-size:.8em;font-weight:600;color:#16776c;margin-inline-start:8px}
+.hl-check{display:flex;gap:10px;align-items:flex-start;border:1px solid #dae4e7;border-radius:10px;padding:10px 14px;margin:8px 0;background:#fff;cursor:pointer;line-height:1.6}
+.hl-check input{width:19px;height:19px;margin-top:3px;flex:none;accent-color:#2f7d4f}
+.hl-check:has(input:checked){background:#e9f5ed;border-color:#b9dcc5}
+.hl-ex-done{background:#2f7d4f;color:#fff;border-radius:10px;padding:10px 14px;font-weight:650;margin:10px 0 0}
+.hl-ex-flag{display:inline-block;margin-top:6px;font-style:normal;font-size:.8em;font-weight:650;color:#23613c;background:#e9f5ed;border-radius:999px;padding:2px 10px}
+.hl-ex-summary{margin:10px 0 0;color:#3d5960}
+.hl-ex-summary b{color:#16776c}
+
+/* Herstellerdokumentation in drei Sprachen */
+.hl-devicehead{flex-direction:column;align-items:stretch}
+.hl-docs{margin-top:4px}
+.hl-docs>b{display:block;font-size:.9em;margin-bottom:6px}
+.hl-docs-links{display:flex;flex-wrap:wrap;gap:8px}
+.hl-docs .hl-doc{display:inline-flex;flex-direction:column;gap:1px;white-space:nowrap;max-width:none!important}
+.hl-docs .hl-doc small{font-size:.78em;opacity:.85}
+.hl-docs .hl-doc-alt{background:#fff;color:#16676e!important;border:1px solid #b9d3cf}
+.hl-docs .hl-doc-alt:hover{background:#eef4f3}
+.hl-docs-note{display:block;margin-top:8px;color:#5b7176;line-height:1.6;max-width:70ch}
+
+/* Herstellerinfos */
+.hl-facts{background:#f5f9f8;border:1px solid #d3e3e0;border-radius:12px;padding:16px 18px;margin:16px 0}
+.hl-facts h3{margin:0 0 4px;font-size:1.05em}
+.hl-facts>ul{margin:10px 0 6px;padding-inline-start:20px;display:grid;gap:8px}
+.hl-facts>ul li{line-height:1.75}
+.hl-sources{margin-top:8px}
+.hl-sources summary{cursor:pointer;color:#16776c;font-size:.9em;font-weight:600}
+.hl-sources ul{margin:8px 0 0;padding-inline-start:20px;display:grid;gap:4px;font-size:.9em}
+.hl-docs .hl-doc{flex-direction:row}
+
+.hl-codeheader{flex-wrap:wrap}.hl-codeheader strong{min-width:0;overflow-wrap:anywhere}

@@ -1,0 +1,283 @@
+/* Automatisch erzeugt von tools/mkdark.py – dunkles Erscheinungsbild. Nicht von Hand bearbeiten. */
+html[data-theme=dark]{color-scheme:dark}
+/* app.css */
+html[data-theme=dark]{--bg:#202328;--paper:#151f2e;--ink:#cfe4e7;--line:#2b4950}
+html[data-theme=dark] .skip{background:#151f2e}
+html[data-theme=dark] .brand-mark{color:#a3d6c4}
+html[data-theme=dark] .track{background:#242829}
+html[data-theme=dark] .topbar{background:#151f2e}
+html[data-theme=dark] .pill{border:1px solid #2b503d;color:#b0c9bf}
+html[data-theme=dark] .intro .version-tag{border:1px solid #2b4650;background:#151f2e}
+html[data-theme=dark] .continue-card{background:#1d2230;border:1px solid #2b3550}
+html[data-theme=dark] .continue-icon{background:#151f2e;border:1px solid #2b3450}
+html[data-theme=dark] .continue-copy .small-label{color:#9eb2db}
+html[data-theme=dark] .continue-copy h2{color:#9cb3de}
+html[data-theme=dark] .btn.secondary{background:#151f2e}
+html[data-theme=dark] .module-card{background:#151f2e}
+html[data-theme=dark] .module-card:hover{border-color:#2b5044}
+html[data-theme=dark] .module-card.current{border-color:#2b503d}
+html[data-theme=dark] .module-number{background:#222827}
+html[data-theme=dark] .module-card.current .module-number{background:#28311e;color:#a7d3b1}
+html[data-theme=dark] .module-card.done .module-number{background:#1f3129;color:#9cdec6}
+html[data-theme=dark] .status{background:#212729}
+html[data-theme=dark] .status.start{background:#262f1d}
+html[data-theme=dark] .status.done{background:#1e2e26;color:#a0d9c1}
+html[data-theme=dark] .card{background:#151f2e}
+html[data-theme=dark] .card-title svg{color:#b0c9c2}
+html[data-theme=dark] .lab-network{background:#212623;border:1px solid #2b5043}
+html[data-theme=dark] .network-title{color:#b1c8c1}
+html[data-theme=dark] .network-bus{border-bottom:1px solid #2b5043}
+html[data-theme=dark] .network-bus::before{background:#2d3633}
+html[data-theme=dark] .node:before{background:#2d3633}
+html[data-theme=dark] .node svg{color:#b3c6c0}
+html[data-theme=dark] .spec-list dd{color:#b3c7c7}
+html[data-theme=dark] .ram-heading b{color:#adccbf}
+html[data-theme=dark] .ram-box .track{background:#252926}
+html[data-theme=dark] .ram-box .track span:nth-child(2){background:#344036}
+html[data-theme=dark] .ram-box .track span:nth-child(3){background:#353b24}
+html[data-theme=dark] .text-link{color:#a9d0c4}
+html[data-theme=dark] .tip-card{background:#282c20;border-color:#45502b}
+html[data-theme=dark] .overview-stats{background:#151f2e}
+html[data-theme=dark] .notice{background:#222a23;color:#b2c7b8;border:1px solid #2b502e}
+html[data-theme=dark] .notice.blue{background:#1c222e;color:#abb9cf;border-color:#2b3650}
+html[data-theme=dark] .step-index{background:#232927}
+html[data-theme=dark] .step code:not(pre code),html[data-theme=dark] .task-row code{background:#222928;color:#aeccc1}
+html[data-theme=dark] .expect{border-left:2px solid #2b502d;color:#b2c8bd!important}
+html[data-theme=dark] .task-row{border-bottom:1px solid #2b3a50}
+html[data-theme=dark] textarea{border:1px solid #2b5045;background:#1e2722}
+html[data-theme=dark] .quiz-option{border:1px solid #2b5043}
+html[data-theme=dark] .quiz-option:has(input:checked){background:#202b23;border-color:#2b5039}
+html[data-theme=dark] .quiz-feedback.correct{color:#9ddcbc}
+html[data-theme=dark] .quiz-feedback.wrong{color:#deb49c}
+html[data-theme=dark] .complete-message{border:1px solid #2b502d;background:#1e2e1d;color:#aacfad}
+html[data-theme=dark] th{background:#212623}
+html[data-theme=dark] .danger-link{color:#d4ada6}
+html[data-theme=dark] .search{border:1px solid #2b503f;background:#151f2e}
+html[data-theme=dark] .ticket{border-top:3px solid #2b5036}
+html[data-theme=dark] dialog{border:1px solid #2b503d}
+html[data-theme=dark] html[dir=rtl] .expect{border-right:2px solid #2b502d}
+html[data-theme=dark] .command-filters button{background:#151f2e}
+html[data-theme=dark] .command-filters button.active{background:#222d25;border-color:#2b5036;color:#a2d7ba}
+html[data-theme=dark] .command-ref-tag{background:#222a25}
+html[data-theme=dark] .rubric{background:#252a20}
+html[data-theme=dark] .stage-map a{background:#151f2e;color:#b0c9bd}
+html[data-theme=dark] .module-card.equipment .module-number{background:#30291d}
+html[data-theme=dark] .room-field input,html[data-theme=dark] .room-page input[type=number],html[data-theme=dark] input[data-room-field]{border:1px solid #2b503b;background:#202520;color:#cceae1}
+html[data-theme=dark] .room-metrics>div{background:#222a20;border:1px solid #30502b}
+html[data-theme=dark] .room-metrics span{color:#b3c6bc}
+html[data-theme=dark] .room-metrics small{color:#b4c3c5}
+html[data-theme=dark] .room-checks .ok{color:#9fdbc1;background:#1f2b20}
+html[data-theme=dark] .room-checks .warn{color:#deaf9c;background:#2e231c}
+html[data-theme=dark]{--muted:#b4c1c5}
+html[data-theme=dark] html[dir=rtl] .module-copy p,html[data-theme=dark] html[dir=rtl] .module-meta,html[data-theme=dark] html[dir=rtl] .learning-note,html[data-theme=dark] html[dir=rtl] .card-sub,html[data-theme=dark] html[dir=rtl] .path-caption,html[data-theme=dark] html[dir=rtl] .spec-list dt,html[data-theme=dark] html[dir=rtl] .ram-heading span,html[data-theme=dark] html[dir=rtl] .ram-box small,html[data-theme=dark] html[dir=rtl] .command-ref-meta,html[data-theme=dark] html[dir=rtl] .ticket .requirements{color:#b4c3c5}
+html[data-theme=dark] html[dir=rtl] .status{color:#b3c2c6}
+html[data-theme=dark] html[dir=rtl] .status.start{color:#b7d3a7}
+html[data-theme=dark] html[dir=rtl] .status.done{color:#9edbc3}
+html[data-theme=dark] html[dir=rtl] .text-link,html[data-theme=dark] html[dir=rtl] .source-links a{color:#a7d3c1}
+html[data-theme=dark] .learning-start-links a{border:1px solid #2b503b;background:#151f2e;color:#9dddc6}
+html[data-theme=dark] .track-option{border:1px solid #2b503b;background:#151f2e;color:#accec2}
+html[data-theme=dark] .track-option small{color:#b4c1c5}
+html[data-theme=dark] .track-option.active,html[data-theme=dark] .track-option[aria-pressed=true]{background:#202b1f}
+html[data-theme=dark] .track-option:hover{background:#222920}
+html[data-theme=dark] .learning-module{border:1px solid #2b5036;background:#151f2e}
+html[data-theme=dark] .learning-module-foot{border-top:1px solid #2b5035;background:#222720;color:#b4c1c5}
+html[data-theme=dark] .learning-module-foot a,html[data-theme=dark] .prerequisite-notice a{color:#9dddc6}
+html[data-theme=dark] .lesson-modes button{border:1px solid #2b503c;background:#151f2e;color:#accec2}
+html[data-theme=dark] .learning-details{border-top:1px solid #2b5036}
+html[data-theme=dark] .term-list dd{color:#b4c1c5}
+html[data-theme=dark] .step-buttons button{border:1px solid #2b503b;background:#151f2e;color:#accec2}
+html[data-theme=dark] .learning-levels>div{background:#242b1e}
+html[data-theme=dark] .catalog-group>p{color:#b4c1c5}
+html[data-theme=dark] .language-term{border-bottom:1px solid #2b5036}
+html[data-theme=dark] .language-sentence,html[data-theme=dark] .language-template{background:#242b1e}
+html[data-theme=dark] .language-progress{color:#b4c1c5}
+html[data-theme=dark] .site-locale-label{color:#b4c1c5}
+html[data-theme=dark] #site-locale{border:1px solid #2b503a;background:#151f2e;color:#cceae1}
+html[data-theme=dark] .site-locale-label select{border:1px solid #2b503b;background:#151f2e;color:#cceae1}
+html[data-theme=dark] .ai-fields input,html[data-theme=dark] .ai-fields select,html[data-theme=dark] #ai-module{border:1px solid #2b503a;background:#151f2e;color:#cceae1}
+html[data-theme=dark] .browser-mode-cards .active{background:#1d2c23;border:2px solid #2b503e}
+html[data-theme=dark] .browser-workspace select{border:1px solid #2b503b;background:#151f2e;color:#9fd3da}
+html[data-theme=dark] #browser-question,html[data-theme=dark] #browser-preview,html[data-theme=dark] #browser-takeaway{border:1px solid #2b503b;background:#1c2822}
+html[data-theme=dark] #browser-feedback,html[data-theme=dark] #browser-note-status{color:#a2d8c7}
+html[data-theme=dark] pre.browser-share{background:#222a2a}
+html[data-theme=dark] .api-advanced{border:1px solid #2b4a50;background:#151f2e}
+html[data-theme=dark]{--bg:#202629;--ink:#cce3eb;--muted:#b3c1c6;--line:#2b4750}
+html[data-theme=dark] .sidebar nav a.active{border-inline-start:3px solid #2b5042}
+html[data-theme=dark] .release-badge b{background:#21372c;color:#9cd2de}
+html[data-theme=dark] .welcome-actions .btn{background:#1e3226;color:#9cdedb;border-color:#2b5039}
+html[data-theme=dark] .install-hero{background:#151f2e}
+html[data-theme=dark] .install-kicker{color:#9cded6}
+html[data-theme=dark] .download-panel{background:#202b26;border:1px solid #2b503b}
+html[data-theme=dark] .install-facts>div{background:#151f2e}
+html[data-theme=dark] .install-facts b{color:#9cded9}
+html[data-theme=dark] .setup-index{background:#1f2f27;color:#9cded1}
+html[data-theme=dark] .setup-grid code{background:#222a2a;border:1px solid #2b5050;color:#a1ced8}
+html[data-theme=dark] .install-support{border-inline-start:4px solid #50412b;background:#2c261a}
+html[data-theme=dark] #autobackup-banner{background:#151f2e;border:1px solid var(--line,#2b4750)}
+html[data-theme=dark] .work-filters button{border:1px solid #2b503c;background:#151f2e;color:#accec2}
+html[data-theme=dark] .work-case>summary::before,html[data-theme=dark] .work-iv>summary::before,html[data-theme=dark] .work-topic>summary::before{background:#212a27}
+html[data-theme=dark] .work-case.done>summary,html[data-theme=dark] .work-iv.done>summary{background:#1b2c20}
+html[data-theme=dark] .work-topic-body th{background:#212826}
+html[data-theme=dark] .work-tag{background:#22282a;color:#b1c4c8}
+html[data-theme=dark] .work-tag.prio-1{background:#33211f;color:#dea39c}
+html[data-theme=dark] .work-tag.prio-2{background:#30271d;color:#debc9c}
+html[data-theme=dark] .work-tag.prio-3{background:#1d2530;color:#9cb5de}
+html[data-theme=dark] .work-tag.prio-4{background:#22282a;color:#b4c3c6}
+html[data-theme=dark] .work-tag.ok{background:#1d3124;color:#9cdeb6}
+html[data-theme=dark] .work-tag.plus{background:#222e28;color:#a0dac3}
+html[data-theme=dark] .work-tag.other{background:#22282a;color:#b3c1c6}
+html[data-theme=dark] .work-tag.gap{background:#2e291c;color:#dec89c}
+html[data-theme=dark] .work-msg{background:#212626;border-inline-start:4px solid #2b5046}
+html[data-theme=dark] .work-note{background:#1d232a;border:1px dashed #2b4850}
+html[data-theme=dark] .work-say{background:#1b222d}
+html[data-theme=dark] .work-boss{background:#212c1b}
+html[data-theme=dark] .work-meter{background:#22282a}
+html[data-theme=dark] .work-meter span.help{background:#2f4139}
+html[data-theme=dark] .work-rate{border:1px solid #2b503c}
+html[data-theme=dark] .work-rate button{border-inline-start:1px solid #2b503c;background:#151f2e;color:#accec2}
+html[data-theme=dark] .work-rate button.active.r0{background:#302523;color:#dea49c}
+html[data-theme=dark] .work-rate button.active.r1{background:#222e27;color:#a0dac3}
+html[data-theme=dark] .train-steps li{background:#22282a;color:#b3c1c6}
+html[data-theme=dark] .train-steps li.done{background:#1d3124;color:#9cdeb6}
+html[data-theme=dark] .train-text{border:1px solid #2b503c}
+html[data-theme=dark] .train-sample{background:#1b222d}
+html[data-theme=dark] .train-order li{background:#151f2e}
+html[data-theme=dark] .train-order li.ok{border-color:#2b503a;background:#1b2c20}
+html[data-theme=dark] .train-order li.bad{border-color:#50302b;background:#2d1f1b}
+html[data-theme=dark] .train-move button{border:1px solid #2b503c;background:#151f2e}
+html[data-theme=dark] .train-mail{background:#1d232a}
+@media print{html[data-theme=dark] .pf-doc{color:#d2dae4}
+html[data-theme=dark] .pf-doc h2{border-bottom:1px solid #2b3a50}
+html[data-theme=dark] .pf-doc footer{color:#acb9cd}}
+html[data-theme=dark] body.printing-portfolio{background:#151f2e!important}
+html[data-theme=dark] #pwa-update .btn{background:#2b331f;color:#c9e5ed}
+/* lesson.css */
+html[data-theme=dark] .lv{--lv-ink:#cce3eb;--lv-soft:#aec6cb;--lv-mist:#212a28;--lv-ok-bg:#1e2e23;--lv-line:#2b4750}
+html[data-theme=dark] .lv-meta li{background:#151f2e}
+html[data-theme=dark] .lv-prereq{background:#2d271b;border:1px solid #50432b;color:#dec59c}
+html[data-theme=dark] .lv-prereq a{color:#dec09c}
+html[data-theme=dark] .lv-phases ol{background:#151f2e}
+html[data-theme=dark] .lv-phase-no{background:#151f2e}
+html[data-theme=dark] .lv-phases li.is-active .lv-phase-no{background:#2b331f;border-color:#41502b}
+html[data-theme=dark] .lv .work-lesson{border:1px solid #2b5049}
+html[data-theme=dark] .lv .work-lesson-grid > div{background:#151f2e}
+html[data-theme=dark] .lv-outline{background:#1f2825}
+html[data-theme=dark] .lv-outline li.is-seen:not(:last-child)::after{background:#2f4137}
+html[data-theme=dark] .lv-outline button:hover{background:#222b28}
+html[data-theme=dark] .lv-dot{background:#151f2e}
+html[data-theme=dark] .lv-outline li.is-seen .lv-dot{border-color:#2b503c}
+html[data-theme=dark] .lv-outline li.is-current button{background:#151f2e}
+html[data-theme=dark] .lv-bar{background:#232b29}
+html[data-theme=dark] .lv-text code{background:#222928}
+html[data-theme=dark] .lv-points li{border-bottom:1px dashed #2b5046}
+html[data-theme=dark] .lv-expect{border:1px solid #2b5037}
+html[data-theme=dark] .lv-expect b{color:#9edcb7}
+html[data-theme=dark] .lv-expect p{color:#a4d5bb}
+html[data-theme=dark] .lv-criterion{background:#151f2e}
+html[data-theme=dark] .lv-criterion:has(input:checked){border-color:#2b5037!important}
+html[data-theme=dark] .lv-fault-grid > div{background:#2d271b}
+html[data-theme=dark] .lv-fault-grid .lv-label{color:#debf9c}
+/* ws-course.css */
+html[data-theme=dark] .wsc{--w-ink:#cce3eb;--w-soft:#b2c3c8;--w-mist:#212a28;--w-line:#2b4750;--w-okbg:#1e2e23}
+html[data-theme=dark] .wsc-overall{background:#151f2e}
+html[data-theme=dark] .wsc-bar{background:#242d2b}
+html[data-theme=dark] .wsc-card{background:#151f2e}
+html[data-theme=dark] .wsc-card:hover{border-color:#2b5048;background:#1c2822}
+html[data-theme=dark] .wsc-card.is-done{border-color:#2b5037}
+html[data-theme=dark] .wsc-pit li::marker{color:#dec19c}
+html[data-theme=dark] .wsc-sol{background:#202525}
+html[data-theme=dark] .wsc-check{background:#151f2e}
+html[data-theme=dark] .wsc-check:has(input:checked){border-color:#2b5037}
+html[data-theme=dark] .wsc-tr{border-top:1px solid var(--w-line,#2b4950)}
+html[data-theme=dark] .wsc-sym{color:#deb69c}
+html[data-theme=dark] .wsc-decide dl>div{background:#202826}
+html[data-theme=dark] .wsc-decide dd{color:var(--w-soft,#b4c3c5)}
+html[data-theme=dark] .sn-stats>div{background:#151f2e;border:1px solid var(--w-line,#2b4950)}
+html[data-theme=dark] .sn-stats b{color:var(--w-teal,#9cded5)}
+html[data-theme=dark] .sn-stats span{color:var(--w-soft,#b4c3c5)}
+html[data-theme=dark] .sn-tab{border:1px solid var(--w-line,#2b5044);background:#151f2e;color:var(--ink,#cfe4e7)}
+html[data-theme=dark] .sn-q{color:var(--ink,#cfe4e7)}
+html[data-theme=dark] .sn-field input{border:1px solid #2b503a;background:#151f2e}
+html[data-theme=dark] .sn-field input.sn-ok{background:#1c2d21}
+html[data-theme=dark] .sn-field input.sn-bad{background:#2f211c}
+html[data-theme=dark] .sn-msg.ok{background:#1e2e26;color:#9cdebd}
+html[data-theme=dark] .sn-msg.bad{background:#2f211c;color:#dead9c}
+html[data-theme=dark] .sn-table th,html[data-theme=dark] .sn-table td{border-bottom:1px solid var(--w-line,#2b4950)}
+html[data-theme=dark] .aq-opt{border:1px solid var(--line,#2b2b50);background:var(--panel,#151f2e)}
+html[data-theme=dark] .aq-opt:disabled:not(.aq-right):not(.aq-wrong){color:var(--w-soft,#b4c3c5)}
+html[data-theme=dark] .tp-fig{border:1px solid var(--w-line,#2b4750)}
+html[data-theme=dark] .wsc-quiz fieldset{border:1px solid var(--w-line,#2b4750)}
+html[data-theme=dark] .wsc-qn{background:var(--w-mist,#212a28);color:var(--w-teal,#9cded6)}
+html[data-theme=dark] .wsc-qo:hover{background:var(--w-mist,#212a28)}
+html[data-theme=dark] .wsc-qo.is-ok{background:#1e2e23}
+html[data-theme=dark] .wsc-qo.is-bad{background:#301f1d}
+html[data-theme=dark] html[data-theme=dark] .wsc-qo.is-ok{border-color:#2b503b}
+html[data-theme=dark] #wsc-qres.is-pass{color:#9fdbb7}
+html[data-theme=dark] #wsc-qres.is-fail{color:#dea09c}
+html[data-theme=dark] .wsc-cert.is-locked{border-top-color:var(--w-line,#2b4750)}
+html[data-theme=dark] .axc-page{background:#151f2e;color:#c9d8ed}
+html[data-theme=dark] .axc-head b{color:#c9d8ed}
+html[data-theme=dark] .axc-head small{color:#adbccc}
+html[data-theme=dark] .axc-page h1{color:#c9d8ed}
+html[data-theme=dark] .axc-intro{color:#adbccc}
+html[data-theme=dark] .axc-name{color:#c9d8ed}
+html[data-theme=dark] .axc-course{color:#9cbade}
+html[data-theme=dark] .axc-facts dt{color:#adbccc}
+html[data-theme=dark] .axc-facts dd{color:#c9d8ed}
+html[data-theme=dark] .axc-note{color:#b3c1c6}
+@media print{html[data-theme=dark] body.cert-open #ax-cert{background:#151f2e}}
+/* hardware-library.css */
+html[data-theme=dark] .hl-notice{border:1px solid #2b4850;background:var(--surface,#1e2a2c)}
+html[data-theme=dark] .hl-filters input{border:1px solid #2b4950;background:var(--card,#151f2e);color:var(--ink,#cce2ea)}
+html[data-theme=dark] .hl-categories button,html[data-theme=dark] .hl-topic-tabs button{border:1px solid #2b4a50;background:var(--card,#151f2e);color:var(--ink,#cce2ea)}
+html[data-theme=dark] .hl-device{background:var(--card,#151f2e);color:var(--ink,#cce2ea);border:1px solid #2b4650}
+html[data-theme=dark] .hl-device.selected{background:#1d2f2e;color:#9cd4de}
+html[data-theme=dark] .hl-detail{background:var(--card,#151f2e);color:var(--ink,#cce2ea);border:1px solid #2b4a50}
+html[data-theme=dark] .hl-illustration{background:#1f2a2e;border:1px solid #2b4950}
+html[data-theme=dark] .hl-illustration small{color:#b0c4c9}
+html[data-theme=dark] .hl-lab{background:var(--surface,#212829)}
+html[data-theme=dark] .hl-topology{color:#9fd1db}
+html[data-theme=dark] .hl-topology small{color:#abc6cf}
+html[data-theme=dark] .hl-path{background:var(--surface,#21292a)}
+html[data-theme=dark] .hl-codeheader button{border:1px solid #2b4950;background:#1c2e2f;color:#a2ccd7}
+html[data-theme=dark] .hl-ex-badge{background:#2f281c;color:#dec29c}
+html[data-theme=dark] .hl-ex-goal{background:#212a28}
+html[data-theme=dark] .hl-ex-goal b{color:#9cded6}
+html[data-theme=dark] .hl-solution{border:1px solid #2b4750;background:#202525}
+html[data-theme=dark] .hl-solution summary{color:#9cded6}
+html[data-theme=dark] .hl-ex-crit h3 span{color:#9cded6}
+html[data-theme=dark] .hl-check{border:1px solid #2b4750;background:#151f2e}
+html[data-theme=dark] .hl-check:has(input:checked){background:#1e2e23;border-color:#2b5037}
+html[data-theme=dark] .hl-ex-flag{color:#9edcb7;background:#1e2e23}
+html[data-theme=dark] .hl-ex-summary{color:#aec6cb}
+html[data-theme=dark] .hl-ex-summary b{color:#9cded6}
+html[data-theme=dark] .hl-docs .hl-doc-alt{background:#151f2e;color:#9cd9de!important;border:1px solid #2b504a}
+html[data-theme=dark] .hl-docs .hl-doc-alt:hover{background:#212a28}
+html[data-theme=dark] .hl-docs-note{color:#b4c2c5}
+html[data-theme=dark] .hl-facts{background:#1f2826;border:1px solid #2b5049}
+html[data-theme=dark] .hl-sources summary{color:#9cded6}
+/* brand-theme.css */
+html[data-theme=dark]{--ink:#c9d9ed}
+html[data-theme=dark] .ax-cta{color:#eddec9}
+html[data-theme=dark] .ax-path{background:#151f2e}
+html[data-theme=dark] .ax-path li a{border-bottom:1px solid #2b3c50}
+html[data-theme=dark] .ax-path li.is-done a{color:#9ddcb7}
+html[data-theme=dark] .ax-tools button{background:var(--paper,#151f2e)}
+html[data-theme=dark] .ax-search{background:var(--paper,#151f2e)}
+/* Handgepflegte Ergänzungen */
+html[data-theme=dark]{--bg:#0B1626;--paper:#13233A;--ink:#E3EAF3;--muted:#A3B3C6;--line:#24395A;--teal:#1F9086;--w-line:#24395A;--w-ink:#E3EAF3;--w-soft:#A3B3C6;--w-teal:#3FB5AA;--w-mist:#1A2E4A;--w-okbg:#14352A;--tp-bg:#0F1E33;--tp-line:#7F95B3;--tp-ink:#E3EAF3;--tp-muted:#A3B3C6;--tp-fill:#1A2E4A;--tp-rt:#1B3354;--tp-sw:#143A3A;--tp-fw:#3A2614;--tp-lab:#13233A}
+html[data-theme=dark] body{background:var(--bg);color:var(--ink)}
+html[data-theme=dark] .ax-path li a{color:var(--ink);border-bottom-color:#36507A}
+html[data-theme=dark] .ax-paths h2,html[data-theme=dark] .ax-path h3{color:var(--ink)}
+html[data-theme=dark] .ax-path{background:var(--paper);border-color:var(--line)}
+html[data-theme=dark] .ax-path li.is-done a{color:#7FD3A2}
+html[data-theme=dark] .ax-next{color:#5FC9BE}
+html[data-theme=dark] .ax-bar{background:#1A2E4A}
+html[data-theme=dark] .tp-lab rect{stroke:#36507A}
+html[data-theme=dark] a{color:#7CC4F0}
+html[data-theme=dark] .sidebar a,html[data-theme=dark] .btn,html[data-theme=dark] .ax-cta,html[data-theme=dark] .ax-cta2,html[data-theme=dark] .wsc-card,html[data-theme=dark] .kh-card{color:inherit}
+html[data-theme=dark] .ax-cta{color:#1B1206}
+html[data-theme=dark] .btn{color:#fff}
+html[data-theme=dark] input,html[data-theme=dark] select,html[data-theme=dark] textarea{background:#0F1E33;color:var(--ink);border-color:#36507A}
+html[data-theme=dark] code{color:inherit}
+

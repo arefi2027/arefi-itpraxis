@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'"><meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#112d35">
+  <meta name="theme-color" content="#0F2340">
   <link rel="icon" href="arefi-icon.svg" type="image/svg+xml">
   <meta name="description" content="آزمایشگاه خصوصی فارسی برای Windows Server، Linux، شبکه و پشتیبانی سازمانی؛ تمرین، آزمون و ثبت پیشرفت.">
   <title>Arefi ITPraxis — آمادگی عملی برای شغل IT</title>
-  <link rel="stylesheet" href="app.css"><link rel="stylesheet" href="lesson.css"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#112d35"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="fonts/PortadaTextARA-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="app.css"><link rel="stylesheet" href="lesson.css"><link rel="stylesheet" href="hardware-library.css"><link rel="stylesheet" href="ws-course.css"><link rel="stylesheet" href="brand-theme.css"><link rel="stylesheet" href="dark-theme.css"><script src="theme-init.js"></script><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0F2340"><link rel="apple-touch-icon" href="icons/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="fonts/PortadaTextARA-Regular.woff" as="font" type="font/woff" crossorigin>
   
   
   
@@ -26,7 +26,18 @@
   <script src="locale-data.js" defer></script>
   <script src="desktop.js" defer></script>
   <script src="brand.js" defer></script>
-  <script src="work-data.js" defer></script><script src="workplace.js" defer></script><script src="training.js" defer></script><script src="lessonview.js" defer></script><script src="app.js" defer></script><script src="autobackup.js" defer></script><script src="platform.js" defer></script>
+  <script src="work-data.js" defer></script><script src="workplace.js" defer></script><script src="training.js" defer></script><script src="ws-course-1.js" defer></script><script src="ws-course-2.js" defer></script><script src="ws-course-3.js" defer></script><script src="ws-course-4.js" defer></script><script src="course-plus.js" defer></script><script src="ws-plus-1.js" defer></script><script src="ws-plus-2.js" defer></script><script src="ws-plus-3.js" defer></script><script src="topo.js" defer></script><script src="course-view.js" defer></script><script src="ws-course.js" defer></script><script src="lx-course-1.js" defer></script><script src="lx-course-2.js" defer></script><script src="lx-course-3.js" defer></script><script src="lx-course-4.js" defer></script><script src="lx-plus-1.js" defer></script><script src="lx-plus-2.js" defer></script><script src="lx-plus-3.js" defer></script><script src="lx-course.js" defer></script><script src="courses-hub.js" defer></script><script src="k-net-1.js" defer></script><script src="k-net-2.js" defer></script><script src="k-net-3.js" defer></script><script src="k-net-topo.js" defer></script><script src="k-net.js" defer></script><script src="k-m365-1.js" defer></script><script src="k-m365-2.js" defer></script><script src="k-m365-3.js" defer></script><script src="k-m365.js" defer></script><script src="k-infra-1.js" defer></script><script src="k-infra-2.js" defer></script><script src="k-infra-3.js" defer></script><script src="k-infra.js" defer></script><script src="k-ops-1.js" defer></script><script src="k-ops-2.js" defer></script><script src="k-ops-3.js" defer></script><script src="k-ops.js" defer></script>
+<script src="k-dev-1.js" defer></script>
+<script src="k-dev-2.js" defer></script>
+<script src="k-dev.js" defer></script>
+<script src="k-ap-1.js" defer></script>
+<script src="k-ap.js" defer></script>
+<script src="k-cli-1.js" defer></script>
+<script src="k-cli-2.js" defer></script>
+<script src="k-cli-3.js" defer></script>
+<script src="k-cli.js" defer></script>
+<script src="k-ccna-1.js" defer></script><script src="k-ccna-2.js" defer></script><script src="k-ccna-3.js" defer></script><script src="k-ccna-topo.js" defer></script><script src="k-ccna.js" defer></script><script src="k-modern-1.js" defer></script><script src="k-modern-2.js" defer></script><script src="k-modern-3.js" defer></script><script src="k-modern.js" defer></script><script src="search.js" defer></script>
+<script src="ap-quiz.js" defer></script><script src="subnet-trainer.js" defer></script><script src="hardware-info.js" defer></script><script src="hardware-exercises.js" defer></script><script src="hardware-library.js" defer></script><script src="lessonview.js" defer></script><script src="app.js" defer></script><script src="autobackup.js" defer></script><script src="platform.js" defer></script>
 </head>
 <body>
 <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -56,6 +67,10 @@
   <a href="#interview" data-nav="interview"><svg><use href="#i-brief"/></svg>درخواست کار و مصاحبه</a>
   <a href="#deutsch" data-nav="deutsch"><svg><use href="#i-book"/></svg>آلمانی در محیط کار IT</a>
   <a href="#referenz" data-nav="referenz"><svg><use href="#i-book"/></svg>فرمان‌ها و واژه‌نامه</a>
+  <a href="#kurse" data-nav="kurse"><svg><use href="#i-grid"/></svg>همهٔ دوره‌ها</a>
+  <a href="#wscourse" data-nav="wscourse"><svg><use href="#i-book"/></svg>دورهٔ ویندوز سرور ۲۰۲۵</a>
+  <a href="#lxcourse" data-nav="lxcourse"><svg><use href="#i-book"/></svg>دورهٔ لینوکس سرور</a>
+  <a href="#hardware" data-nav="hardware"><svg><use href="#i-server"/></svg>کتابخانه تجهیزات</a>
   <a href="#room" data-nav="room"><svg><use href="#i-server"/></svg>اتاق سرور و تجهیزات</a>
   <a href="#languages" data-nav="languages"><svg><use href="#i-terminal"/></svg>زبان IT · EN / DE</a>
   <a href="#desktop" data-nav="desktop"><svg><use href="#i-down"/></svg>نصب و به‌روزرسانی</a>

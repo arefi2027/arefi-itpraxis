@@ -159,13 +159,13 @@ return { page, structureStep };
 'use strict';
 const FA = () => (window.ServerLabApp ? window.ServerLabApp.locale() : document.documentElement.lang) === 'fa';
 /* ---------- Persisch: lateinische Begriffe als LTR-Inseln ---------- */
-const RUN = /[A-Za-z0-9][A-Za-z0-9_./:\\@+*=,()%'\-]*(?:[  →>]+[A-Za-z0-9][A-Za-z0-9_./:\\@+*=,()%'\-]*)*/g;
+const RUN = /(?:~\/|[\/~$])?[A-Za-z0-9](?:[^\u0600-\u06FF\uFB50-\uFDFF\uFE70-\uFEFF«»\n.;!?]|[.;!?](?=[^\s\u0600-\u06FF]))*[A-Za-z0-9)\]+%\/?!]|[A-Za-z0-9]/g;
 const SKIP = new Set(['PRE', 'CODE', 'BDI', 'SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION', 'KBD', 'SVG']);
 function isolateLatin(root) {
   if (!root || !FA()) return;
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode(n) {
-      if (!/[A-Za-z]/.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+      if (!/[A-Za-z0-9]/.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
       for (let e = n.parentElement; e && e !== root; e = e.parentElement) {
         if (SKIP.has(e.tagName) || e.getAttribute('dir') === 'ltr') return NodeFilter.FILTER_REJECT;
       }
