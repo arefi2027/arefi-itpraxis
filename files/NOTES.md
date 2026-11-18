@@ -1,8 +1,6 @@
-**Arefi ITPraxis 2.8.0 (Vorabversion) – Stufen 3 und 4 von 4**
+**Arefi ITPraxis 2.9.0 (Vorabversion) – Vertiefung für IT-Techniker**
 
-- Neue Lernstrecke **IT-Betrieb und Sicherheit** (8 Module, fa/de/en): ITIL und Servicedesk, Ticketqualität und Eskalation, Endpoint-Schutz (Defender, BitLocker, LAPS), DSGVO/NIS2/BSI IT-Grundschutz, Umgang mit Sicherheitsvorfällen, E-Mail-Zustellung mit SPF/DKIM/DMARC, Druckdienste, VoIP/SIP.
-- Neue Lernstrecke **Daten, Skripte und Cloud** (7 Module): SQL-Grundlagen und Datenbankbetrieb, Automatisierung mit PowerShell und Python, Azure-Grundlagen und Azure-Netzwerk, Kubernetes-Einstieg.
-- Neue Lernstrecke **Prüfungsvorbereitung Fachinformatiker Systemintegration** (5 Module): AP1/AP2-Aufbau, Rechenaufgaben, WiSo, betriebliche Projektarbeit.
-- Neues **AP-Übungsquiz**: 45 Fragen in sechs Kategorien mit Erklärung zu jeder Antwort und Bestwerten je Kategorie.
-- Jedes Modul mit Praxislabor, Fehlersuche (Symptom → Ursache und Lösung), Entscheidungshilfe und Interviewfragen.
-- Alle Seiten auf Handy, Tablet und Desktop in drei Sprachen geprüft.
+- Neue Lernstrecke **Arbeitsplatz- und Client-Support (Techniker vor Ort)** mit 9 Modulen in fa/de/en: Hardwarediagnose und Teiletausch, Windows startet nicht (WinRE, Bluescreen, BitLocker), langsame PCs, Treiber und Updates, Softwareverteilung mit winget und MSI, Benutzerprofile und PC-Tausch, Fernsupport (Quick Assist, RDP, PowerShell), Dock, Monitor, Headset und Smartphone, Verkabelung, Patchfeld und Switchport, Inventar und sichere Entsorgung (DIN 66399, NIST SP 800-88).
+- **Windows Server 2025** (17 Module) und **Linux-Server** (16 Module) stark erweitert: jedes Modul hat jetzt zusätzliches Kernwissen, Fehlersuche-Befehle im Labor, 3–4 Fehlerfälle (Symptom → Ursache und Lösung), eine Entscheidungshilfe und eine weitere Interviewfrage.
+- Darstellung langer Befehlsnamen auf dem Handy korrigiert.
+- Alle Inhalte automatisch auf fehlende Übersetzungen und Bash-Syntax geprüft; alle Seiten auf Handy, Tablet und Desktop in drei Sprachen getestet.
