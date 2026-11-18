@@ -1,18 +1,13 @@
-## Arefi ITPraxis 2.15.0
+## Arefi ITPraxis 2.15.1 (Vorabversion)
 
 **Deutsch**
-- **Lehrbuch-Struktur:** Inhaltsverzeichnis mit 8 Teilen und 29 nummerierten Kapiteln; neue Seitenleiste mit aufklappbaren Teilen und den festen Einstiegen „Inhaltsverzeichnis“, „Störung lösen“ und „Weiterlernen“.
-- **Störungshandbuch:** Sechs-Schritte-Methode, Erstcheck für die ersten zwei Minuten, Eskalationsregeln und Symptomsuche über 372 Störungen in 12 Bereichen; 12 neue ausführliche Supportfälle (u. a. Vertrauensstellung, PC startet nicht, C: voll, Windows Update, Firmenhandy und MFA, Remotedesktop, Besprechungsraum, Datei wiederherstellen, Office-Lizenz, Scannen, USB-Headset, Zertifikatswarnung).
-- **Netzwerkplanung und Projektmanagement (neu):** vollständige Projektmappe „Kleine Firma“ mit 32 Dokumenten nach DIN 69901 und IHK-Projektantrag, als Muster und als Vorlage, druckbar als PDF.
-- **Werkzeugkasten für IT-Profis (neu):** Werkzeugliste mit 30 Programmen und 8 Praxismodulen (Wireshark, iPerf3, Nmap, Sysinternals, Fernzugriff, Admin-USB-Toolkit, Online-Port- und Webtests).
-- Interviewfragen auf Persisch sauber dargestellt; alle Quellenlinks der Lernstrecken geprüft.
+- iPhone und iPad: Safari zeigt automatisch eine Anleitung „Zum Home-Bildschirm“ in drei Schritten (auch für iOS 26 mit „Als Web-App öffnen“ und für Links, die in anderen Apps wie WhatsApp oder Telegram geöffnet wurden). „Später“ blendet sie für 7 Tage aus, „Nicht mehr anzeigen“ dauerhaft.
+- Eigener Abschnitt „iPhone und iPad“ auf der Seite „Installieren und Updates“ mit Adresse, Schritten, Hinweis zum getrennten Speicher und Knopf „Anleitung auf diesem Gerät zeigen“.
+- Name „ITPraxis“ unter dem Symbol auf dem Home-Bildschirm; kein ungewolltes Hineinzoomen in Eingabefelder auf dem iPhone; Schriftgröße bleibt im Querformat stabil.
+- Geprüft auf iPhone- und iPad-Formaten (Hoch- und Querformat, iPad Pro): keine Überbreite auf Start, Inhaltsverzeichnis, Störungshandbuch, Kursen, Supportfällen und Projektmappe.
 
 **فارسی**
-- کل برنامه مثل یک کتاب درسی مرتب شد: فهرست مطالب با ۸ بخش و ۲۹ فصل، منوی کناری تازه و دفترچهٔ عیب‌یابی با روش شش‌مرحله‌ای و جست‌وجوی ۳۷۲ مشکل؛ ۱۲ مورد کامل تازهٔ پشتیبانی.
-- دورهٔ تازهٔ برنامه‌ریزی شبکه و مدیریت پروژه با پوشهٔ کامل «شرکت کوچک» (۳۲ سند طبق DIN 69901 و سندهای IHK).
-- دورهٔ تازهٔ جعبه‌ابزار IT با فهرست ۳۰ نرم‌افزار و ۸ ماژول عملی.
+- iPhone و iPad: راهنمای خودکار «افزودن به صفحهٔ اصلی» در Safari، بخش جداگانه در صفحهٔ نصب، نام «ITPraxis» زیر نماد و رفع بزرگ‌نمایی ناخواسته.
 
 **English**
-- Textbook structure with 8 parts and 29 chapters, new sidebar and a troubleshooting handbook (372 faults, 12 new detailed support cases).
-- New course network planning and project management with a complete “small company” project folder (32 documents following DIN 69901, IHK documents).
-- New IT toolbox course with 30 tools and 8 hands-on modules.
+- iPhone and iPad: automatic “Add to Home Screen” guide in Safari, dedicated section on the install page, “ITPraxis” as Home Screen name and no unwanted zoom into input fields.
