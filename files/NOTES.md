@@ -1,8 +1,7 @@
-**Arefi ITPraxis 2.10.0 (Vorabversion) – neue Marke, neue Startseite, Cisco-Lernstrecke**
+**Arefi ITPraxis 2.11.0 (Vorabversion) – Moderne Infrastruktur, Netzpläne, Suche und dunkles Design**
 
-- **Neues Erscheinungsbild:** eigenes Logo (Schild-A), Markenfarben Navy/Kupfer, neue App-Symbole für Windows, macOS, Linux und PWA.
-- **Neue Startseite:** klare Botschaft, „Weiterlernen“ an der zuletzt geöffneten Stelle, Gesamtfortschritt und vier Berufsziele (Helpdesk, IT-Techniker, Fachinformatiker Systemintegration, Netzwerkadministration) mit Kursreihenfolge und nächstem Schritt.
-- **Kursübersicht neu geordnet:** 10 Lernstrecken in fünf Stufen, nummeriert in empfohlener Reihenfolge.
-- **Neue Lernstrecke Cisco-Netzwerke (CCNA-Niveau)** mit 9 Modulen und Packet-Tracer-Laboren in fa/de/en: IOS-Grundkonfiguration und SSH, VLANs/Trunks/Inter-VLAN-Routing, Rapid STP, BPDU Guard und EtherChannel, statische Routen und Backup-Route, OSPFv2, DHCP/Relay, NAT/PAT, NTP, Syslog, CDP/LLDP, ACLs, Port Security, DHCP Snooping und DAI, IPv6 und WLAN-Controller, strukturierte Fehlersuche und Automatisierung (REST, NETCONF/RESTCONF, Ansible, Netmiko).
-- Unabhängiger Kurs mit eigenen Inhalten; Cisco® und CCNA® sind Marken von Cisco Systems, keine Verbindung zu Cisco.
-- Alle Kurse in drei Sprachen auf Desktop und Handy getestet.
+- **Neue Lernstrecke Moderne Infrastruktur** (8 Module mit Laboren, fa/de/en): Git für Admins, Terraform und OpenTofu, CI/CD mit GitHub Actions und GitLab CI, Container im Betrieb (Compose, Registry, Trivy), Observability mit Prometheus und Grafana, SIEM mit Wazuh und Windows-Ereignis-IDs, Zero Trust (SSH-Zertifikate, Mikrosegmentierung mit nftables, ZTNA, SASE), Public Cloud AWS und Azure.
+- **Netzpläne als Grafik** in allen Cisco-Laboren und den Netzwerklaboren (VLAN, STP/LACP, Routing/NAT, VPN, Firewall/DMZ, 802.1X, iSCSI, IPv6).
+- **Suche über alle Lernstrecken** (Strg+K oder /): Themen, Befehle und Fehlermeldungen in 102 Modulen.
+- **Dunkles Design** mit Umschalter in der Kopfzeile; folgt beim ersten Start der Systemeinstellung.
+- Neues Berufsziel **Cloud- und Plattformadministration (DevOps)** auf der Startseite; Lernstrecke in Stufe 4 eingeordnet.
