@@ -1,7 +1,5 @@
-**Arefi ITPraxis 2.11.0 (Vorabversion) – Moderne Infrastruktur, Netzpläne, Suche und dunkles Design**
+**Arefi ITPraxis 2.12.0 (Vorabversion) – Wissenschecks und Lernnachweis**
 
-- **Neue Lernstrecke Moderne Infrastruktur** (8 Module mit Laboren, fa/de/en): Git für Admins, Terraform und OpenTofu, CI/CD mit GitHub Actions und GitLab CI, Container im Betrieb (Compose, Registry, Trivy), Observability mit Prometheus und Grafana, SIEM mit Wazuh und Windows-Ereignis-IDs, Zero Trust (SSH-Zertifikate, Mikrosegmentierung mit nftables, ZTNA, SASE), Public Cloud AWS und Azure.
-- **Netzpläne als Grafik** in allen Cisco-Laboren und den Netzwerklaboren (VLAN, STP/LACP, Routing/NAT, VPN, Firewall/DMZ, 802.1X, iSCSI, IPv6).
-- **Suche über alle Lernstrecken** (Strg+K oder /): Themen, Befehle und Fehlermeldungen in 102 Modulen.
-- **Dunkles Design** mit Umschalter in der Kopfzeile; folgt beim ersten Start der Systemeinstellung.
-- Neues Berufsziel **Cloud- und Plattformadministration (DevOps)** auf der Startseite; Lernstrecke in Stufe 4 eingeordnet.
+- **Wissenscheck in jedem der 102 Module:** Symptome den passenden Ursachen und Lösungen zuordnen und die richtige Entscheidung wählen; sofortige Auswertung mit Markierung, bestanden ab 75 %, Ergebnis wird gespeichert.
+- **Lernnachweis als PDF:** Wenn alle Module einer Lernstrecke abgeschlossen und alle Wissenschecks bestanden sind, lässt sich ein Nachweis mit Name, Lernstrecke, Durchschnitt, Datum und Kennung drucken oder als PDF speichern (A4 quer). Ehrlich gekennzeichnet: kein staatlicher, IHK- oder Herstellerabschluss.
+- **Quellen geprüft:** Cisco-Dokumente, Wazuh-Quickstart (jetzt Version 4.14), CCNA-Prüfungsthemen inklusive v2.0, GitHub- und AWS-Dokumentation u. a.
