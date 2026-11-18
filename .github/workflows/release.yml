@@ -26,7 +26,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           V=$(python3 -c "import json;print(json.load(open('files/version.json'))['version'])")
-          gh release view "v$V" >/dev/null 2>&1 && { echo "v$V existiert bereits"; exit 0; }
+          if gh release view "v$V" >/dev/null 2>&1; then
+            if [ ! -f files/PRERELEASE ]; then
+              gh release edit "v$V" --prerelease=false --latest --notes-file files/NOTES.md
+              echo "v$V ist jetzt die offizielle Version"
+            else
+              echo "v$V existiert bereits"
+            fi
+            exit 0
+          fi
           PRE=""; [ -f files/PRERELEASE ] && PRE="--prerelease"
           gh release create "v$V" $PRE --target main --title "Arefi ITPraxis $V" --notes-file files/NOTES.md \
             files/*.exe files/*.zip files/*.deb files/*.tar.gz files/version.json files/version.json.sig
