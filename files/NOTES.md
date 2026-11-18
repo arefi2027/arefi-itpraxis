@@ -1,6 +1,8 @@
-**Arefi ITPraxis 2.7.0 (Vorabversion) – Stufe 2 von 4**
+**Arefi ITPraxis 2.8.0 (Vorabversion) – Stufen 3 und 4 von 4**
 
-- Neue Lernstrecke **Microsoft 365, Entra ID und Intune** (6 Module, fa/de/en): Benutzer, Gruppen, Lizenzen und On-/Offboarding mit Microsoft Graph PowerShell; MFA, Conditional Access und Break-Glass; Exchange Online mit Nachrichtenverfolgung; Teams/SharePoint/OneDrive mit Freigaben und Wiederherstellung; Intune (Compliance, BitLocker, Win32-Apps); Windows Autopilot.
-- Neue Lernstrecke **Virtualisierung, Backup und Monitoring** (7 Module): Proxmox VE, VMware vSphere, Cluster und HA, Veeam mit unveränderbarem Repository, Wiederherstellung mit RPO/RTO und Notfallplan, Checkmk, SNMPv3 und zentrales Syslog.
+- Neue Lernstrecke **IT-Betrieb und Sicherheit** (8 Module, fa/de/en): ITIL und Servicedesk, Ticketqualität und Eskalation, Endpoint-Schutz (Defender, BitLocker, LAPS), DSGVO/NIS2/BSI IT-Grundschutz, Umgang mit Sicherheitsvorfällen, E-Mail-Zustellung mit SPF/DKIM/DMARC, Druckdienste, VoIP/SIP.
+- Neue Lernstrecke **Daten, Skripte und Cloud** (7 Module): SQL-Grundlagen und Datenbankbetrieb, Automatisierung mit PowerShell und Python, Azure-Grundlagen und Azure-Netzwerk, Kubernetes-Einstieg.
+- Neue Lernstrecke **Prüfungsvorbereitung Fachinformatiker Systemintegration** (5 Module): AP1/AP2-Aufbau, Rechenaufgaben, WiSo, betriebliche Projektarbeit.
+- Neues **AP-Übungsquiz**: 45 Fragen in sechs Kategorien mit Erklärung zu jeder Antwort und Bestwerten je Kategorie.
 - Jedes Modul mit Praxislabor, Fehlersuche (Symptom → Ursache und Lösung), Entscheidungshilfe und Interviewfragen.
-- Darstellung: Pfeile im persischen Text zeigen in Leserichtung, lange Start-Buttons umbrechen auf dem Handy.
+- Alle Seiten auf Handy, Tablet und Desktop in drei Sprachen geprüft.
