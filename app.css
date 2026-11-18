@@ -435,7 +435,9 @@ main .card>.btn,main .card>label.btn{margin-block-start:12px;margin-inline-end:1
 .work-case>summary::-webkit-details-marker,.work-iv>summary::-webkit-details-marker,.work-topic>summary::-webkit-details-marker{display:none}
 .work-case>summary::before,.work-iv>summary::before,.work-topic>summary::before{content:'+';display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;background:#eef4f2;color:var(--teal);font-weight:700;flex:none}
 .work-case[open]>summary::before,.work-iv[open]>summary::before,.work-topic[open]>summary::before{content:'–'}
+.work-case>summary::before,.work-iv>summary::before,.work-topic>summary::before{line-height:1;font-size:16px;font-family:system-ui,sans-serif}
 .work-case>summary .work-case-title{flex:1;min-width:200px}
+.work-iv>summary .work-iv-q{flex:1;min-width:0;line-height:1.6}
 .work-topic>summary h3{margin:0;font-size:18px;flex:1}
 .work-case.done>summary,.work-iv.done>summary{background:#f3faf5}
 .work-case-body,.work-topic-body{padding:4px 20px 20px;border-top:1px solid var(--line)}

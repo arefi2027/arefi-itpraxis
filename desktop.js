@@ -2,7 +2,7 @@
 (() => {
 'use strict';
 const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const APP_VERSION='2.12.1';
+const APP_VERSION='2.15.0';
 let selected='',step=0,info=null,busy=false;
 const isLocal=()=>location.hostname==='127.0.0.1'&&location.port==='18764'&&location.protocol==='http:';
 const lang=()=>document.documentElement.lang||'fa';

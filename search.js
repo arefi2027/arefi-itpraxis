@@ -41,6 +41,12 @@ const index = () => {
     ];
     list.push({ hash: hash + '/' + m.id, title: pick(m.title), course: titles[hash] || hash, parts: parts.map(([t, w]) => [t, norm(t), w]) });
   }));
+  ((window.LAB && window.LAB.workCases) || []).forEach(c => {
+    const d = c[['fa', 'de', 'en'][i]] || c.de;
+    if (!d) return;
+    const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1]];
+    list.push({ hash: 'support/' + c.id, title: d.t, course: ['مشکلات روزمرهٔ پشتیبانی', 'Alltagsfälle im Support', 'Everyday support cases'][i], parts: parts.map(([t, w]) => [t, norm(t), w]) });
+  });
   return (cache[i] = list);
 };
 const search = q => {

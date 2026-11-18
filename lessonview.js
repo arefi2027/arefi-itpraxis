@@ -187,7 +187,11 @@ function isolateLatin(root) {
       last = mm.index + run.length; RUN.lastIndex = last;
     }
     if (last < v.length) frag.append(v.slice(last));
-    n.replaceWith(frag);
+    /* In Flex-/Grid-Containern würde jedes Stück ein eigenes Item (z. B. summary mit space-between). */
+    const par = n.parentElement;
+    if (par && /flex|grid/.test(getComputedStyle(par).display)) {
+      const box = document.createElement('span'); box.className = 'bidi-text'; box.append(frag); n.replaceWith(box);
+    } else n.replaceWith(frag);
   });
 }
 function hook() {

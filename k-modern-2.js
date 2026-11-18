@@ -127,7 +127,7 @@ done
   sources: [
     ['Docker Docs – Compose file reference', 'https://docs.docker.com/reference/compose-file/'],
     ['Docker Docs – Packet filtering and firewalls', 'https://docs.docker.com/engine/network/packet-filtering-firewalls/'],
-    ['Trivy – Documentation', 'https://trivy.dev/latest/']
+    ['Trivy – Documentation (First steps)', 'https://trivy.dev/docs/latest/getting-started/']
   ]
 },
 

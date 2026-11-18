@@ -15,7 +15,7 @@ const NOBOOK = {
 window.ArefiCourseRegister = def => {
   const texts = {};
   ['fa', 'de', 'en'].forEach((l, k) => { texts[l] = Object.assign({}, NOBOOK[l], { title: def.title[k], lead: def.lead[k], part: def.part.map(p => p[k]) }); });
-  const v = window.ArefiCourseView(def.C, { key: 'arefi-k-' + def.id, hash: 'k-' + def.id, shell: def.shell || 'Bash', texts });
+  const v = window.ArefiCourseView(def.C, { key: 'arefi-k-' + def.id, hash: 'k-' + def.id, shell: def.shell || 'Bash', texts, catalog: def.catalog, projects: def.projects });
   list.push({ id: def.id, hash: 'k-' + def.id, group: def.group || 0, title: def.title, lead: def.lead, view: v, count: def.C.modules.length });
 };
 const TX = {
@@ -32,7 +32,7 @@ const all = () => {
   return out;
 };
 // Empfohlene Lernreihenfolge: [hash, Stufe]
-const ORDER = [['k-cli', 0], ['k-net', 0], ['wscourse', 1], ['lxcourse', 1], ['k-m365', 1], ['k-ccna', 2], ['k-infra', 2], ['k-ops', 3], ['k-dev', 3], ['k-modern', 3], ['k-ap', 4]];
+const ORDER = [['k-cli', 0], ['k-net', 0], ['wscourse', 1], ['lxcourse', 1], ['k-m365', 1], ['k-tools', 1], ['k-ccna', 2], ['k-plan', 2], ['k-infra', 2], ['k-ops', 3], ['k-dev', 3], ['k-modern', 3], ['k-ap', 4]];
 const ordered = () => {
   const cs = all(), out = [];
   ORDER.forEach(([h, g], k) => { const c = cs.find(x => x.hash === h); if (c) out.push(Object.assign({}, c, { group: g, step: k + 1 })); });
@@ -44,7 +44,7 @@ const page = () => {
   const groups = t.groups.map((g, gi) => {
     const items = cs.filter(c => c.group === gi);
     if (!items.length) return '';
-    return `<section class="wsc-part"><h2>${esc(g)}</h2><ol class="wsc-list">${items.map(c => `<li><a class="wsc-card kh-card${c.s.done === c.s.total ? ' is-done' : ''}" href="#${c.hash}"><span class="wsc-no">${c.s.done === c.s.total ? "✓" : num(c.step)}</span><span class="wsc-ct"><b>${esc(c.title[i])}</b><small>${esc(c.lead[i])}</small><span class="wsc-meta"><span class="wsc-bar"><span style="width:${Math.round(c.s.done / c.s.total * 100)}%"></span></span>${num(c.s.done)} ${esc(t.of)} ${num(c.s.total)} ${esc(t.mods)}</span></span></a></li>`).join('')}</ol></section>`;
+    return `<section class="wsc-part"><h2>${esc(g)}</h2><ol class="wsc-list">${items.map(c => `<li><a class="wsc-card kh-card${(c.s.total && c.s.done === c.s.total) ? ' is-done' : ''}" href="#${c.hash}"><span class="wsc-no">${(c.s.total && c.s.done === c.s.total) ? "✓" : num(c.step)}</span><span class="wsc-ct"><b>${esc(c.title[i])}</b><small>${esc(c.lead[i])}</small><span class="wsc-meta"><span class="wsc-bar"><span style="width:${Math.round(c.s.done / c.s.total * 100)}%"></span></span>${num(c.s.done)} ${esc(t.of)} ${num(c.s.total)} ${esc(c.s.unit || t.mods)}</span></span></a></li>`).join('')}</ol></section>`;
   }).join('');
   const tools = `<section class="wsc-part"><h2>${esc(t.tools)}</h2><ol class="wsc-list"><li><a class="wsc-card kh-card" href="#subnetz"><span class="wsc-ct"><b>${esc(t.subnet)}</b><small>${esc(t.subnetLead)}</small></span></a></li>${(window.ArefiExtraTools || []).map(x => `<li><a class="wsc-card kh-card" href="#${x.hash}"><span class="wsc-ct"><b>${esc(x.title[i])}</b><small>${esc(x.lead[i])}</small></span></a></li>`).join('')}</ol></section>`;
   return `<div class="wsc"><header class="wsc-head"><h1>${esc(t.title)}</h1><p>${esc(t.lead)}</p><p class="kh-order">${esc(t.order)}</p></header>${groups}${tools}</div>`;

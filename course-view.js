@@ -48,6 +48,35 @@ Object.keys(TX).forEach(l => Object.assign(TX[l], QX[l]));
 Object.keys(TX).forEach(l => Object.assign(TX[l], (cfg.texts || {})[l] || {}));
 const T = () => TX[L()];
 
+/* Werkzeugkatalog (optional, cfg.catalog): filterbare Liste mit Zweck, Plattform, Lizenz, offizieller Seite und Anleitung */
+const CAT = {
+  fa: { title: 'فهرست ابزارها', intro: 'نرم‌افزارهای مهم برای کار روزانهٔ IT، با کاربرد، سیستم‌عامل، نوع مجوز و لینک رسمی. برای ابزارهایی که «آموزش» دارند، تمرین گام‌به‌گام در همین دوره هست. فقط از سایت رسمی دانلود کن.', all: 'همه', site: 'سایت رسمی', tut: 'آموزش در این دوره', count: 'ابزار' },
+  de: { title: 'Werkzeugliste', intro: 'Wichtige Software für den IT-Alltag mit Zweck, Plattform, Lizenz und offizieller Seite. Werkzeuge mit „Anleitung“ übst du Schritt für Schritt in dieser Lernstrecke. Nur von der offiziellen Seite herunterladen.', all: 'Alle', site: 'Offizielle Seite', tut: 'Anleitung in dieser Lernstrecke', count: 'Werkzeuge' },
+  en: { title: 'Tool list', intro: 'Important software for everyday IT work with purpose, platform, licence and official site. Tools marked “tutorial” are practised step by step in this course. Only download from the official site.', all: 'All', site: 'Official site', tut: 'Tutorial in this course', count: 'tools' }
+};
+const PJ = {
+  fa: { title: 'پوشه‌های پروژه: از برنامه‌ریزی تا تحویل', intro: 'هر پوشه یک پروژهٔ کامل شبکه است با همهٔ سندها طبق مراحل DIN 69901 و قالب IHK؛ نمونهٔ کامل را بخوان، بعد قالب خالی را خودت پر کن.', open: 'باز کردن پوشه', docs: 'سند' },
+  de: { title: 'Projektmappen: von der Planung bis zur Abnahme', intro: 'Jede Mappe ist ein vollständiges Netzwerkprojekt mit allen Dokumenten nach den Phasen der DIN 69901 und im IHK-Format. Lies die Musterlösung und fülle danach die Vorlage selbst aus.', open: 'Mappe öffnen', docs: 'Dokumenten' },
+  en: { title: 'Project folders: from planning to acceptance', intro: 'Each folder is a complete network project with all documents along the DIN 69901 phases and in IHK format. Read the model solution, then fill in the blank template yourself.', open: 'Open folder', docs: 'documents' }
+};
+function projHtml() {
+  if (!cfg.projects || !cfg.projects.length || !window.ArefiProjectView) return '';
+  const i = I(), c = PJ[L()];
+  return `<section class="pv-list" aria-labelledby="pv-h"><h2 id="pv-h">${esc(c.title)}</h2><p class="micro">${esc(c.intro)}</p><ul>${cfg.projects.map(P => { const s = window.ArefiProjectView.stats(P); return `<li><a class="pv-card" href="#${cfg.hash}/${P.id}"><span class="pv-size">${esc(P.size[i])}</span><b>${esc(P.title[i])}</b><small>${esc(P.lead[i])}</small><span class="wsc-meta"><span class="wsc-bar"><span style="width:${Math.round(s.done / s.total * 100)}%"></span></span>${num(s.done)} ${esc(T().of)} ${num(s.total)} ${esc(c.docs)}</span></a></li>`; }).join('')}</ul></section>`;
+}
+function catHtml() {
+  const K = cfg.catalog;
+  if (!K) return '';
+  const i = I(), c = CAT[L()];
+  const chips = [`<button type="button" class="axk-chip" data-axk="all" aria-pressed="true">${esc(c.all)} (${num(K.items.length)})</button>`]
+    .concat(K.cats.map((n, k) => `<button type="button" class="axk-chip" data-axk="${k}" aria-pressed="false">${esc(n[i])} (${num(K.items.filter(x => x[1] === k).length)})</button>`)).join('');
+  const items = K.items.map(([name, cat, purpose, plat, lic, url, mod]) => {
+    const mt = mod && C.modules.find(m => m.id === mod);
+    return `<li class="axk-tool" data-cat="${cat}"><div class="axk-top"><b dir="ltr">${esc(name)}</b><span class="axk-tag">${esc(K.cats[cat][i])}</span></div><p>${esc(purpose[i])}</p><div class="axk-meta"><span dir="ltr">${esc(plat)}</span><span>${esc(K.lic[lic][i])}</span></div><div class="axk-links"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(c.site)} ↗</a>${mt ? `<a href="#${cfg.hash}/${mod}">${esc(c.tut)}: ${esc(mt.title[i].split(':')[0])}</a>` : ''}</div></li>`;
+  }).join('');
+  return `<section class="axk-cat" aria-labelledby="axk-h"><h2 id="axk-h">${esc(c.title)} <small>${num(K.items.length)} ${esc(c.count)}</small></h2><p class="micro">${esc(c.intro)}</p><div class="axk-chips" role="group" aria-label="${esc(c.title)}">${chips}</div><ul class="axk-list">${items}</ul></section>`;
+}
+
 function quizHtml(m) {
   const t = T(), i = I(), qs = quizOf(m); if (!qs.length) return '';
   const r = qres(m.id);
@@ -57,6 +86,7 @@ function quizHtml(m) {
 const CERT_NAME = 'arefi-cert-name';
 function certHtml() {
   const t = T(), M = C.modules, nd = M.filter(done).length, nq = M.filter(qpass).length;
+  if (!M.length) return '';
   if (nd < M.length || nq < M.length) return `<section class="card wsc-cert is-locked"><h2>${esc(t.cert)}</h2><p>${esc(t.certLocked)}</p><p class="micro">${num(nd)}/${num(M.length)} ${esc(t.modules)} · ${num(nq)}/${num(M.length)} ${esc(t.quizzes)}</p></section>`;
   let name = ''; try { name = localStorage.getItem(CERT_NAME) || ''; } catch {}
   return `<section class="card wsc-cert"><h2>${esc(t.cert)}</h2><label class="note-label" for="wsc-cname">${esc(t.certName)}</label><div class="wsc-cert-row"><input id="wsc-cname" class="wsc-input" maxlength="80" value="${esc(name)}" autocomplete="name"><button type="button" class="btn" id="wsc-cbtn">${esc(t.certBtn)}</button></div></section>`;
@@ -84,6 +114,7 @@ function openCert(name) {
 }
 function overview() {
   const t = T(), M = C.modules, n = M.filter(done).length;
+  if (!M.length) return `<div class="wsc"><header class="wsc-head"><h1>${esc(t.title)}</h1><p>${esc(t.lead)}</p></header>${catHtml()}${projHtml()}</div>`;
   const next = M.find(m => !done(m)) || M[0];
   const parts = t.part.map((_, x) => x + 1).map(p => `<section class="wsc-part"><h2>${esc(t.part[p - 1])}</h2><ol class="wsc-list">${M.map((m, k) => [m, k]).filter(([m]) => m.part === p).map(([m, k]) => {
     const s = st(m.id), pr = prog(m), tot = m.lab.checks[0].length;
@@ -91,7 +122,7 @@ function overview() {
   }).join('')}</ol></section>`).join('');
   return `<div class="wsc"><header class="wsc-head"><h1>${esc(t.title)}</h1><p>${esc(t.lead)}</p>
 <div class="wsc-overall"><div><b>${num(n)} ${esc(t.of)} ${num(M.length)}</b> <span>${esc(t.modules)}</span></div><span class="wsc-bar wsc-bar-lg"><span style="width:${Math.round(n / M.length * 100)}%"></span></span><a class="btn" href="#${cfg.hash}/${next.id}">${esc(n ? t.cont : t.start)}: ${esc(next.title[I()])}</a></div>
-<p class="micro">${num(M.filter(qpass).length)} ${esc(t.of)} ${num(M.length)} ${esc(t.quizzes)} · ${esc(t.storage)}</p></header>${parts}${certHtml()}</div>`;
+<p class="micro">${num(M.filter(qpass).length)} ${esc(t.of)} ${num(M.length)} ${esc(t.quizzes)} · ${esc(t.storage)}</p></header>${catHtml()}${projHtml()}${parts}${certHtml()}</div>`;
 }
 
 function moduleView(id) {
@@ -122,8 +153,14 @@ ${quizHtml(m)}<nav class="wsc-nav">${prev ? `<a class="btn secondary" href="#${c
 }
 
 const rtlArrows = h => L() === 'fa' ? h.split(/(<pre[\s\S]*?<\/pre>)/).map((x, k) => k % 2 ? x : x.replace(/→/g, '←')).join('') : h;
-C.page = id => rtlArrows(id ? moduleView(id) : overview());
-C.stats = () => ({ done: C.modules.filter(done).length, total: C.modules.length });
+const projOf = id => { const m = /^(p-[a-z0-9]+)(?:--([a-z0-9-]+))?$/.exec(id || ''); if (!m || !cfg.projects) return null; const P = cfg.projects.find(x => x.id === m[1]); return P ? { P, doc: m[2] || '' } : null; };
+C.page = id => { const pj = projOf(id); if (pj && window.ArefiProjectView) return window.ArefiProjectView.view(pj.P, cfg, pj.doc); return rtlArrows(id ? moduleView(id) : overview()); };
+C.stats = () => {
+  let d = C.modules.filter(done).length, n = C.modules.length;
+  if (cfg.projects && window.ArefiProjectView) cfg.projects.forEach(P => { const s = window.ArefiProjectView.stats(P); d += s.done; n += s.total; });
+  const U = { fa: ['سند', 'ماژول و سند'], de: ['Dokumenten', 'Modulen und Dokumenten'], en: ['documents', 'modules and documents'] }[L()] || ['', ''];
+  return cfg.projects && cfg.projects.length ? { done: d, total: n, unit: C.modules.length ? U[1] : U[0] } : { done: d, total: n };
+};
 C.mount = () => {
   const cb = document.getElementById('wsc-cbtn');
   if (cb) cb.addEventListener('click', () => {
@@ -131,6 +168,16 @@ C.mount = () => {
     if (!name) { inp.focus(); return; }
     try { localStorage.setItem(CERT_NAME, name); } catch {}
     openCert(name);
+  });
+  const pvr = document.querySelector('.pv[data-pv]');
+  if (pvr && cfg.projects && window.ArefiProjectView) { const P = cfg.projects.find(x => x.id === pvr.dataset.pv); if (P) window.ArefiProjectView.mount(P); return; }
+  const kc = document.querySelector('.axk-cat');
+  if (kc) kc.addEventListener('click', e => {
+    const b = e.target.closest('[data-axk]');
+    if (!b) return;
+    const v = b.dataset.axk;
+    kc.querySelectorAll('[data-axk]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    kc.querySelectorAll('.axk-tool').forEach(li => { li.hidden = v !== 'all' && li.dataset.cat !== v; });
   });
   const root = document.querySelector('.wsc-mod');
   if (!root) return;
