@@ -1,14 +1,13 @@
-## Arefi ITPraxis 2.16.3
-
-Enthält alle Änderungen aus 2.16.2 und 2.16.3.
+## Arefi ITPraxis 2.16.4 (Vorabversion · Pilotfassung)
 
 **Deutsch**
-- **Genau so reparierst du es:** Alle 38 Alltagsfälle haben einen neuen Abschnitt mit 173 Schritten – jeweils Ort (Eingabeaufforderung, PowerShell, PowerShell als Administrator, Switch-Konsole, Windows-Menü, Admin-Portal) samt Hinweis zum Öffnen, der genaue Befehl oder Klickweg und worauf du in der Ausgabe achten musst.
-- Befehle sind über die Suche und den Filter im Störungshandbuch auffindbar.
-- **Vorstellungsgespräch:** Musterantworten zu Störungs- und Planungsfragen beginnen mit den Rückfragen, die ein Techniker zuerst stellt; Hinweis „Darf ich zuerst kurz nachfragen …?“
+- **Ausbildung:** neuer dreisprachiger 25-Minuten-Praxisauftrag „Teamfreigabe nicht erreichbar“ (Startseite) mit Beispielbefunden, begründetem nächsten Schritt, Ticketübergabe und Bewertungsraster – ohne VM nutzbar.
+- **Lernstand:** Der Import fragt vor dem Überschreiben nach und behält den bisherigen Stand bei einem Speicherfehler. Tastatursprung zum Hauptinhalt lässt die Ansicht geöffnet.
+- **Sicherheit Desktop:** Die lokale API prüft HTTP-Methode, Sitzung und Herkunft; JSON-Anfragen sind begrenzt. Updates laufen nur einmal gleichzeitig, mit strengerer Prüfung von Version, Weiterleitungen und Download-Größe; Signatur- und SHA-256-Prüfung bleiben Pflicht.
+- **Stabilität:** Desktop-Oberfläche, KI-Status und Lebenszeichen funktionieren auch auf dem Ausweichport. Der Offline-Speicher der Web-App enthält nur noch die mitgelieferten App-Dateien; alte Zwischenspeicher werden entfernt.
 
 **فارسی**
-- همهٔ ۳۸ مورد روزمره بخش «دقیقاً چطور تعمیر کنی» دارند: ۱۷۳ قدم با محل اجرا، فرمان یا مسیر کلیک دقیق و اینکه در خروجی به چه نگاه کنی؛ پاسخ‌های نمونهٔ مصاحبه با پرسش‌های تکنسین شروع می‌شوند.
+- تمرین عملی ۲۵ دقیقه‌ای سه‌زبانه در صفحهٔ شروع، تأیید پیش از جایگزینی پیشرفت، امنیت بیشتر API محلی و به‌روزرسانی، کار روی پورت جایگزین.
 
 **English**
-- All 38 everyday cases have an "Exactly how to fix it" section with 173 steps; sample interview answers start with the technician's clarifying questions.
+- New 25-minute practice assignment on the start page, safer progress import, hardened local API and updates, fallback-port support.
