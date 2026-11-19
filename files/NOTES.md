@@ -1,13 +1,15 @@
-## Arefi ITPraxis 2.16.4 (Vorabversion · Pilotfassung)
+## Arefi ITPraxis 2.16.5 (Vorabversion)
+
+Enthält auch 2.16.4 (Pilotfassung: Praxisauftrag, sichere Desktop-API, Import mit Bestätigung).
 
 **Deutsch**
-- **Ausbildung:** neuer dreisprachiger 25-Minuten-Praxisauftrag „Teamfreigabe nicht erreichbar“ (Startseite) mit Beispielbefunden, begründetem nächsten Schritt, Ticketübergabe und Bewertungsraster – ohne VM nutzbar.
-- **Lernstand:** Der Import fragt vor dem Überschreiben nach und behält den bisherigen Stand bei einem Speicherfehler. Tastatursprung zum Hauptinhalt lässt die Ansicht geöffnet.
-- **Sicherheit Desktop:** Die lokale API prüft HTTP-Methode, Sitzung und Herkunft; JSON-Anfragen sind begrenzt. Updates laufen nur einmal gleichzeitig, mit strengerer Prüfung von Version, Weiterleitungen und Download-Größe; Signatur- und SHA-256-Prüfung bleiben Pflicht.
-- **Stabilität:** Desktop-Oberfläche, KI-Status und Lebenszeichen funktionieren auch auf dem Ausweichport. Der Offline-Speicher der Web-App enthält nur noch die mitgelieferten App-Dateien; alte Zwischenspeicher werden entfernt.
+- **Schnellhilfe:** Im Störungshandbuch eine Fehlermeldung oder einen Code eingeben (z. B. „Zugriff verweigert“, 0x80070005, 169.254, „Postfach voll“) – der passende Fall erscheint oben mit den ersten drei Prüfschritten samt Befehl und Ablesehinweis.
+- **Zehn neue häufige Störungen** mit Befehlen und Ablesehinweisen: DNS-Störung, DHCP-Bereich voll, Backup fehlgeschlagen mit Wiederherstellungsnachweis, gesperrte Datei, temporäres Profil, Postfach voll, Teams-Anmeldeschleife, Office-Absturz, Gruppenrichtlinie wirkt nicht, Verdacht auf Ransomware. Jetzt 48 Fälle mit 221 Schritten.
+- **Üben:** Jeder Fall hat den Modus „Selbst lösen“ (nur Ticket sichtbar, eigene Lösung schreiben, Bewertungsraster) und ein druckbares Aufgaben- oder Lösungsblatt.
+- Neuer Bereich „Daten und Backup“; der Praxisauftrag verlinkt den passenden Fall zum Üben mit Befehlen.
 
 **فارسی**
-- تمرین عملی ۲۵ دقیقه‌ای سه‌زبانه در صفحهٔ شروع، تأیید پیش از جایگزینی پیشرفت، امنیت بیشتر API محلی و به‌روزرسانی، کار روی پورت جایگزین.
+- راه‌حل سریع با جست‌وجوی پیام خطا، ده خرابی رایج تازه با فرمان، حالت «خودم حل می‌کنم» و برگهٔ قابل چاپ.
 
 **English**
-- New 25-minute practice assignment on the start page, safer progress import, hardened local API and updates, fallback-port support.
+- Quick help by error message, ten new common faults with commands, "Solve it myself" mode and printable sheets.
