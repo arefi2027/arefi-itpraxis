@@ -155,6 +155,9 @@ html[data-theme=dark] .work-run{background:#202525}
 html[data-theme=dark] .work-run-do{border:1px solid #2b5043;background:#151f2e}
 html[data-theme=dark] .work-run-where{background:#202926;border-bottom:1px solid #2b5042}
 html[data-theme=dark] .work-run-look{color:#b1c8c4;border-inline-start:3px solid #2b502d}
+html[data-theme=dark] .work-selfcheck{border:1px solid #2b503a;background:#1e2921}
+html[data-theme=dark] .bk-fast{background:#202525}
+html[data-theme=dark] .bk-best:not(:empty){border:2px solid #2b503c;background:#1b2c22}
 /* lesson.css */
 html[data-theme=dark] .lv{--lv-ink:#cce3eb;--lv-soft:#aec6cb;--lv-mist:#212a28;--lv-ok-bg:#1e2e23;--lv-line:#2b4750}
 html[data-theme=dark] .lv-meta li{background:#151f2e}

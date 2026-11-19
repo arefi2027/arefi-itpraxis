@@ -84,24 +84,40 @@ function shiftPage() {
 }
 
 /* ---------- German for IT jobs ---------- */
-let vocabMode = 'list', vocabIdx = null, vocabShow = false;
-function vocabQuiz() {
- const w = W().ws(), open = G.vocab.map((_, i) => i).filter(i => !w.vocab[i]);
- if (!open.length) return `<p>${T('همهٔ واژه‌ها را بلدی. عالی!', 'Du kennst alle Wörter. Sehr gut!', 'You know all the words. Very good!')}</p><button class="btn secondary" type="button" data-train="vocab-reset">${T('از نو', 'Neu beginnen', 'Start again')}</button>`;
- if (vocabIdx === null || w.vocab[vocabIdx]) vocabIdx = open[Math.floor(Math.random() * open.length)];
- const v = G.vocab[vocabIdx], hint = lang() === 'fa' ? v[2] : v[1];
- return `<div class="train-flash"><p class="micro">${T(`${num(G.vocab.length - open.length)} از ${num(G.vocab.length)} واژه را بلدی`, `${G.vocab.length - open.length} von ${G.vocab.length} Wörtern sicher`, `${G.vocab.length - open.length} of ${G.vocab.length} words known`)}</p><p class="train-flash-q">${E(hint)}</p><p class="micro">${T('آلمانی‌اش را بلند بگو، بعد ببین.', 'Sag es laut auf Deutsch, dann aufdecken.', 'Say it out loud in German, then reveal.')}</p>${vocabShow ? `<p class="train-flash-a" lang="de" dir="ltr">${E(v[0])}</p><div class="train-rate"><button class="btn secondary" type="button" data-train="vocab-again">${T('هنوز نه', 'Noch nicht', 'Not yet')}</button><button class="btn" type="button" data-train="vocab-known">${T('بلدم', 'Kann ich', 'I know it')}</button></div>` : `<button class="btn" type="button" data-train="vocab-show">${T('نشان بده', 'Aufdecken', 'Reveal')}</button>`}</div>`;
+const EN = D.workEnglish || { phrases: [], mails: [], vocab: [] };
+const LANGS = { de: { data: G, key: 'vocab', name: 'Deutsch' }, en: { data: EN, key: 'vocabEn', name: 'English' } };
+const VS = { de: { mode: 'list', idx: null, show: false }, en: { mode: 'list', idx: null, show: false } };
+function known(code) { const w = W().ws(); if (!w[LANGS[code].key]) w[LANGS[code].key] = {}; return w[LANGS[code].key]; }
+function vocabQuiz(code) {
+ const V = LANGS[code].data.vocab, st = VS[code], k = known(code), open = V.map((_, i) => i).filter(i => !k[i]);
+ if (!open.length) return `<p>${T('همهٔ واژه‌ها را بلدی. عالی!', 'Du kennst alle Wörter. Sehr gut!', 'You know all the words. Very good!')}</p><button class="btn secondary" type="button" data-train="vocab-reset" data-l="${code}">${T('از نو', 'Neu beginnen', 'Start again')}</button>`;
+ if (st.idx === null || k[st.idx]) st.idx = open[Math.floor(Math.random() * open.length)];
+ const v = V[st.idx], hint = lang() === 'fa' ? v[2] : v[1], n = V.length - open.length;
+ const say = code === 'de' ? T('آلمانی‌اش را بلند بگو، بعد ببین.', 'Sag es laut auf Deutsch, dann aufdecken.', 'Say it out loud in German, then reveal.') : T('انگلیسی‌اش را بلند بگو، بعد ببین.', 'Sag es laut auf Englisch, dann aufdecken.', 'Say it out loud in English, then reveal.');
+ return `<div class="train-flash"><p class="micro">${T(`${num(n)} از ${num(V.length)} واژه را بلدی`, `${n} von ${V.length} Wörtern sicher`, `${n} of ${V.length} words known`)}</p><p class="train-flash-q">${E(hint)}</p><p class="micro">${say}</p>${st.show ? `<p class="train-flash-a" lang="${code}" dir="ltr">${E(v[0])}</p><div class="train-rate"><button class="btn secondary" type="button" data-train="vocab-again" data-l="${code}">${T('هنوز نه', 'Noch nicht', 'Not yet')}</button><button class="btn" type="button" data-train="vocab-known" data-l="${code}">${T('بلدم', 'Kann ich', 'I know it')}</button></div>` : `<button class="btn" type="button" data-train="vocab-show" data-l="${code}">${T('نشان بده', 'Aufdecken', 'Reveal')}</button>`}</div>`;
 }
-function deutschPage() {
- const other = lang() === 'fa' ? 2 : 1;
- return `<div class="eyebrow">${T('مانع شمارهٔ یک در استخدام', 'Hürde Nummer eins bei der Einstellung', 'The number one hiring hurdle')}</div>
+const HEAD = {
+ de: () => `<div class="eyebrow">${T('مانع شمارهٔ یک در استخدام', 'Hürde Nummer eins bei der Einstellung', 'The number one hiring hurdle')}</div>
 <h1>${T('آلمانی در محیط کار IT', 'Deutsch im IT-Job', 'German for IT jobs')}</h1>
-<p class="page-description">${T('در پژوهش Bitkom سال ۲۰۲۶، شرکت‌ها کمبود دانش زبان آلمانی را بیش از هر مانع دیگری دلیل پر نشدن جای خالی IT دانسته‌اند. بسیاری از آگهی‌های پشتیبانی آلمانی C1 می‌خواهند. این جمله‌ها را بلند تمرین کن تا در تلفن بی‌مکث بیایند.', 'In der Bitkom-Studie 2026 nennen Unternehmen fehlende Deutschkenntnisse häufiger als jede andere Hürde bei der Besetzung von IT-Stellen. Viele Support-Anzeigen verlangen Deutsch auf C1-Niveau. Übe diese Sätze laut, bis sie am Telefon ohne Pause kommen.', 'In the 2026 Bitkom study, companies name missing German skills more often than any other hurdle in filling IT jobs. Many support ads require German at C1 level. Practise these phrases out loud until they come without pause on the phone.')}</p>
-<div class="lesson-modes work-roles">${[['list', T('جمله‌ها و ایمیل', 'Sätze und E-Mails', 'Phrases and emails')], ['quiz', T('آزمون واژه‌ها', 'Wortschatz-Test', 'Vocabulary test')], ['table', T('فهرست واژه‌ها', 'Wortliste', 'Word list')]].map(([id, t]) => `<button type="button" data-train="vmode" data-m="${id}" class="${vocabMode === id ? 'active' : ''}" aria-pressed="${vocabMode === id}">${E(t)}</button>`).join('')}</div>
-${vocabMode === 'list' ? G.phrases.map(p => `<section class="card train-phrases"><h2>${E(L(p.t))}</h2><ul>${p.items.map(x => `<li><span lang="de" dir="ltr"><b>${E(x[0])}</b></span>${lang() !== 'de' ? `<br><span class="micro">${E(x[other])}</span>` : ''}</li>`).join('')}</ul></section>`).join('') + `<h2 class="work-section-title">${T('نمونه‌های ایمیل', 'E-Mail-Vorlagen', 'Email templates')}</h2>` + G.mails.map(m => `<details class="card work-topic"><summary><h3>${E(L(m.t))}</h3></summary><div class="work-topic-body"><pre class="train-mail" lang="de" dir="ltr">${E(m.de)}</pre></div></details>`).join('') : ''}
-${vocabMode === 'quiz' ? `<section class="card">${vocabQuiz()}</section>` : ''}
-${vocabMode === 'table' ? `<section class="card table-wrap"><table><thead><tr><th>Deutsch</th><th>${lang() === 'fa' ? 'فارسی' : 'English'}</th></tr></thead><tbody>${G.vocab.map(v => `<tr><td lang="de" dir="ltr">${E(v[0])}</td><td>${E(v[other])}</td></tr>`).join('')}</tbody></table></section>` : ''}
-<p class="micro">${T('برای جمله‌های هر مورد پشتیبانی به آلمانی، «تمرین شیفت» را باز کن.', 'Für die deutschen Sätze zu jedem Supportfall öffne das Schicht-Training.', 'For the German sentences of each support case, open the shift training.')} <a class="text-link" href="#shift">${T('تمرین شیفت', 'Schicht-Training', 'Shift training')}</a></p>`;
+<p class="page-description">${T('در پژوهش Bitkom سال ۲۰۲۶، شرکت‌ها کمبود دانش زبان آلمانی را بیش از هر مانع دیگری دلیل پر نشدن جای خالی IT دانسته‌اند. بسیاری از آگهی‌های پشتیبانی آلمانی C1 می‌خواهند. این جمله‌ها را بلند تمرین کن تا در تلفن بی‌مکث بیایند.', 'In der Bitkom-Studie 2026 nennen Unternehmen fehlende Deutschkenntnisse häufiger als jede andere Hürde bei der Besetzung von IT-Stellen. Viele Support-Anzeigen verlangen Deutsch auf C1-Niveau. Übe diese Sätze laut, bis sie am Telefon ohne Pause kommen.', 'In the 2026 Bitkom study, companies name missing German skills more often than any other hurdle in filling IT jobs. Many support ads require German at C1 level. Practise these phrases out loud until they come without pause on the phone.')}</p>`,
+ en: () => `<div class="eyebrow">${T('زبان دوم کاری در بسیاری از تیم‌های IT', 'Zweite Arbeitssprache in vielen IT-Teams', 'The second working language in many IT teams')}</div>
+<h1>${T('انگلیسی در محیط کار IT', 'Englisch im IT-Job', 'English for IT jobs')}</h1>
+<p class="page-description">${T('پیام‌های خطا، مستندات، پشتیبانی سازنده‌ها و همکاران بین‌المللی انگلیسی‌اند. بسیاری از آگهی‌های IT در اتریش و آلمان دانش خوب انگلیسی گفتاری و نوشتاری می‌خواهند. این جمله‌ها را بلند تمرین کن و ایمیل‌ها را با داده‌های خودت بازنویسی کن.', 'Fehlermeldungen, Dokumentation, Herstellersupport und internationale Kolleginnen und Kollegen sind auf Englisch. Viele IT-Stellenanzeigen in Österreich und Deutschland verlangen gute Englischkenntnisse in Wort und Schrift. Übe diese Sätze laut und schreibe die E-Mails mit deinen eigenen Angaben nach.', 'Error messages, documentation, vendor support and international colleagues all use English. Many IT job ads in Austria and Germany ask for good spoken and written English. Practise these phrases out loud and rewrite the emails with your own details.')}</p>`
+};
+function langPage(code) {
+ const X = LANGS[code], P = X.data, st = VS[code], other = lang() === 'fa' ? 2 : 1, tr = lang() !== code;
+ const foot = code === 'de'
+  ? `<p class="micro">${T('برای جمله‌های هر مورد پشتیبانی به آلمانی، «تمرین شیفت» را باز کن.', 'Für die deutschen Sätze zu jedem Supportfall öffne das Schicht-Training.', 'For the German sentences of each support case, open the shift training.')} <a class="text-link" href="#shift">${T('تمرین شیفت', 'Schicht-Training', 'Shift training')}</a></p>`
+  : `<p class="micro">${T('دستورها، نام گزینه‌ها و متن خطا را عیناً به انگلیسی نگه دار؛ آن‌ها را ترجمه نکن.', 'Befehle, Menünamen und Fehlertexte bleiben im Original auf Englisch; übersetze sie nicht.', 'Keep commands, menu names and error texts in the original English; do not translate them.')}</p>`;
+ const sib = code === 'de' ? ['english', T('انگلیسی در محیط کار IT', 'Englisch im IT-Job', 'English for IT jobs')] : ['deutsch', T('آلمانی در محیط کار IT', 'Deutsch im IT-Job', 'German for IT jobs')];
+ const terms = code === 'de' ? T('اصطلاحات هر درس به آلمانی', 'Fachbegriffe jeder Lektion auf Deutsch', 'Terms of each lesson in German') : T('اصطلاحات هر درس به انگلیسی', 'Fachbegriffe jeder Lektion auf Englisch', 'Terms of each lesson in English');
+ return `${HEAD[code]()}
+<div class="lesson-modes work-roles">${[['list', T('جمله‌ها و ایمیل', 'Sätze und E-Mails', 'Phrases and emails')], ['quiz', T('آزمون واژه‌ها', 'Wortschatz-Test', 'Vocabulary test')], ['table', T('فهرست واژه‌ها', 'Wortliste', 'Word list')]].map(([id, t]) => `<button type="button" data-train="vmode" data-l="${code}" data-m="${id}" class="${st.mode === id ? 'active' : ''}" aria-pressed="${st.mode === id}">${E(t)}</button>`).join('')}</div>
+${st.mode === 'list' ? P.phrases.map(p => `<section class="card train-phrases"><h2>${E(L(p.t))}</h2><ul>${p.items.map(x => `<li><span lang="${code}" dir="ltr"><b>${E(x[0])}</b></span>${tr ? `<br><span class="micro">${E(x[other])}</span>` : ''}</li>`).join('')}</ul></section>`).join('') + `<h2 class="work-section-title">${T('نمونه‌های ایمیل', 'E-Mail-Vorlagen', 'Email templates')}</h2>` + P.mails.map(m => `<details class="card work-topic"><summary><h3>${E(L(m.t))}</h3></summary><div class="work-topic-body"><pre class="train-mail" lang="${code}" dir="ltr">${E(m[code])}</pre></div></details>`).join('') : ''}
+${st.mode === 'quiz' ? `<section class="card">${vocabQuiz(code)}</section>` : ''}
+${st.mode === 'table' ? `<section class="card table-wrap"><table><thead><tr><th>${X.name}</th><th>${lang() === 'fa' ? 'فارسی' : code === 'de' ? 'English' : 'Deutsch'}</th></tr></thead><tbody>${P.vocab.map(v => `<tr><td lang="${code}" dir="ltr">${E(v[0])}</td><td>${E(v[other])}</td></tr>`).join('')}</tbody></table></section>` : ''}
+${foot}
+<p class="micro"><a class="text-link" href="#${sib[0]}">${E(sib[1])}</a> · <a class="text-link" href="#languages" data-train="lterms" data-l="${code}">${E(terms)}</a></p>`;
 }
 
 /* ---------- application portfolio (printable, German) ---------- */
@@ -154,13 +170,15 @@ document.addEventListener('click', e => {
  if (a === 'back') { saveText(); S.step--; S.checked = false; redraw(); return; }
  if (a === 'up' || a === 'down') { const i = +b.dataset.i, j = a === 'up' ? i - 1 : i + 1; [S.order[i], S.order[j]] = [S.order[j], S.order[i]]; S.checked = false; redraw(); setTimeout(() => document.querySelector(`[data-train="${a}"][data-i="${j}"]`)?.focus(), 0); return; }
  if (a === 'rate') { const id = S.ids[S.i]; rate(id, b.dataset.g); S.done.push(id); S.i++; S.step = 0; S.order = null; S.checked = false; S.answers = {}; redraw(); window.scrollTo(0, 0); return; }
- if (a === 'vmode') { vocabMode = b.dataset.m; vocabShow = false; redraw(); return; }
- if (a === 'vocab-show') { vocabShow = true; redraw(); return; }
- if (a === 'vocab-known') { W().ws().vocab[vocabIdx] = true; W().persist(); vocabIdx = null; vocabShow = false; redraw(); return; }
- if (a === 'vocab-again') { vocabIdx = null; vocabShow = false; redraw(); return; }
- if (a === 'vocab-reset') { W().ws().vocab = {}; W().persist(); redraw(); return; }
+ const lc = LANGS[b.dataset.l] ? b.dataset.l : 'de', st = VS[lc];
+ if (a === 'vmode') { st.mode = b.dataset.m; st.show = false; redraw(); return; }
+ if (a === 'vocab-show') { st.show = true; redraw(); return; }
+ if (a === 'vocab-known') { if (st.idx !== null) known(lc)[st.idx] = true; W().persist(); st.idx = null; st.show = false; redraw(); return; }
+ if (a === 'vocab-again') { st.idx = null; st.show = false; redraw(); return; }
+ if (a === 'vocab-reset') { W().ws()[LANGS[lc].key] = {}; W().persist(); st.idx = null; redraw(); return; }
+ if (a === 'lterms') { const ap = window.ServerLabApp, s0 = ap?.state(); if (s0?.languages) { s0.languages.target = lc; ap.save(); } return; }
  if (a === 'portfolio') { printPortfolio(); return; }
 });
 
-window.ArefiTraining = { page: name => name === 'shift' ? shiftPage() : deutschPage(), portfolioCard };
+window.ArefiTraining = { page: name => name === 'shift' ? shiftPage() : name === 'english' ? langPage('en') : langPage('de'), portfolioCard };
 })();

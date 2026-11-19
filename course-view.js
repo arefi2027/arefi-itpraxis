@@ -55,9 +55,9 @@ const CAT = {
   en: { title: 'Tool list', intro: 'Important software for everyday IT work with purpose, platform, licence and official site. Tools marked “tutorial” are practised step by step in this course. Only download from the official site.', all: 'All', site: 'Official site', tut: 'Tutorial in this course', count: 'tools' }
 };
 const PJ = {
-  fa: { title: 'پوشه‌های پروژه: از برنامه‌ریزی تا تحویل', intro: 'هر پوشه یک پروژهٔ کامل شبکه است با همهٔ سندها طبق مراحل DIN 69901 و قالب IHK؛ نمونهٔ کامل را بخوان، بعد قالب خالی را خودت پر کن.', open: 'باز کردن پوشه', docs: 'سند' },
-  de: { title: 'Projektmappen: von der Planung bis zur Abnahme', intro: 'Jede Mappe ist ein vollständiges Netzwerkprojekt mit allen Dokumenten nach den Phasen der DIN 69901 und im IHK-Format. Lies die Musterlösung und fülle danach die Vorlage selbst aus.', open: 'Mappe öffnen', docs: 'Dokumenten' },
-  en: { title: 'Project folders: from planning to acceptance', intro: 'Each folder is a complete network project with all documents along the DIN 69901 phases and in IHK format. Read the model solution, then fill in the blank template yourself.', open: 'Open folder', docs: 'documents' }
+  fa: { title: 'پوشه‌های پروژه: از برنامه‌ریزی تا تحویل', intro: 'هر پوشه یک پروژهٔ کامل شبکه است با نمونه‌سندهای برنامه‌ریزی، اجرا، آزمون و تحویل. برای تحویل رسمی، مقررات اتاق بازرگانی و صنایع (IHK) مربوط به خودت را بررسی کن؛ نمونهٔ کامل را بخوان، بعد قالب خالی را خودت پر کن.', open: 'باز کردن پوشه', docs: 'سند' },
+  de: { title: 'Projektmappen: von der Planung bis zur Abnahme', intro: 'Jede Mappe ist ein vollständiges Netzwerkprojekt mit Beispieldokumenten für Planung, Umsetzung, Test und Abnahme. Für eine Einreichung gelten die Vorgaben deiner zuständigen IHK. Lies die Musterlösung und fülle danach die Vorlage selbst aus.', open: 'Mappe öffnen', docs: 'Dokumenten' },
+  en: { title: 'Project folders: from planning to acceptance', intro: 'Each folder is a complete network project with sample documents for planning, implementation, testing and acceptance. For submissions, follow your responsible IHK’s requirements. Read the model solution, then fill in the blank template yourself.', open: 'Open folder', docs: 'documents' }
 };
 function projHtml() {
   if (!cfg.projects || !cfg.projects.length || !window.ArefiProjectView) return '';

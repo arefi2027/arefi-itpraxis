@@ -13,7 +13,7 @@ const app = () => window.ServerLabApp;
 const RATE_MAX = 2;
 
 /* ---------- state ---------- */
-function blank() { return { cases: {}, skills: {}, iv: {}, role: 'helpdesk', area: 'all', sr: {}, vocab: {}, profile: { name: '' } }; }
+function blank() { return { cases: {}, skills: {}, iv: {}, role: 'helpdesk', area: 'all', sr: {}, vocab: {}, vocabEn: {}, profile: { name: '' } }; }
 function sanitize(w) {
  const out = blank();
  if (!w || typeof w !== 'object') return out;
@@ -23,7 +23,7 @@ function sanitize(w) {
  if ((J.roles || []).some(r => r.id === w.role)) out.role = w.role;
  if (w.area === 'all' || (J.areas && w.area in J.areas)) out.area = w.area;
  for (const c of CASES) { const x = w.sr?.[c.id]; if (x && Number.isFinite(Date.parse(x.due)) && Number.isInteger(x.ivl) && x.ivl >= 1 && x.ivl <= 60 && Number.isInteger(x.n) && x.n >= 0) out.sr[c.id] = { due: x.due, ivl: x.ivl, n: Math.min(x.n, 999) }; }
- const vn = (D.workGerman?.vocab || []).length; for (const [k, v] of Object.entries(w.vocab || {})) if (/^\d+$/.test(k) && +k < vn && v === true) out.vocab[k] = true;
+ for (const [key, src] of [['vocab', D.workGerman], ['vocabEn', D.workEnglish]]) { const vn = (src?.vocab || []).length; for (const [k, v] of Object.entries(w[key] || {})) if (/^\d+$/.test(k) && +k < vn && v === true) out[key][k] = true; }
  if (typeof w.profile?.name === 'string') out.profile.name = w.profile.name.slice(0, 80);
  return out;
 }
@@ -49,6 +49,20 @@ const dirAttr = () => lang() === 'fa' ? ' dir="rtl"' : '';
 
 /* ---------- page: everyday support cases ---------- */
 function casesProgress() { const w = ws(); const n = CASES.filter(c => w.cases[c.id]).length; return { n, total: CASES.length }; }
+/* Modus „Selbst lösen“: nur Ticket und Abgabebedingungen sichtbar, Bewertungsraster zum Vergleich */
+function selfCheck(c) {
+ const crit = [T('اثر و کاربران درگیر ثبت شده‌اند و پرسش‌های روشن‌کننده آمده است.', 'Auswirkung und Betroffene sind festgehalten, klärende Rückfragen sind genannt.', 'Impact and affected users are recorded, clarifying questions are named.'),
+  T('بررسی‌ها با فرمان یا محل دقیق و نتیجهٔ مورد انتظار نوشته شده‌اند و علت از یافته‌ها نتیجه می‌شود.', 'Prüfschritte stehen mit Befehl oder Klickweg und erwartetem Ergebnis da; die Ursache folgt aus den Befunden.', 'Checks are written with command or click path and expected result; the cause follows from the findings.'),
+  T('اقدام کوچک‌ترین تغییر لازم است و در صورت نیاز تأیید دارد.', 'Die Maßnahme ist der kleinste nötige Eingriff und hat, wo nötig, eine Freigabe.', 'The action is the smallest necessary change and has approval where needed.'),
+  T('آزمون نهایی موفقیت را ثابت می‌کند.', 'Ein Nachtest belegt den Erfolg.', 'A follow-up test proves success.'),
+  T('یادداشت تیکت و پیام به کاربر روشن و کامل‌اند؛ مرز ارجاع درست است.', 'Ticketnotiz und Nachricht an den Benutzer sind klar und vollständig; die Eskalationsgrenze stimmt.', 'Ticket note and message to the user are clear and complete; the escalation boundary is right.')];
+ return `<section class="work-selfcheck" hidden><h3>${T('حل مستقل', 'Selbst lösen', 'Solve it yourself')}</h3>
+<p class="micro">${T('فقط تیکت بالا را داری. پاسخت را بنویس: ۱. پرسش‌ها و اثر، ۲. بررسی‌ها با فرمان و نتیجهٔ مورد انتظار، ۳. علت محتمل و اقدام با تأیید، ۴. آزمون نهایی، ۵. یادداشت تیکت. بعد با راه‌حل مقایسه کن.', 'Du hast nur das Ticket oben. Schreibe deine Lösung: 1. Rückfragen und Auswirkung, 2. Prüfschritte mit Befehl und erwartetem Ergebnis, 3. vermutete Ursache und Maßnahme mit Freigabe, 4. Nachtest, 5. Ticketnotiz. Vergleiche danach mit der Lösung.', 'You only have the ticket above. Write your solution: 1. questions and impact, 2. checks with command and expected result, 3. likely cause and action with approval, 4. follow-up test, 5. ticket note. Then compare with the solution.')}</p>
+<label class="micro" for="self-${c.id}">${T('پاسخ تو (فقط روی همین صفحه، ذخیره نمی‌شود)', 'Deine Lösung (nur auf dieser Seite, wird nicht gespeichert)', 'Your solution (this page only, not saved)')}</label>
+<textarea id="self-${c.id}" class="work-self-text" rows="8"></textarea>
+<details class="work-rubric"><summary>${T('معیارهای بررسی', 'Bewertungsraster', 'Assessment rubric')}</summary><ol>${crit.map(x => `<li>${E(x)}</li>`).join('')}</ol><p class="micro">${T('برای هر معیار برآورده یک امتیاز. موارد ناقص را با راه‌حل مقایسه و پاسخ را کامل کن.', 'Je erfülltem Kriterium ein Punkt. Offene Punkte mit der Lösung vergleichen und die Antwort ergänzen.', 'One point per criterion met. Compare open points with the solution and complete your answer.')}</p></details>
+<button type="button" class="btn" data-case-reveal="${c.id}">${T('مقایسه با راه‌حل', 'Mit der Lösung vergleichen', 'Compare with the solution')}</button></section>`;
+}
 /* „Genau so reparierst du es“: wo, was eingeben, worauf achten (Daten in work-run.js) */
 function runHtml(c) {
  const rows = ((window.LAB || {}).workRun || {})[c.id], W = (window.LAB || {}).workRunWhere || {};
@@ -69,6 +83,8 @@ function caseCard(c, open) {
 <summary><span class="work-case-title">${E(d.t)}</span><span class="work-tags"><span class="work-tag area-${c.area}">${E(L(J.areas[c.area]))}</span><span class="work-tag prio-${c.prio}">${E(L(J.prio[c.prio]))}</span>${done ? `<span class="work-tag ok">✓ ${T('بلدم', 'Kann ich', 'I can do this')}</span>` : ''}</span></summary>
 <div class="work-case-body">
 <blockquote class="work-msg">${E(d.msg)}</blockquote>
+<div class="work-case-tools"><button type="button" class="btn secondary" data-case-mode="${c.id}" aria-pressed="false">${T('خودم حل می‌کنم', 'Selbst lösen', 'Solve it myself')}</button><button type="button" class="btn secondary" data-case-print="${c.id}" title="${T('در حالت «خودم حل می‌کنم» برگهٔ تمرین بدون پاسخ چاپ می‌شود، در غیر این صورت برگهٔ کامل با راه‌حل.', 'Im Modus „Selbst lösen“ wird das Aufgabenblatt ohne Lösung gedruckt, sonst das vollständige Blatt mit Lösung.', 'In "Solve it myself" mode the worksheet prints without the solution, otherwise the full sheet with the solution.')}">${T('چاپ برگه', 'Blatt drucken', 'Print sheet')}</button></div>
+${selfCheck(c)}
 <div class="work-grid">
 <section><h3>${T('۱. اول بپرس', '1. Zuerst nachfragen', '1. Ask first')}</h3><ul>${d.ask.map(x => `<li>${E(x)}</li>`).join('')}</ul></section>
 <section><h3>${T('۲. قدم‌به‌قدم بررسی کن', '2. Schritt für Schritt prüfen', '2. Check step by step')}</h3><ol>${d.steps.map(x => `<li>${E(x)}</li>`).join('')}</ol></section>
@@ -203,6 +219,30 @@ document.addEventListener('change', e => {
  const t = e.target;
  if (t.matches('[data-work-case]')) { ws().cases[t.dataset.workCase] = t.checked || undefined; if (!t.checked) delete ws().cases[t.dataset.workCase]; persist(); const card = t.closest('.work-case'); card?.classList.toggle('done', t.checked); const pr = document.querySelector('.work-progress'); if (pr) { const p = casesProgress(); pr.textContent = T(`${num(p.n)} از ${num(p.total)} مورد را بلدی`, `${p.n} von ${p.total} Fällen sicher`, `${p.n} of ${p.total} cases mastered`); } }
  if (t.matches('[data-work-iv]')) { if (t.checked) ws().iv[t.dataset.workIv] = true; else delete ws().iv[t.dataset.workIv]; persist(); t.closest('.work-iv')?.classList.toggle('done', t.checked); const qs = J.interview || [], n = qs.filter(q => ws().iv[q.id]).length; const pr = document.querySelector('.work-progress'); if (pr) pr.textContent = T(`${num(n)} از ${num(qs.length)} پرسش تمرین شده`, `${n} von ${qs.length} Fragen geübt`, `${n} of ${qs.length} questions practised`); }
+});
+document.addEventListener('click', e => {
+ const m = e.target.closest('[data-case-mode],[data-case-reveal],[data-case-print]');
+ if (!m) return;
+ const id = m.dataset.caseMode || m.dataset.caseReveal || m.dataset.casePrint, card = document.getElementById('case-' + id);
+ if (!card) return;
+ const box = card.querySelector('.work-selfcheck'), modeBtn = card.querySelector('[data-case-mode]');
+ if (m.dataset.caseMode) {
+  const on = !card.classList.contains('is-quiz');
+  card.classList.toggle('is-quiz', on);
+  if (box) box.hidden = !on;
+  if (modeBtn) { modeBtn.setAttribute('aria-pressed', String(on)); modeBtn.textContent = on ? T('نمایش راه‌حل', 'Lösung anzeigen', 'Show solution') : T('خودم حل می‌کنم', 'Selbst lösen', 'Solve it myself'); }
+  if (on) card.querySelector('.work-self-text')?.focus();
+ } else if (m.dataset.caseReveal) {
+  card.classList.remove('is-quiz');
+  if (modeBtn) { modeBtn.setAttribute('aria-pressed', 'false'); modeBtn.textContent = T('خودم حل می‌کنم', 'Selbst lösen', 'Solve it myself'); }
+  card.querySelector('.work-run')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+ } else {
+  card.open = true;
+  card.classList.add('is-printing');
+  document.body.classList.add('print-one');
+  window.addEventListener('afterprint', () => { card.classList.remove('is-printing'); document.body.classList.remove('print-one'); }, { once: true });
+  window.print();
+ }
 });
 document.addEventListener('click', e => {
  const b = e.target.closest('[data-work-area],[data-work-role],[data-work-skill]'); if (!b) return;

@@ -3,7 +3,7 @@
 (() => {
 'use strict';
 const KEY = 'serverlab.v1', DB = 'arefi-backup', STORE = 'handles', ID = 'progress', FLAG = 'arefi-backup-file';
-const isApp = location.host === '127.0.0.1:18764';
+const isApp = document.querySelector('meta[name=arefi-desktop]') !== null;
 const lang = () => document.documentElement.lang || 'fa';
 const T = (fa, de, en) => lang() === 'de' ? de : lang() === 'en' ? en : fa;
 const supported = 'showSaveFilePicker' in window && 'indexedDB' in window;

@@ -44,7 +44,7 @@ const index = () => {
   ((window.LAB && window.LAB.workCases) || []).forEach(c => {
     const d = c[['fa', 'de', 'en'][i]] || c.de;
     if (!d) return;
-    const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1], [((((window.LAB || {}).workRun || {})[c.id]) || []).map(r => (typeof r[1] === 'string' ? r[1] : r[1][i === 0 ? 2 : i - 1]) + ' ' + r[2][i === 0 ? 2 : i - 1]).join(' \n '), 1]];
+    const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1], [((((window.LAB || {}).workSig || {})[c.id]) || []).join(' \n '), 5], [((((window.LAB || {}).workRun || {})[c.id]) || []).map(r => (typeof r[1] === 'string' ? r[1] : r[1][i === 0 ? 2 : i - 1]) + ' ' + r[2][i === 0 ? 2 : i - 1]).join(' \n '), 1]];
     list.push({ hash: 'support/' + c.id, title: d.t, course: ['مشکلات روزمرهٔ پشتیبانی', 'Alltagsfälle im Support', 'Everyday support cases'][i], parts: parts.map(([t, w]) => [t, norm(t), w]) });
   });
   // Wissenskapitel „Was Firmen erwarten“ (z. B. ITIL, Österreich)
@@ -54,6 +54,13 @@ const index = () => {
     const txt = String(d.html || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
     const parts = [[d.t, 6], [txt, 1]];
     list.push({ hash: 'jobs/' + t.id, title: d.t, course: ['انتظار شرکت‌ها', 'Was Firmen erwarten', 'What employers expect'][i], parts: parts.map(([x, w]) => [x, norm(x), w]) });
+  });
+  // Sprachbereiche „Deutsch im IT-Job“ und „Englisch im IT-Job“: Satzgruppen, E-Mails, Wortschatz
+  [['deutsch', 'workGerman', 'de', ['آلمانی در محیط کار IT', 'Deutsch im IT-Job', 'German for IT jobs']], ['english', 'workEnglish', 'en', ['انگلیسی در محیط کار IT', 'Englisch im IT-Job', 'English for IT jobs']]].forEach(([hash, key, code, ct]) => {
+    const X = (window.LAB || {})[key]; if (!X) return;
+    (X.phrases || []).forEach(p => list.push({ hash, title: p.t[['fa', 'de', 'en'][i]] || p.t.de, course: ct[i], parts: [[p.t.de + ' ' + p.t.en + ' ' + p.t.fa, 6], [p.items.map(x => x.join(' ')).join(' \n '), 2]].map(([t, w]) => [t, norm(t), w]) }));
+    (X.mails || []).forEach(m => list.push({ hash, title: m.t[['fa', 'de', 'en'][i]] || m.t.de, course: ct[i], parts: [[m.t.de + ' ' + m.t.en + ' ' + m.t.fa, 6], [m[code] || '', 1]].map(([t, w]) => [t, norm(t), w]) }));
+    if ((X.vocab || []).length) list.push({ hash, title: [code === 'de' ? 'واژه‌های آلمانی IT' : 'واژه‌های انگلیسی IT', code === 'de' ? 'Wortschatz Deutsch' : 'Wortschatz Englisch', code === 'de' ? 'German vocabulary' : 'English vocabulary'][i], course: ct[i], parts: [[X.vocab.map(v => v.join(' ')).join(' \n '), 2]].map(([t, w]) => [t, norm(t), w]) });
   });
   // Projektmappen (Netzplanung): jedes Dokument einzeln auffindbar
   const flat = b => [b.h, b.p, b.note, b.cap, b.pre, (b.ul || []).join(' '), (b.ol || []).join(' '), (b.t || []).join(' '), (b.r || []).map(r => r.join(' ')).join(' '), (b.kv || []).map(r => r.join(' ')).join(' ')].filter(Boolean).join(' \n ');

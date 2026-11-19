@@ -74,7 +74,8 @@ const PARTS = [
     { h: 'jobs', t: ['انتظار شرکت‌ها', 'Was Firmen erwarten', 'What employers expect'], g: ['می‌دانی هر شغل دقیقاً چه مهارتی می‌خواهد و چه چیزی هنوز کم داری.', 'Du weißt, welche Fähigkeiten jede Rolle verlangt und was dir noch fehlt.', 'You know what each role requires and what you still lack.'] },
     { h: 'interview', t: ['درخواست کار و مصاحبه', 'Bewerbung und Interview', 'Applying and interviews'], g: ['رزومه را هدفمند می‌نویسی و به پرسش‌های فنی و رفتاری جواب روشن می‌دهی.', 'Du schreibst gezielte Bewerbungen und beantwortest Fach- und Verhaltensfragen klar.', 'You write targeted applications and answer technical and behavioural questions clearly.'] },
     { h: 'deutsch', t: ['آلمانی در محیط کار IT', 'Deutsch im IT-Job', 'German for IT jobs'], g: ['با کاربر، همکار و مدیر به آلمانی روشن و مؤدبانه حرف می‌زنی و می‌نویسی.', 'Du sprichst und schreibst klar und höflich mit Benutzern, Kollegen und Vorgesetzten.', 'You speak and write clearly and politely with users, colleagues and managers.'] },
-    { h: 'languages', t: ['زبان IT به انگلیسی و آلمانی', 'IT-Sprachen Englisch und Deutsch', 'IT language in English and German'], g: ['اصطلاحات هر درس را به انگلیسی و آلمانی به کار می‌بری.', 'Du verwendest die Fachbegriffe jeder Lektion auf Englisch und Deutsch.', 'You use each lesson’s terms in English and German.'] },
+    { h: 'english', t: ['انگلیسی در محیط کار IT', 'Englisch im IT-Job', 'English for IT jobs'], g: ['تماس، پروندهٔ پشتیبانی سازنده، جلسهٔ تیم و مصاحبه را به انگلیسی روشن پیش می‌بری.', 'Du führst Telefonat, Herstellersupport, Team-Meeting und Bewerbungsgespräch klar auf Englisch.', 'You handle calls, vendor support, team meetings and interviews clearly in English.'] },
+    { h: 'languages', t: ['اصطلاحات درس‌ها به انگلیسی و آلمانی', 'Fachbegriffe der Lektionen (Englisch und Deutsch)', 'Lesson terms in English and German'], g: ['اصطلاحات هر درس را به انگلیسی و آلمانی به کار می‌بری.', 'Du verwendest die Fachbegriffe jeder Lektion auf Englisch und Deutsch.', 'You use each lesson’s terms in English and German.'] },
     { h: 'k-ap', t: ['آزمون نهایی Fachinformatiker (آلمان)', 'Abschlussprüfung Fachinformatiker (DE)', 'Fachinformatiker final exam (Germany)'], g: ['ساختار آزمون، حساب‌ها، WiSo و پروژهٔ آزمون را می‌شناسی. در اتریش آزمون هم‌ارز، LAP فناوری اطلاعات است؛ در «انتظار شرکت‌ها» توضیح داده شده.', 'Du kennst Aufbau, Rechenaufgaben, WiSo und das Prüfungsprojekt. In Österreich ist der vergleichbare Abschluss die Lehrabschlussprüfung Informationstechnologie; siehe „Was Firmen erwarten“.', 'You know the structure, calculations, WiSo and the exam project. In Austria the comparable qualification is the IT apprenticeship exam (LAP); see "What employers expect".'] },
     { h: 'apquiz', t: ['آزمون تمرینی AP', 'AP-Übungsquiz', 'AP practice quiz'], g: ['پرسش‌های شبیه آزمون را با زمان تمرین می‌کنی.', 'Du übst prüfungsnahe Fragen mit Zeitlimit.', 'You practise exam-like questions against the clock.'] },
     { h: 'career', t: ['آمادگی شغلی', 'Berufsvorbereitung', 'Job preparation'], g: ['تمرین‌هایت را به شواهد قابل‌نمایش برای کارفرما تبدیل می‌کنی.', 'Du machst aus deinen Übungen vorzeigbare Nachweise für Arbeitgeber.', 'You turn your exercises into evidence you can show employers.'] }
@@ -240,9 +241,22 @@ const CASE_AREA = { password: 'konto', mfa: 'konto', onboarding: 'konto', offboa
 const CASE_BY_AREA = { account: 'konto', m365: 'mail', onboarding: 'konto', network: 'netz', device: 'client', print: 'druck', security: 'sicher', process: 'betrieb' };
 
 function chapterOf(h) { for (let pi = 0; pi < PARTS.length; pi++) { const ci = PARTS[pi].ch.findIndex(c => c.h === h); if (ci >= 0) return { no: chNo(pi, ci), t: pick(PARTS[pi].ch[ci].t) }; } return { no: '', t: '' }; }
+// Schnellhilfe im Störungshandbuch: die ersten drei Reparaturschritte direkt am Treffer
+const FAST = {
+ fa: ['راه‌حل سریع: سه قدم اول', 'ارجاع بده، اگر:', 'همهٔ قدم‌ها و مورد کامل'],
+ de: ['Schnellhilfe: die ersten drei Schritte', 'Weitergeben, wenn:', 'Alle Schritte und den ganzen Fall öffnen'],
+ en: ['Quick help: the first three steps', 'Escalate when:', 'Open all steps and the full case']
+};
+const FAST_BEST = { fa: 'دقیقاً همین خطا: مستقیم به راه‌حل', de: 'Passt genau: direkt zur Lösung', en: 'Exact match: straight to the fix' };
+function fastHelp(x) {
+ if (!x.run || !x.run.length) return '';
+ const W = LAB().workRunWhere || {}, k = { de: 0, en: 1, fa: 2 }[L()] ?? 2, t = FAST[L()] || FAST.fa;
+ const p = a => Array.isArray(a) ? (a[k] || a[0]) : String(a || '');
+ return `<details class="bk-fast"><summary>${esc(t[0])}</summary><ol>${x.run.map(([w, inp, look]) => `<li><span class="bk-fast-where">${esc(W[w] ? p(W[w]).split(' – ')[0] : w)}</span>${typeof inp === 'string' ? `<pre dir="ltr"><code>${esc(inp)}</code></pre>` : `<p>${esc(p(inp))}</p>`}<p class="bk-fast-look">${esc(p(look))}</p></li>`).join('')}</ol>${x.esc ? `<p class="bk-fast-esc"><b>${esc(t[1])}</b> ${esc(x.esc)}</p>` : ''}<a class="text-link" href="#support/${x.id}">${esc(t[2])}</a></details>`;
+}
 function fixIndex() {
  const out = { cases: [], quick: [] };
- (LAB().workCases || []).forEach(c => { const d = c[L()] || c.de; out.cases.push({ area: c.fixArea || CASE_AREA[c.id] || CASE_BY_AREA[c.area] || 'betrieb', id: c.id, t: d.t, msg: d.msg, prio: c.prio, done: caseDone(c.id), text: [d.t, d.msg, d.fix, (d.steps || []).join(' '), (((LAB().workRun || {})[c.id]) || []).map(r => typeof r[1] === 'string' ? r[1] : '').join(' ')].join(' ') }); });
+ (LAB().workCases || []).forEach(c => { const d = c[L()] || c.de; out.cases.push({ area: c.fixArea || CASE_AREA[c.id] || CASE_BY_AREA[c.area] || 'betrieb', id: c.id, t: d.t, msg: d.msg, prio: c.prio, done: caseDone(c.id), text: [d.t, d.msg, d.fix, (d.steps || []).join(' '), (((LAB().workRun || {})[c.id]) || []).map(r => typeof r[1] === 'string' ? r[1] : '').join(' '), (((LAB().workSig || {})[c.id]) || []).join(' ')].join(' '), sig: (((LAB().workSig || {})[c.id]) || []).join('|').toLowerCase(), esc: d.esc || '', run: ((((LAB().workRun || {})[c.id]) || []).slice(0, 3)) }); });
  Object.keys(COURSE).forEach(h => {
   if (h === 'k-ap') return;
   const C = window[COURSE[h]]; if (!C || !C.modules) return;
@@ -277,7 +291,7 @@ function fixPage(focus) {
   const cs = ix.cases.filter(x => x.area === a), qs = ix.quick.filter(x => x.area === a);
   if (!cs.length && !qs.length) return '';
   return `<section class="bk-fa" data-area="${a}" id="fa-${a}"><h2>${esc(pick(AREAS[a]))} <span class="bk-fan">${num(cs.length + qs.length)}</span></h2>
-${cs.length ? `<h3>${esc(f.casesH)}</h3><ul class="bk-cases">${cs.map(x => `<li data-q="${esc(x.text.toLowerCase())}"><a class="bk-case${x.done ? ' is-done' : ''}" href="#support/${x.id}"><span class="bk-case-t"><b>${esc(x.t)}</b>${prioTag(x.prio)}${x.done ? '<span class="bk-ok">✓</span>' : ''}</span><span class="bk-case-msg">${esc(x.msg)}</span><span class="bk-case-go">${esc(f.openCase)}</span></a></li>`).join('')}</ul>` : ''}
+${cs.length ? `<h3>${esc(f.casesH)}</h3><ul class="bk-cases">${cs.map(x => `<li data-q="${esc(x.text.toLowerCase())}" data-sig="${esc(x.sig || '')}"><a class="bk-case${x.done ? ' is-done' : ''}" href="#support/${x.id}"><span class="bk-case-t"><b>${esc(x.t)}</b>${prioTag(x.prio)}${x.done ? '<span class="bk-ok">✓</span>' : ''}</span><span class="bk-case-msg">${esc(x.msg)}</span><span class="bk-case-go">${esc(f.openCase)}</span></a>${fastHelp(x)}</li>`).join('')}</ul>` : ''}
 ${qs.length ? `<h3>${esc(f.quickH)}</h3><ul class="bk-quick">${qs.map(x => `<li data-q="${esc(x.text.toLowerCase())}"><details><summary>${esc(x.sym)}</summary><p><b>${esc(f.fixL)}</b> ${esc(x.fix)}</p><a class="text-link" href="${x.href}">${esc(f.inChapter)} ${esc(x.where)}</a></details></li>`).join('')}</ul>` : ''}</section>`;
  };
  return `<div class="bk bk-fixp"><header class="bk-head"><h1>${esc(f.title)}</h1><p>${esc(f.lead)}</p></header>
@@ -286,7 +300,7 @@ ${qs.length ? `<h3>${esc(f.quickH)}</h3><ul class="bk-quick">${qs.map(x => `<li 
 <section class="bk-finder" aria-label="${esc(f.search)}"><label for="bk-q">${esc(f.search)}</label><input id="bk-q" type="search" autocomplete="off" placeholder="${esc(f.ph)}">
 <div class="bk-chips" role="group" aria-label="${esc(f.search)}"><button type="button" class="axk-chip" data-fa="all" aria-pressed="${!AREAS[focus]}">${esc(f.all)} <span>${num(total)}</span></button>${Object.keys(AREAS).filter(a => counts[a]).map(a => `<button type="button" class="axk-chip" data-fa="${a}" aria-pressed="${focus === a}">${esc(pick(AREAS[a]))} <span>${num(counts[a])}</span></button>`).join('')}</div>
 <p class="bk-hits" id="bk-hits" aria-live="polite"></p></section>
-<div id="bk-results">${Object.keys(AREAS).map(areaSec).join('')}</div><p class="bk-none" id="bk-none" hidden>${esc(f.none)}</p></div>`;
+<div id="bk-best" class="bk-best" aria-live="polite"></div><div id="bk-results">${Object.keys(AREAS).map(areaSec).join('')}</div><p class="bk-none" id="bk-none" hidden>${esc(f.none)}</p></div>`;
 }
 function mountFix(focus) {
  const f = FX[L()] || FX.fa;
@@ -305,9 +319,20 @@ function mountFix(focus) {
    const fan = sec.querySelector('.bk-fan'); if (fan) fan.textContent = num(m);
    if (words.length && m && m <= 3) sec.querySelectorAll('li:not([hidden]) details').forEach(d => { d.open = true; });
   });
+  const best = document.querySelector('#bk-best'), ph = words.join(' ');
+  if (best) {
+   best.innerHTML = '';
+   const found = ph.length < 3 ? [] : [...document.querySelectorAll('#bk-results .bk-cases > li[data-sig]')].filter(li => li.dataset.sig.split('|').some(sg => sg && (sg.includes(ph) || (sg.length >= 4 && ph.includes(sg))))).slice(0, 3);
+   if (found.length) {
+    best.innerHTML = `<h3>${esc((FAST_BEST[L()] || FAST_BEST.fa))}</h3><ul class="bk-cases"></ul>`;
+    const ul = best.querySelector('ul');
+    found.forEach(li => { const c = li.cloneNode(true); c.hidden = false; c.removeAttribute('data-q'); const d = c.querySelector('.bk-fast'); if (d) d.open = true; ul.appendChild(c); });
+   }
+  }
   hits.textContent = num(n) + ' ' + f.hits;
   none.hidden = n > 0;
  };
+ try { const pre = sessionStorage.getItem('arefi-bk-q'); if (pre) { q.value = pre; sessionStorage.removeItem('arefi-bk-q'); } } catch {}
  q.addEventListener('input', apply);
  document.querySelectorAll('[data-fa]').forEach(b => b.addEventListener('click', () => {
   area = b.dataset.fa;

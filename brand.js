@@ -97,6 +97,8 @@ function apply(r) {
   if (r.page === 'path') {
     const main = document.querySelector('main');
     main.insertAdjacentHTML('afterbegin', hero() + paths());
+    const fs = main.querySelector('.fault-search'), h = main.querySelector('.ax-hero');
+    if (fs && h) h.after(fs);
   }
 }
 window.ArefiBrand = { apply, mark };
