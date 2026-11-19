@@ -1,11 +1,12 @@
-## Arefi ITPraxis 2.16.2 (Vorabversion)
+## Arefi ITPraxis 2.16.3 (Vorabversion)
 
 **Deutsch**
-- Musterantworten im Vorstellungsgespräch beginnen bei Störungs- und Planungsfragen jetzt mit den Rückfragen, die ein Techniker zuerst stellt: Netzwerkschleife im Stockwerk, APIPA-Adresse, Netzplanung für 40 Arbeitsplätze, drei Tickets gleichzeitig, verärgerter Benutzer.
-- Hinweis auf der Interviewseite: Bei Störungsfragen zuerst nachfragen – „Darf ich zuerst kurz nachfragen …?“
+- Alle 38 Alltagsfälle haben jetzt den Abschnitt „Genau so reparierst du es“: 173 Schritte, jeweils mit Ort (Eingabeaufforderung, PowerShell, PowerShell als Administrator, Switch-Konsole, Windows-Menü, Admin-Portal) samt Hinweis, wie man ihn öffnet, dem genauen Befehl oder Klickweg und dem, worauf man in der Ausgabe achten muss.
+- Befehle sind über die Suche und den Filter im Störungshandbuch auffindbar.
+- Enthält 2.16.2: Musterantworten im Vorstellungsgespräch beginnen mit den Rückfragen des Technikers.
 
 **فارسی**
-- پاسخ‌های نمونهٔ مصاحبه برای پرسش‌های خرابی و طراحی حالا با پرسش‌های تکنسین شروع می‌شوند.
+- همهٔ ۳۸ مورد روزمره بخش «دقیقاً چطور تعمیر کنی» دارند: ۱۷۳ قدم با محل اجرا، فرمان یا مسیر کلیک دقیق و اینکه در خروجی به چه نگاه کنی.
 
 **English**
-- Sample interview answers for fault and planning questions now start with the technician's clarifying questions.
+- All 38 everyday cases have an "Exactly how to fix it" section: 173 steps with the place, the exact command or click path and what to look for in the output.
