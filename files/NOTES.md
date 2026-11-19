@@ -1,14 +1,13 @@
-## Arefi ITPraxis 2.16.0 (Vorabversion)
+## Arefi ITPraxis 2.16.1 (Vorabversion)
 
-**Deutsch – Netzwerke planen**
-- Vier vollständige Projektmappen mit denselben zehn Planungsbereichen: Privat/Home-Office, kleine Firma (18), mittlere Firma (120, Fertigung + Filiale), große Firma (800, zwei Rechenzentren, sechs Filialen).
-- Je Mappe: Netzplan (logisch und physisch), VLAN- und IP-Plan, Erreichbarkeit, Sicherheit, Verfügbarkeitsrechnung, Qualität mit Abnahmekriterien, Kosten und TCO mit recherchierten Preisen (Quelle und Datum), Betrieb, Recht für Deutschland und Österreich (DSGVO, NIS2UmsuCG, NISG 2026, ArbVG/BetrVG).
-- Vergleichsmappe: alle vier Netztypen je Bereich nebeneinander, mit Sprung in jede Mappe.
-- 13 neue Lektionen: Bedarf und Netzplan, Netztyp wählen, VLAN/IP, Erreichbarkeit, Sicherheit, Verfügbarkeit, Qualität, Verkabelung/PoE/USV, Kosten/TCO, Projektphasen, PSP und Netzplantechnik, Umsetzung und Abnahme, Recht DE/AT.
-- Kapitel 3.4 heißt jetzt „Netzwerke planen: Netzplan, Sicherheit, Verfügbarkeit, Kosten und Projekt“; Projektdokumente sind über die Suche auffindbar.
+**Deutsch – Was Firmen erwarten, Netzwerkbetrieb, Österreich**
+- Neue Zielrolle „Netzwerktechniker/-in (Junior)“ mit fünf neuen Kompetenzen (Switching, Messen mit Wireshark/iPerf/Nmap, Netzplanung, Firewall/VPN/802.1X, Rollouts); jede Kompetenz verlinkt direkt auf die passenden Kapitel.
+- Sechs neue Alltagsfälle aus dem Netzwerkbetrieb mit Rückfragen, Prüfschritten, Befehlen, Lösung, Ticketnotiz und Eskalation: Netzwerkschleife, fremder DHCP-Server, Dose nur 100 Mbit/s, PoE-Budget erschöpft, Drucker nach 802.1X-Einführung, VPN mit gleichem Heimnetz.
+- Neues Wissenskapitel „Jobsuche in Österreich“: Gehaltsangabe im Inserat (§ 9 GlBG), IT-Kollektivvertrag, außerordentliche Lehrabschlussprüfung Informationstechnologie, AMS „alle jobs“.
+- Drei neue Interviewfragen für Netzwerkstellen; Planungsfehler aus Kapitel 3.4 erscheinen im Störungshandbuch; Wissenskapitel sind über die Suche auffindbar.
 
 **فارسی**
-- چهار پوشهٔ کامل طراحی شبکه (خانه، شرکت کوچک، متوسط، بزرگ) با ده بخش یکسان، پوشهٔ مقایسه و ۱۳ درس تازه؛ فصل ۳٫۴ با نام روشن و جستجو در سندها.
+- نقش تازهٔ «تکنسین شبکه»، شش مورد روزمرهٔ تازه از خرابی‌های شبکه با راه‌حل، فصل کاریابی در اتریش و سه پرسش مصاحبهٔ تازه.
 
 **English**
-- Four complete network-planning folders (home, small, medium, large) with the same ten areas, a comparison folder and 13 new lessons; clearly named chapter 3.4 and searchable documents.
+- New network technician role, six new everyday network fault cases with solutions, a chapter on job hunting in Austria and three new interview questions.
