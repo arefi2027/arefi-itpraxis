@@ -12,7 +12,7 @@ const ICON = id => `<svg aria-hidden="true"><use href="#i-${id}"/></svg>`;
 const PARTS = [
  { id: 'p1', t: ['شروع و روش کار', 'Einstieg und Arbeitsweise', 'Getting started and working method'],
    lead: ['پیش از هر چیز: چطور با این برنامه یاد بگیری، آزمایشگاه خودت را بسازی و هر مشکل را با یک روش ثابت حل کنی.', 'Bevor es losgeht: wie du mit diesem Programm lernst, dein Übungslabor aufbaust und jedes Problem mit derselben Methode löst.', 'Before anything else: how to learn with this program, build your practice lab and solve every problem with one consistent method.'],
-   roles: ['helpdesk', 'onsite', 'admin'],
+   roles: ['helpdesk', 'onsite', 'admin', 'net'],
    ch: [
     { h: 'guide', t: ['راهنمای شروع و برنامهٔ یادگیری', 'Einstieg und Lernplan', 'Getting started and study plan'], g: ['می‌دانی از کجا شروع کنی و هر هفته چه چیزی را تمرین کنی.', 'Du weißt, wo du anfängst und was du jede Woche übst.', 'You know where to start and what to practise each week.'] },
     { h: 'lab', t: ['آزمایشگاه تمرینی خودت', 'Dein Übungslabor', 'Your practice lab'], g: ['ماشین‌های مجازی، شبکه و نام‌گذاری آزمایشگاه را می‌سازی.', 'Du baust VMs, Netz und Namensschema deines Labors auf.', 'You build the VMs, network and naming scheme of your lab.'] },
@@ -31,12 +31,12 @@ const PARTS = [
    ] },
  { id: 'p3', t: ['شبکه', 'Netzwerk', 'Networking'],
    lead: ['از آدرس IP و VLAN تا روتر Cisco و برنامه‌ریزی کامل شبکهٔ یک شرکت. هر تکنسین باید بتواند «اینترنت نیست» را لایه‌به‌لایه بررسی کند.', 'Von IP-Adresse und VLAN bis zum Cisco-Router und zur vollständigen Netzplanung einer Firma. Jede Technikerin muss „kein Internet“ Schicht für Schicht prüfen können.', 'From IP address and VLAN to Cisco routers and the complete network plan of a company. Every technician must be able to check “no internet” layer by layer.'],
-   roles: ['onsite', 'admin', 'fisi'],
+   roles: ['onsite', 'admin', 'fisi', 'net'],
    ch: [
     { h: 'k-net', t: ['شبکه و ذخیره‌ساز برای ادمین', 'Netzwerk und Speicher für Admins', 'Networking and storage for admins'], g: ['RAID، NAS، Subnetting، IPv6، VLAN، مسیریابی، VPN، فایروال و WLAN شرکتی را پیاده می‌کنی.', 'Du setzt RAID, NAS, Subnetting, IPv6, VLAN, Routing, VPN, Firewall und Firmen-WLAN um.', 'You implement RAID, NAS, subnetting, IPv6, VLANs, routing, VPN, firewall and enterprise Wi-Fi.'] },
     { h: 'subnetz', t: ['تمرین‌ساز Subnetting', 'Subnetting-Trainer', 'Subnetting trainer'], g: ['زیرشبکه را بدون ماشین‌حساب و سریع حساب می‌کنی.', 'Du rechnest Subnetze schnell und ohne Taschenrechner.', 'You calculate subnets quickly without a calculator.'] },
     { h: 'k-ccna', t: ['Cisco CCNA به‌صورت عملی', 'Cisco CCNA praxisnah', 'Hands-on Cisco CCNA'], g: ['سوئیچ و روتر Cisco را پیکربندی، امن و عیب‌یابی می‌کنی.', 'Du konfigurierst, sicherst und prüfst Cisco-Switches und -Router.', 'You configure, secure and troubleshoot Cisco switches and routers.'] },
-    { h: 'k-plan', t: ['برنامه‌ریزی شبکه و مدیریت پروژه', 'Netzwerkplanung und Projektmanagement', 'Network planning and project management'], g: ['شبکهٔ یک شرکت را طبق DIN 69901 برنامه‌ریزی، اجرا و تحویل می‌دهی.', 'Du planst, baust und übergibst ein Firmennetz nach DIN 69901.', 'You plan, build and hand over a company network following DIN 69901.'] }
+    { h: 'k-plan', t: ['طراحی و برنامه‌ریزی شبکه: نقشه، امنیت، دسترس‌پذیری، هزینه و پروژه', 'Netzwerke planen: Netzplan, Sicherheit, Verfügbarkeit, Kosten und Projekt', 'Planning networks: diagram, security, availability, cost and project'], g: ['شبکهٔ خانه، شرکت کوچک، متوسط و بزرگ را طراحی می‌کنی، نقشه‌اش را می‌کشی، امنیت و دسترس‌پذیری و هزینه‌اش را حساب می‌کنی و آن را مثل یک پروژهٔ واقعی تحویل می‌دهی.', 'Du entwirfst Netze für Zuhause, kleine, mittlere und große Firmen, zeichnest den Netzplan, bewertest Sicherheit, Verfügbarkeit und Kosten und übergibst alles wie in einem echten Projekt.', 'You design networks for a home, a small, a medium and a large company, draw the diagram, assess security, availability and cost and hand everything over like a real project.'] }
    ] },
  { id: 'p4', t: ['سرور و سرویس‌ها', 'Server und Dienste', 'Servers and services'],
    lead: ['گام بعدی از پشتیبانی به سمت ادمین سیستم: Active Directory، DNS، DHCP، فایل، چاپ و لینوکس؛ همه در آزمایشگاه خودت.', 'Der Schritt vom Support zur Systemadministration: Active Directory, DNS, DHCP, Datei, Druck und Linux – alles in deinem eigenen Labor.', 'The step from support to system administration: Active Directory, DNS, DHCP, files, printing and Linux – all in your own lab.'],
@@ -49,14 +49,14 @@ const PARTS = [
    ] },
  { id: 'p5', t: ['دیتاسنتر، مجازی‌سازی و پشتیبان‌گیری', 'Rechenzentrum, Virtualisierung und Backup', 'Data centre, virtualisation and backup'],
    lead: ['جایی که سرورها اجرا می‌شوند و داده‌ها نجات پیدا می‌کنند: Proxmox، VMware، Veeam، پایش و اتاق سرور.', 'Wo Server laufen und Daten gerettet werden: Proxmox, VMware, Veeam, Monitoring und Serverraum.', 'Where servers run and data is rescued: Proxmox, VMware, Veeam, monitoring and the server room.'],
-   roles: ['admin', 'fisi'],
+   roles: ['admin', 'fisi', 'net'],
    ch: [
     { h: 'k-infra', t: ['مجازی‌سازی، پشتیبان‌گیری و پایش', 'Virtualisierung, Backup und Monitoring', 'Virtualisation, backup and monitoring'], g: ['ماشین مجازی می‌سازی، پشتیبان می‌گیری، بازگردانی را آزمایش و سرویس‌ها را پایش می‌کنی.', 'Du betreibst VMs, sicherst, testest die Wiederherstellung und überwachst Dienste.', 'You run VMs, back up, test restores and monitor services.'] },
     { h: 'room', t: ['برنامه‌ریزی اتاق سرور', 'Serverraum planen', 'Planning the server room'], g: ['رک، برق، UPS و خنک‌سازی را حساب و برنامه‌ریزی می‌کنی.', 'Du berechnest und planst Rack, Strom, USV und Kühlung.', 'You calculate and plan rack, power, UPS and cooling.'] }
    ] },
  { id: 'p6', t: ['عملیات IT و امنیت', 'IT-Betrieb und Sicherheit', 'IT operations and security'],
    lead: ['روال‌های حرفه‌ای که شرکت‌ها انتظار دارند: ITIL، نوشتن تیکت، امنیت کلاینت، قانون، رخداد امنیتی، ایمیل، چاپگر و تلفن.', 'Die professionellen Abläufe, die Firmen erwarten: ITIL, Tickets, Endpunktsicherheit, Recht, Sicherheitsvorfälle, E-Mail, Druck und Telefonie.', 'The professional routines companies expect: ITIL, tickets, endpoint security, law, security incidents, email, printing and telephony.'],
-   roles: ['helpdesk', 'admin', 'fisi'],
+   roles: ['helpdesk', 'admin', 'fisi', 'net'],
    ch: [
     { h: 'k-ops', t: ['عملیات، امنیت و سرویس‌ها', 'Betrieb, Sicherheit und Dienste', 'Operations, security and services'], g: ['طبق ITIL کار می‌کنی، رخداد امنیتی را درست مدیریت و ایمیل، چاپ و VoIP را عیب‌یابی می‌کنی.', 'Du arbeitest nach ITIL, behandelst Sicherheitsvorfälle richtig und behebst Fehler bei E-Mail, Druck und VoIP.', 'You work by ITIL, handle security incidents correctly and fix email, print and VoIP problems.'] }
    ] },
@@ -69,13 +69,13 @@ const PARTS = [
    ] },
  { id: 'p8', t: ['شغل، زبان و آزمون', 'Beruf, Sprache und Prüfung', 'Career, language and exam'],
    lead: ['از دانش به استخدام: انتظار واقعی شرکت‌ها، مصاحبه، آلمانی کاری و آزمون نهایی Fachinformatiker.', 'Vom Wissen zur Anstellung: echte Erwartungen der Firmen, Bewerbung, Deutsch im Job und Abschlussprüfung Fachinformatiker.', 'From knowledge to a job: what employers really expect, interviews, German at work and the Fachinformatiker final exam.'],
-   roles: ['helpdesk', 'onsite', 'admin', 'fisi'],
+   roles: ['helpdesk', 'onsite', 'admin', 'fisi', 'net'],
    ch: [
     { h: 'jobs', t: ['انتظار شرکت‌ها', 'Was Firmen erwarten', 'What employers expect'], g: ['می‌دانی هر شغل دقیقاً چه مهارتی می‌خواهد و چه چیزی هنوز کم داری.', 'Du weißt, welche Fähigkeiten jede Rolle verlangt und was dir noch fehlt.', 'You know what each role requires and what you still lack.'] },
     { h: 'interview', t: ['درخواست کار و مصاحبه', 'Bewerbung und Interview', 'Applying and interviews'], g: ['رزومه را هدفمند می‌نویسی و به پرسش‌های فنی و رفتاری جواب روشن می‌دهی.', 'Du schreibst gezielte Bewerbungen und beantwortest Fach- und Verhaltensfragen klar.', 'You write targeted applications and answer technical and behavioural questions clearly.'] },
     { h: 'deutsch', t: ['آلمانی در محیط کار IT', 'Deutsch im IT-Job', 'German for IT jobs'], g: ['با کاربر، همکار و مدیر به آلمانی روشن و مؤدبانه حرف می‌زنی و می‌نویسی.', 'Du sprichst und schreibst klar und höflich mit Benutzern, Kollegen und Vorgesetzten.', 'You speak and write clearly and politely with users, colleagues and managers.'] },
     { h: 'languages', t: ['زبان IT به انگلیسی و آلمانی', 'IT-Sprachen Englisch und Deutsch', 'IT language in English and German'], g: ['اصطلاحات هر درس را به انگلیسی و آلمانی به کار می‌بری.', 'Du verwendest die Fachbegriffe jeder Lektion auf Englisch und Deutsch.', 'You use each lesson’s terms in English and German.'] },
-    { h: 'k-ap', t: ['آزمون نهایی Fachinformatiker', 'Abschlussprüfung Fachinformatiker', 'Fachinformatiker final exam'], g: ['ساختار آزمون، حساب‌ها، WiSo و پروژهٔ آزمون را می‌شناسی.', 'Du kennst Aufbau, Rechenaufgaben, WiSo und das Prüfungsprojekt.', 'You know the structure, calculations, WiSo and the exam project.'] },
+    { h: 'k-ap', t: ['آزمون نهایی Fachinformatiker (آلمان)', 'Abschlussprüfung Fachinformatiker (DE)', 'Fachinformatiker final exam (Germany)'], g: ['ساختار آزمون، حساب‌ها، WiSo و پروژهٔ آزمون را می‌شناسی. در اتریش آزمون هم‌ارز، LAP فناوری اطلاعات است؛ در «انتظار شرکت‌ها» توضیح داده شده.', 'Du kennst Aufbau, Rechenaufgaben, WiSo und das Prüfungsprojekt. In Österreich ist der vergleichbare Abschluss die Lehrabschlussprüfung Informationstechnologie; siehe „Was Firmen erwarten“.', 'You know the structure, calculations, WiSo and the exam project. In Austria the comparable qualification is the IT apprenticeship exam (LAP); see "What employers expect".'] },
     { h: 'apquiz', t: ['آزمون تمرینی AP', 'AP-Übungsquiz', 'AP practice quiz'], g: ['پرسش‌های شبیه آزمون را با زمان تمرین می‌کنی.', 'Du übst prüfungsnahe Fragen mit Zeitlimit.', 'You practise exam-like questions against the clock.'] },
     { h: 'career', t: ['آمادگی شغلی', 'Berufsvorbereitung', 'Job preparation'], g: ['تمرین‌هایت را به شواهد قابل‌نمایش برای کارفرما تبدیل می‌کنی.', 'Du machst aus deinen Übungen vorzeigbare Nachweise für Arbeitgeber.', 'You turn your exercises into evidence you can show employers.'] }
    ] }
@@ -87,7 +87,7 @@ const APPENDIX = [
  { h: 'assistant', icon: 'terminal', t: ['مربی KI', 'KI-Tutor', 'AI tutor'] },
  { h: 'desktop', icon: 'down', t: ['نصب و به‌روزرسانی', 'Installieren und Updates', 'Install and updates'] }
 ];
-const ROLES = { helpdesk: ['هلپ‌دسک', 'Helpdesk', 'Helpdesk'], onsite: ['تکنسین حضوری', 'Vor-Ort-Technik', 'On-site technician'], admin: ['ادمین سیستم', 'Systemadministration', 'System administrator'], fisi: ['آزمون FISI', 'FISI-Prüfung', 'FISI exam'] };
+const ROLES = { helpdesk: ['هلپ‌دسک', 'Helpdesk', 'Helpdesk'], onsite: ['تکنسین حضوری', 'Vor-Ort-Technik', 'On-site technician'], admin: ['ادمین سیستم', 'Systemadministration', 'System administrator'], fisi: ['آزمون FISI', 'FISI-Prüfung', 'FISI exam'], net: ['تکنسین شبکه', 'Netzwerktechnik', 'Network technician'] };
 
 const TX = {
  fa: { toc: 'فهرست مطالب', fix: 'حل یک مشکل', cont: 'ادامهٔ یادگیری', part: 'بخش', appx: 'پیوست‌ها', appxLead: 'برای جست‌وجو و مراجعهٔ سریع، نه برای خواندن پشت سر هم.',
@@ -232,9 +232,10 @@ const MOD_AREA = {
  'tools-sysinternals': 'client', 'tools-remote': 'fern', 'tools-usbkit': 'hardware', 'tools-online-web': 'mail',
  'ops-itil': 'betrieb', 'ops-ticket': 'betrieb', 'sec-endpoint': 'sicher', 'sec-compliance': 'sicher', 'sec-incident': 'sicher', 'svc-mail': 'mail', 'svc-print': 'druck', 'svc-voip': 'netz',
  'mon-checkmk': 'betrieb', 'mon-snmp': 'betrieb', 'mod-siem': 'sicher', 'mod-zt': 'sicher',
+ 'plan-sicherheit': 'sicher', 'plan-recht': 'betrieb', 'plan-kosten': 'betrieb', 'plan-projekt': 'betrieb', 'plan-zeit': 'betrieb', 'plan-umsetzung': 'betrieb', 'plan-verfuegbarkeit': 'virt',
  'ws-auth': 'konto', 'ws-hybrid': 'konto', 'ws-pki': 'sicher', 'ws-hyperv': 'virt', 'ws-remote': 'fern', 'ws-monitor': 'betrieb', 'ws-security': 'sicher'
 };
-const COURSE_AREA = { 'k-cli': 'client', 'k-net': 'netz', 'k-m365': 'mail', 'k-tools': 'netz', 'k-ccna': 'netz', 'k-infra': 'virt', 'k-ops': 'betrieb', 'k-dev': 'betrieb', 'k-modern': 'betrieb', wscourse: 'server', lxcourse: 'linux' };
+const COURSE_AREA = { 'k-cli': 'client', 'k-net': 'netz', 'k-m365': 'mail', 'k-tools': 'netz', 'k-ccna': 'netz', 'k-infra': 'virt', 'k-ops': 'betrieb', 'k-dev': 'betrieb', 'k-modern': 'betrieb', 'k-plan': 'netz', wscourse: 'server', lxcourse: 'linux' };
 const CASE_AREA = { password: 'konto', mfa: 'konto', onboarding: 'konto', offboarding: 'konto', outlook: 'mail', sharedmailbox: 'mail', 'teams-av': 'mail', onedrive: 'mail', ndr: 'mail', nonet: 'netz', netdrive: 'server', vpn: 'fern', wlan: 'netz', slowpc: 'client', bitlocker: 'client', dock: 'hardware', software: 'client', printer: 'druck', phishing: 'sicher', major: 'betrieb' };
 const CASE_BY_AREA = { account: 'konto', m365: 'mail', onboarding: 'konto', network: 'netz', device: 'client', print: 'druck', security: 'sicher', process: 'betrieb' };
 
@@ -243,7 +244,7 @@ function fixIndex() {
  const out = { cases: [], quick: [] };
  (LAB().workCases || []).forEach(c => { const d = c[L()] || c.de; out.cases.push({ area: c.fixArea || CASE_AREA[c.id] || CASE_BY_AREA[c.area] || 'betrieb', id: c.id, t: d.t, msg: d.msg, prio: c.prio, done: caseDone(c.id), text: [d.t, d.msg, d.fix, (d.steps || []).join(' ')].join(' ') }); });
  Object.keys(COURSE).forEach(h => {
-  if (h === 'k-ap' || h === 'k-plan') return;
+  if (h === 'k-ap') return;
   const C = window[COURSE[h]]; if (!C || !C.modules) return;
   const ch = chapterOf(h);
   C.modules.forEach((m, k) => (m.trouble || []).forEach(tr => { if (!Array.isArray(tr) || tr.length < 2) return; const sym = pick(tr[0]), fix = pick(tr[1]); if (!sym) return; out.quick.push({ area: MOD_AREA[m.id] || COURSE_AREA[h], sym, fix, href: '#' + h + '/' + m.id, where: (ch.no ? ch.no + num('.' + (k + 1)) + ' · ' : '') + pick(m.title), text: sym + ' ' + fix + ' ' + pick(m.title) }); }));

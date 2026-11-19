@@ -394,3 +394,25 @@ a.bk-next:hover{border-color:#d4772c}
 .bk .bk-none{padding:20px;text-align:center;font-size:15px}
 @media(max-width:900px){.bk-rule ol{grid-template-columns:repeat(2,minmax(0,1fr))}.bk-steps{grid-template-columns:1fr 1fr}.bk-two{grid-template-columns:1fr}}
 @media(max-width:700px){.bk-chl{grid-template-columns:40px minmax(0,1fr)}.bk-meta{grid-column:2;text-align:start}.bk-secs{padding-inline-start:8px}.bk-head h1{font-size:28px}.bk-pno{width:44px;height:44px;font-size:22px}.bk-steps{grid-template-columns:1fr}.bk-rule ol{grid-template-columns:1fr}}
+
+/* iPhone und iPad */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@supports (-webkit-touch-callout:none){input,select,textarea{font-size:max(16px,1em)}}
+#ios-install{position:fixed;inset:auto 0 0 0;z-index:200;padding:12px;padding-bottom:max(12px,env(safe-area-inset-bottom));display:flex;justify-content:center;pointer-events:none}
+.ios-sheet{pointer-events:auto;display:flex;gap:14px;align-items:flex-start;width:min(560px,100%);background:#fff;border:1px solid var(--line);border-top:4px solid #d4772c;border-radius:16px;box-shadow:0 18px 50px #0f234033;padding:16px 16px 14px}
+.ios-sheet img{border-radius:12px;flex:none}
+.ios-body{min-width:0}
+.ios-body h2{font-size:17px;color:#0f2340;margin:0 0 4px}
+.ios .ios-body p,.ios-body p{font-size:14.5px;line-height:1.7;margin:0 0 8px}
+.ios-body ol{margin:0 0 10px;padding-inline-start:20px;display:grid;gap:6px}
+.ios-body li{font-size:14.5px;line-height:1.7;color:#24363b}
+.ios-body li svg,.ios-steps svg{width:18px;height:18px;vertical-align:-3px;color:#2460e8}
+.ios-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ios-actions .btn{font-size:14.5px;padding:8px 14px}
+.ios-steps{margin:8px 0 12px;padding-inline-start:20px;display:grid;gap:6px}
+.ios-steps li{font-size:15px;line-height:1.75}
+.ios-card .btn{margin-top:10px}
+@media print{#ios-install{display:none!important}}
+.pv-why .pv-method{margin-top:10px;font-size:15px}.pv-why .pv-method a{font-weight:600}
+.pv-go{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 4px}.pv-go span{font-weight:600;color:var(--w-soft,#4a6268);margin-inline-end:4px}.pv-go a{display:inline-block;padding:6px 12px;border:1px solid var(--w-line,#cfd8e3);border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}.pv-go a:hover,.pv-go a:focus-visible{background:var(--w-mist,#eef3f8)}
+@media print{.pv-go{display:none}}

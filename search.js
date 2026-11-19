@@ -14,7 +14,7 @@ const T = k => ({
   hits: ['نتیجه', 'Treffer', 'results']
 })[k][I()];
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const norm = s => String(s || '').toLowerCase().replace(/[يى]/g, 'ی').replace(/ك/g, 'ک').replace(/‌/g, ' ').replace(/[ًٌٍَُِّْ]/g, '');
+const norm = s => String(s || '').toLowerCase().replace(/[يى]/g, 'ی').replace(/ك/g, 'ک').replace(/[‌\-–]/g, ' ').replace(/[ًٌٍَُِّْ]/g, '');
 
 // Index je Sprache, einmal aufgebaut
 const cache = {};
@@ -47,6 +47,21 @@ const index = () => {
     const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1]];
     list.push({ hash: 'support/' + c.id, title: d.t, course: ['مشکلات روزمرهٔ پشتیبانی', 'Alltagsfälle im Support', 'Everyday support cases'][i], parts: parts.map(([t, w]) => [t, norm(t), w]) });
   });
+  // Wissenskapitel „Was Firmen erwarten“ (z. B. ITIL, Österreich)
+  (((window.LAB && window.LAB.workJobs) || {}).topics || []).forEach(t => {
+    const d = t[['fa', 'de', 'en'][i]] || t.de;
+    if (!d) return;
+    const txt = String(d.html || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    const parts = [[d.t, 6], [txt, 1]];
+    list.push({ hash: 'jobs/' + t.id, title: d.t, course: ['انتظار شرکت‌ها', 'Was Firmen erwarten', 'What employers expect'][i], parts: parts.map(([x, w]) => [x, norm(x), w]) });
+  });
+  // Projektmappen (Netzplanung): jedes Dokument einzeln auffindbar
+  const flat = b => [b.h, b.p, b.note, b.cap, b.pre, (b.ul || []).join(' '), (b.ol || []).join(' '), (b.t || []).join(' '), (b.r || []).map(r => r.join(' ')).join(' '), (b.kv || []).map(r => r.join(' ')).join(' ')].filter(Boolean).join(' \n ');
+  (window.ArefiPlanProjects || []).forEach(p => (p.docs || []).forEach(d => {
+    const tt = Array.isArray(d.t) ? d.t[i] : d.title;
+    const parts = [[tt + ' ' + (d.title || ''), 6], [Array.isArray(d.why) ? d.why[i] : '', 2], [(d.body || []).map(flat).join(' \n '), 1]];
+    list.push({ hash: 'k-plan/' + p.id + '--' + d.id, title: tt, course: Array.isArray(p.title) ? p.title[i] : '', parts: parts.map(([t, w]) => [t, norm(t), w]) });
+  }));
   return (cache[i] = list);
 };
 const search = q => {

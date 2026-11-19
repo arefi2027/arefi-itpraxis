@@ -38,6 +38,7 @@ function linkFor(ref) {
  if (kind === 'case') { const c = caseById(id); return c ? `<a class="text-link" href="#support/${id}">${E(L(c).t)}</a>` : ''; }
  if (kind === 'mod') return `<a class="text-link" href="#mod/${id}">${E(lessonTitle(id))}</a>`;
  if (kind === 'topic') { const t = (J.topics || []).find(x => x.id === id); return t ? `<a class="text-link" href="#jobs/${id}">${E(L(t).t)}</a>` : ''; }
+ if (kind === 'kurs') { const x = window.ArefiBook && window.ArefiBook.modRef(id); return x ? `<a class="text-link" href="${x.href}">${E((x.no ? x.no + ' ' : '') + x.t)}</a>` : ''; }
  if (kind === 'page') return `<a class="text-link" href="#${id}">${E(T('انتظار شرکت‌ها', 'Was Firmen erwarten', 'What employers expect'))}</a>`;
  return '';
 }
@@ -96,7 +97,7 @@ function supportPage(r) {
 function role() { const w = ws(); return (J.roles || []).find(r => r.id === w.role) || J.roles[0]; }
 function rateLabel(v) { return [T('هنوز نه', 'Noch nicht', 'Not yet'), T('با کمک', 'Mit Hilfe', 'With help'), T('مستقل', 'Selbstständig', 'Independently')][v]; }
 function skillLinks(s) {
- const refs = [...(s.lessons || []).map(id => 'mod:' + id), ...(s.cases || []).map(id => 'case:' + id)];
+ const refs = [...(s.kurs || []).map(id => 'kurs:' + id), ...(s.lessons || []).map(id => 'mod:' + id), ...(s.cases || []).map(id => 'case:' + id)];
  if (s.topic) refs.push('topic:' + s.topic);
  if (s.gap) refs.push('topic:' + s.gap);
  return refs.map(linkFor).filter(Boolean).slice(0, 4).join(' · ');
@@ -129,9 +130,9 @@ function topicCard(t, open) {
 }
 function jobsPage(r) {
  const w = ws(), rr = role(), d = L(rr);
- return `<div class="eyebrow">${T('بر اساس آگهی‌های شغلی امروز آلمان', 'Auf Grundlage aktueller Stellenanzeigen in Deutschland', 'Based on current job ads in Germany')}</div>
+ return `<div class="eyebrow">${T('بر اساس آگهی‌های شغلی امروز آلمان و اتریش', 'Auf Grundlage aktueller Stellenanzeigen in Deutschland und Österreich', 'Based on current job ads in Germany and Austria')}</div>
 <h1>${T('شرکت‌ها از تکنسین IT چه انتظاری دارند', 'Was Firmen von IT-Technikern erwarten', 'What companies expect from IT technicians')}</h1>
-<p class="page-description">${T('آگهی‌های پشتیبانی و مدیریت سیستم تقریباً همیشه این‌ها را می‌خواهند: Windows 10/11، Active Directory، Microsoft 365 با Entra ID و Intune، شبکه (TCP/IP، DNS، DHCP)، سامانهٔ تیکت و ITIL، آگاهی امنیتی، مستندسازی و ارتباط خوب به آلمانی و انگلیسی. نقش خودت را انتخاب کن و صادقانه بسنج کجا هستی.', 'Anzeigen für Support und Systemadministration verlangen fast immer: Windows 10/11, Active Directory, Microsoft 365 mit Entra ID und Intune, Netzwerk (TCP/IP, DNS, DHCP), Ticketsystem und ITIL, Sicherheitsbewusstsein, Dokumentation und gute Kommunikation auf Deutsch und Englisch. Wähle deine Zielrolle und schätze ehrlich ein, wo du stehst.', 'Support and system administration ads almost always ask for: Windows 10/11, Active Directory, Microsoft 365 with Entra ID and Intune, networking (TCP/IP, DNS, DHCP), ticket system and ITIL, security awareness, documentation and good communication in German and English. Pick your target role and rate honestly where you stand.')}</p>
+<p class="page-description">${T('آگهی‌های پشتیبانی و مدیریت سیستم تقریباً همیشه این‌ها را می‌خواهند: Windows 10/11، Active Directory، Microsoft 365 با Entra ID و Intune، شبکه (TCP/IP، DNS، DHCP)، سامانهٔ تیکت و ITIL، آگاهی امنیتی، مستندسازی و ارتباط خوب به آلمانی و انگلیسی. آگهی‌های شبکه افزون بر این سوئیچینگ و VLAN، Firewall و VPN، WLAN، اندازه‌گیری با ابزارها و طراحی و مستندسازی شبکه را می‌خواهند. نقش خودت را انتخاب کن و صادقانه بسنج کجا هستی.', 'Anzeigen für Support und Systemadministration verlangen fast immer: Windows 10/11, Active Directory, Microsoft 365 mit Entra ID und Intune, Netzwerk (TCP/IP, DNS, DHCP), Ticketsystem und ITIL, Sicherheitsbewusstsein, Dokumentation und gute Kommunikation auf Deutsch und Englisch. Netzwerkstellen verlangen zusätzlich Switching und VLANs, Firewall und VPN, WLAN, Messen mit Werkzeugen sowie Netzplanung und Dokumentation. Wähle deine Zielrolle und schätze ehrlich ein, wo du stehst.', 'Support and system administration ads almost always ask for: Windows 10/11, Active Directory, Microsoft 365 with Entra ID and Intune, networking (TCP/IP, DNS, DHCP), ticket system and ITIL, security awareness, documentation and good communication in German and English. Network jobs additionally ask for switching and VLANs, firewall and VPN, Wi-Fi, measuring with tools, and network planning and documentation. Pick your target role and rate honestly where you stand.')}</p>
 <div class="lesson-modes work-roles">${J.roles.map(x => `<button type="button" data-work-role="${x.id}" class="${rr.id === x.id ? 'active' : ''}" aria-pressed="${rr.id === x.id}">${E(L(x).t)}</button>`).join('')}</div>
 <div class="work-role-grid">
 <section class="card"><h2>${E(d.t)}</h2><p>${E(d.sum)}</p><h3>${T('روز کاری معمول', 'Typischer Arbeitstag', 'Typical working day')}</h3><ul>${d.day.map(x => `<li>${E(x)}</li>`).join('')}</ul></section>

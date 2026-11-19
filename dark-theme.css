@@ -298,6 +298,13 @@ html[data-theme=dark] .bk-case-go{color:#9cded6}
 html[data-theme=dark] .bk-quick details{background:#151f2e}
 html[data-theme=dark] .bk-quick summary::after{color:#deb99c}
 html[data-theme=dark] .bk .bk-quick details p{color:#adc5cd}
+html[data-theme=dark] .ios-sheet{background:#151f2e}
+html[data-theme=dark] .ios-body h2{color:#c9d8ed}
+html[data-theme=dark] .ios-body li{color:#d3e0e4}
+html[data-theme=dark] .ios-body li svg,html[data-theme=dark] .ios-steps svg{color:#9cb0de}
+html[data-theme=dark] .pv-go span{color:var(--w-soft,#b2c3c8)}
+html[data-theme=dark] .pv-go a{border:1px solid var(--w-line,#2b3b50)}
+html[data-theme=dark] .pv-go a:hover,html[data-theme=dark] .pv-go a:focus-visible{background:var(--w-mist,#1d262e)}
 /* hardware-library.css */
 html[data-theme=dark] .hl-notice{border:1px solid #2b4850;background:var(--surface,#1e2a2c)}
 html[data-theme=dark] .hl-filters input{border:1px solid #2b4950;background:var(--card,#151f2e);color:var(--ink,#cce2ea)}

@@ -92,14 +92,14 @@ PR.push({
         ['L01', '48 Anschlüsse Cat 6A, Klasse EA, sternförmig zum Technikraum, nach DIN EN 50173/50174', '48/48 Permanent-Link-Messungen bestanden, Messprotokoll liegt vor'],
         ['L02', '3 Wi-Fi-7-Access-Points (PoE+), SSIDs „BP-Intern“ (WPA3, Schlüssel nur per Intune-Profil auf Firmengeräten) und „BP-Gast“ (Captive Portal, Client-Isolation)', 'Signal ≥ −67 dBm an allen 24 Messpunkten'],
         ['L03', 'Glasfaser 500/200 Mbit/s plus 5G/LTE-Backup, automatischer Failover in der Firewall', 'Umschaltzeit < 60 s, Test durch Trennen der Glasfaser'],
-        ['L04', '7 VLANs, Firewall-Matrix (Dokument D14), Gast/IoT nur Internet', 'Zugriffstest aus VLAN 50/60 auf 10.10.20.10 schlägt fehl'],
+        ['L04', '7 VLANs, Firewall-Matrix (Dokument D15), Gast/IoT nur Internet', 'Zugriffstest aus VLAN 50/60 auf 10.10.20.10 schlägt fehl'],
         ['L05', 'Remote-Access-VPN mit MFA (bevorzugt Anmeldung über Microsoft Entra ID, sonst TOTP der Firewall)', '3 Testnutzer verbinden sich erfolgreich, ohne MFA keine Verbindung'],
         ['L06', 'NAS-Snapshots stündlich, Sicherung nachts auf zweites Ziel außer Haus (verschlüsselt)', 'Testwiederherstellung einer Datei und eines Ordners erfolgreich'],
         ['L07', 'Voice-VLAN 30, QoS DSCP EF (46) priorisiert', 'Testtelefonat während 400-Mbit/s-Download ohne Aussetzer'],
         ['L08', 'USV 1.500 VA im Rack, NAS fährt bei Akku < 40 % geordnet herunter', 'Netztrennung 10 min ohne Ausfall, Shutdown-Signal getestet'],
         ['L09', '2 × 24-Port-PoE-Switches, 10G-Uplinks, Reserve 30 % Ports und PoE', 'Portbelegung ≤ 70 % bei Abnahme'],
         ['L10', 'Cloud-Verwaltung bzw. Fernzugang nur über VPN aus Admin-Netz', 'Admin-Zugang nur aus VLAN 99/VPN-Admin möglich'],
-        ['L11', 'Kostenplan D18', 'Abrechnung ≤ 25.000 € netto zzgl. genehmigter Änderungen']
+        ['L11', 'Kostenplan D19', 'Abrechnung ≤ 25.000 € netto zzgl. genehmigter Änderungen']
       ] }
     ] },
 
@@ -145,11 +145,11 @@ PR.push({
         ['Abnahme', 'A', 'R', 'R', 'C', 'C']
       ], cap: 'R = durchführend, A = verantwortlich/entscheidet, C = konsultiert, I = informiert' },
       { h: '2 Kommunikation' },
-      { ul: ['Kick-off: KW 2, Montag, 60 min, alle Beteiligten.', 'Statusbericht: wöchentlich freitags per E-Mail (Vorlage D23).', 'Lenkungsrunde: 14-tägig, 30 min, Geschäftsführung + Projektleitung.', 'Eskalation: Projektleitung → Geschäftsführung Auftragnehmer → Geschäftsführung Kunde, jeweils innerhalb von 24 h.'] },
+      { ul: ['Kick-off: KW 2, Montag, 60 min, alle Beteiligten.', 'Statusbericht: wöchentlich freitags per E-Mail (Vorlage D24).', 'Lenkungsrunde: 14-tägig, 30 min, Geschäftsführung + Projektleitung.', 'Eskalation: Projektleitung → Geschäftsführung Auftragnehmer → Geschäftsführung Kunde, jeweils innerhalb von 24 h.'] },
       { h: '3 Änderungsverfahren' },
-      { ol: ['Änderungswunsch schriftlich (Vorlage D24).', 'Projektleitung bewertet Kosten, Termin, Risiko in max. 2 Arbeitstagen.', 'Geschäftsführung Kunde genehmigt oder lehnt ab.', 'Erst nach Genehmigung umsetzen; Nachtrag im Kostenplan.'] },
+      { ol: ['Änderungswunsch schriftlich (Vorlage D25).', 'Projektleitung bewertet Kosten, Termin, Risiko in max. 2 Arbeitstagen.', 'Geschäftsführung Kunde genehmigt oder lehnt ab.', 'Erst nach Genehmigung umsetzen; Nachtrag im Kostenplan.'] },
       { h: '4 Qualität, Ablage, Werkzeuge' },
-      { ul: ['Abnahmekriterien siehe Pflichtenheft D05, Testplan D22.', 'Ablage: Projektordner im Teams-Kanal „BP-NET-2027“, Versionierung im Dateinamen (v1.0, v1.1).', 'Zugangsdaten nur im Kennwortsafe, niemals in E-Mails.', 'Werkzeuge: draw.io (Pläne), GanttProject (Termine), Messgerät des Fachbetriebs.'] }
+      { ul: ['Abnahmekriterien siehe Pflichtenheft D05, Testplan D23.', 'Ablage: Projektordner im Teams-Kanal „BP-NET-2027“, Versionierung im Dateinamen (v1.0, v1.1).', 'Zugangsdaten nur im Kennwortsafe, niemals in E-Mails.', 'Werkzeuge: draw.io (Pläne), GanttProject (Termine), Messgerät des Fachbetriebs.'] }
     ] },
 
   { id: 'psp', ph: 'plan', t: ['ساختار شکست کار (PSP)', 'Projektstrukturplan', 'Work breakdown structure'], title: 'Projektstrukturplan (PSP, phasenorientiert)',
@@ -250,7 +250,28 @@ PR.push({
       { kv: [['DHCP', 'Firewall je VLAN; Lease 8 h Clients, 1 h Gäste; Reservierungen für Drucker'], ['DNS', 'Firewall als Resolver; interne Zone intern.brandt-partner.de (Subdomain der eigenen Domain, nicht .local)'], ['NTP', 'Firewall synchronisiert mit ptbtime1.ptb.de und ptbtime2.ptb.de, verteilt Zeit an alle VLANs'], ['IPv6', 'Router Advertisements je VLAN, SLAAC, Firewall filtert IPv6 genauso wie IPv4'], ['Reserve', 'VLAN 70–89 frei für Erweiterungen (z. B. Kameras, Labor)']] }
     ] },
 
-  { id: 'sicherheit', ph: 'plan', t: ['منطقه‌های امنیتی و ماتریس فایروال', 'Sicherheitszonen und Firewall-Matrix', 'Security zones and firewall matrix'], title: 'Sicherheitszonen und Firewall-Matrix',
+  { id: 'erreichbarkeit', ph: 'plan',
+  t: ['اتصال و دسترسی از بیرون', 'Erreichbarkeit: Internet, VPN, Cloud', 'Reachability: internet, VPN, cloud'],
+  title: 'Erreichbarkeit: Internet, Home-Office-VPN, Cloud-Dienste',
+  why: ['برای هر ارتباط بنویس از کدام مسیر می‌رود، اگر قطع شد مسیر دوم چیست و چه کسی اجازه دارد. در این دفتر هیچ سروری از اینترنت در دسترس نیست؛ همه چیز از بیرون فقط با VPN.', 'Für jede Verbindung steht fest, welchen Weg sie nimmt, was bei Ausfall der Ersatzweg ist und wer sie nutzen darf. In diesem Büro ist kein Server aus dem Internet erreichbar; von außen geht alles nur per VPN.', 'For every connection you note its path, the fallback if it fails and who may use it. In this office no server is reachable from the internet; from outside everything goes through VPN.'],
+  body: [
+    { keep: 1, t: ['Verbindung', 'Hauptweg', 'Ersatzweg', 'Zugang und Schutz'], r: [
+      ['Büro → Internet', 'WAN1 Glasfaser 500/200', 'WAN2 LTE/5G, automatischer Failover < 60 s (L03)', 'Web-Schutz und IPS auf der Firewall'],
+      ['Home-Office → Firmennetz', 'Remote-Access-VPN mit MFA (L05), Full Tunnel', 'zweites VPN-Ziel nur, wenn der LTE-Tarif eine öffentliche IP hat', 'Pool VPN-Nutzer, Regeln wie Clients'],
+      ['Administration von außen', 'VPN-Admin (L10)', '–', 'nur dieser Pool erreicht MGMT (VLAN 99)'],
+      ['Cloud-Dienste (Microsoft 365, Lizenzaktivierung)', 'direkt über WAN1', 'WAN2', 'Firewall-Regeln nach Zieldiensten'],
+      ['Cloud-Telefonie (SIP-TLS)', 'WAN1 mit Priorisierung (EF)', 'WAN2', 'VOICE-VLAN 30'],
+      ['NAS-Daten von unterwegs', 'nur über VPN', '–', 'keine Portfreigabe, keine Hersteller-Cloud-Relays']
+    ] },
+    { h: 'Namen und Adressen' },
+    { kv: [
+      ['Öffentlich', 'vpn.brandt-partner.de zeigt auf die feste IPv4-Adresse von WAN1; kein weiterer öffentlicher Eintrag'],
+      ['Intern', 'Zone intern.brandt-partner.de auf der Firewall (siehe VLAN- und IP-Plan)'],
+      ['Stolperstein LTE', 'Viele Mobilfunktarife liefern nur private Adressen hinter Carrier-NAT. Dann ist das VPN bei Glasfaserausfall von außen nicht erreichbar – im Pflichtenheft als bekannte Einschränkung festgehalten oder Tarif mit öffentlicher IP wählen.']
+    ] }
+  ] },
+
+{ id: 'sicherheit', ph: 'plan', t: ['منطقه‌های امنیتی و ماتریس فایروال', 'Sicherheitszonen und Firewall-Matrix', 'Security zones and firewall matrix'], title: 'Sicherheitszonen und Firewall-Matrix',
     why: ['ماتریس فایروال روشن می‌کند چه کسی با چه کسی و با کدام پورت حق ارتباط دارد. پیش‌فرض «ممنوع» است؛ هر اجازه باید دلیل و مالک داشته باشد. این‌ها اصول بخش‌های NET.1.1 و NET.3.2 در IT-Grundschutz هم هست.', 'Die Firewall-Matrix klärt, wer mit wem über welche Dienste sprechen darf. Standard ist „verboten“; jede Freigabe braucht Begründung und Eigentümer. Das entspricht den Grundsätzen der Grundschutz-Bausteine NET.1.1 und NET.3.2.', 'The firewall matrix states who may talk to whom on which services. The default is “deny”; every permission needs a reason and an owner, in line with IT-Grundschutz NET.1.1 and NET.3.2.'],
     body: [
       { keep: 1, t: ['Von \\ Nach', 'Internet', 'SERVER (20)', 'PRINT (40)', 'VOICE (30)', 'MGMT (99)'], r: [
@@ -377,7 +398,7 @@ PR.push({
   { id: 'angebot', ph: 'plan', t: ['پیشنهاد قیمت و محاسبه', 'Angebot und Kalkulation', 'Quotation and calculation'], title: 'Angebot (Auszug) und Kalkulation',
     why: ['پیشنهاد قیمت باید روشن بگوید چه چیزی شامل است و چه نیست، اعتبار تا کی است و پرداخت چطور است. محاسبه پشت آن با هزینه‌ها، سربار و سود قیمت را قابل‌دفاع می‌کند.', 'Ein Angebot sagt klar, was enthalten ist und was nicht, wie lange es gilt und wie bezahlt wird. Die Kalkulation dahinter (Kosten, Gemeinkosten, Gewinn) macht den Preis begründbar.', 'A quotation states clearly what is and is not included, how long it is valid and how payment works. The calculation behind it (costs, overhead, profit) makes the price defensible.'],
     body: [
-      { kv: [['Angebotsnummer', 'A-2027-0012'], ['Gültig bis', '31.01.2027'], ['Leistung', 'Netzwerk-Neuaufbau laut Pflichtenheft v1.0 als Werkleistung'], ['Preis', '20.739,20 € netto zzgl. USt. (Positionen siehe D18)'], ['Zahlung', '40 % bei Auftrag, 60 % nach Abnahme, 14 Tage netto'], ['Nicht enthalten', 'Elektroinstallation 230 V, Möbelumzug, Endgeräte, Provider-Entgelte'], ['Änderungen', 'nach schriftlichem Änderungsantrag zu 95 €/h bzw. Materialpreis']] },
+      { kv: [['Angebotsnummer', 'A-2027-0012'], ['Gültig bis', '31.01.2027'], ['Leistung', 'Netzwerk-Neuaufbau laut Pflichtenheft v1.0 als Werkleistung'], ['Preis', '20.739,20 € netto zzgl. USt. (Positionen siehe D19)'], ['Zahlung', '40 % bei Auftrag, 60 % nach Abnahme, 14 Tage netto'], ['Nicht enthalten', 'Elektroinstallation 230 V, Möbelumzug, Endgeräte, Provider-Entgelte'], ['Änderungen', 'nach schriftlichem Änderungsantrag zu 95 €/h bzw. Materialpreis']] },
       { h: 'Kalkulation Dienstleistung (vereinfacht)' },
       { keep: 1, t: ['Posten', 'Rechnung', 'Betrag'], r: [
         ['Personalkosten intern', '64 h × 48 € Kostensatz (PW)', '3.072,00 €'],
@@ -462,7 +483,7 @@ PR.push({
     why: ['با امضای Abnahme کارفرما تأیید می‌کند که کار طبق قرارداد است؛ طبق § 640 BGB به‌خاطر ایراد جزئی نمی‌توان تحویل را رد کرد و پرداخت با تحویل سررسید می‌شود. ایرادها را با مهلت رفع ثبت کن.', 'Mit der Abnahme bestätigt der Auftraggeber die vertragsgemäße Leistung. Nach § 640 BGB kann sie wegen unwesentlicher Mängel nicht verweigert werden; die Vergütung wird mit der Abnahme fällig. Mängel mit Frist festhalten.', 'With acceptance the client confirms the work meets the contract. Under § 640 BGB it cannot be refused for insignificant defects, and payment falls due on acceptance. Record defects with a deadline.'],
     body: [
       { kv: [['Projekt', 'BP-NET-2027, Netzwerk-Neuaufbau'], ['Grundlage', 'Pflichtenheft v1.0, CR-01'], ['Datum/Ort', '18.02.2027, Hafenstraße'], ['Teilnehmende', 'K. Brandt, S. Wagner, Projektleitung NordNetz IT']] },
-      { keep: 1, t: ['Prüfpunkt', 'Ergebnis'], r: [['Abnahmekriterien L01–L11', 'erfüllt (Messprotokoll D25)'], ['Dokumentation übergeben', 'ja (Netzplan, IP-Plan, Firewall-Matrix, Messprotokolle, Betriebshandbuch)'], ['Einweisung', 'ja, 2 h am 17.02. (Büroleitung, 2 Keyuser)'], ['Zugangsdaten', 'im Kennwortsafe des Kunden hinterlegt']] },
+      { keep: 1, t: ['Prüfpunkt', 'Ergebnis'], r: [['Abnahmekriterien L01–L11', 'erfüllt (Messprotokoll D26)'], ['Dokumentation übergeben', 'ja (Netzplan, IP-Plan, Firewall-Matrix, Messprotokolle, Betriebshandbuch)'], ['Einweisung', 'ja, 2 h am 17.02. (Büroleitung, 2 Keyuser)'], ['Zugangsdaten', 'im Kennwortsafe des Kunden hinterlegt']] },
       { t: ['Mangel', 'Einstufung', 'Frist'], r: [['Beschriftung an 2 Dosen (OG 2.07) fehlt', 'unwesentlich', '25.02.2027']] },
       { p: 'Die Leistung wird mit dem oben genannten unwesentlichen Mangel abgenommen. Die Gewährleistungsfrist beginnt mit dem heutigen Tag.' },
       { sig: ['Auftraggeber', 'Auftragnehmer'] }
@@ -482,7 +503,7 @@ PR.push({
         ['Wartungsvertrag', '2 h/Monat, Reaktionszeit 4 h werktags', 'NordNetz IT']
       ] },
       { h: 'Übergebene Unterlagen' },
-      { ul: ['Logischer und physischer Netzplan (draw.io + PDF)', 'VLAN- und IP-Plan, Firewall-Matrix, Portbelegung je Switch', 'Messprotokolle Verkabelung und WLAN', 'Inventar mit Seriennummern, Garantie- und Support-Enddaten', 'Notfallhandbuch-Auszug (D28)'] }
+      { ul: ['Logischer und physischer Netzplan (draw.io + PDF)', 'VLAN- und IP-Plan, Firewall-Matrix, Portbelegung je Switch', 'Messprotokolle Verkabelung und WLAN', 'Inventar mit Seriennummern, Garantie- und Support-Enddaten', 'Notfallhandbuch-Auszug (D29)'] }
     ] },
 
   { id: 'notfall', ph: 'abs', t: ['دفترچهٔ اضطراری', 'Notfallhandbuch (Auszug)', 'Emergency manual (extract)'], title: 'Notfallhandbuch (Auszug)',
@@ -533,7 +554,7 @@ PR.push({
     body: [
       { ol: ['Einleitung: Projektumfeld, Projektziel, Begründung, Schnittstellen, Abgrenzung', 'Projektplanung: Phasen, Zeitplanung (Soll/Ist), Ressourcen, Entwicklungsprozess', 'Analyse: Ist-Analyse, Wirtschaftlichkeitsanalyse (Make-or-Buy, Amortisation), Anforderungen', 'Entwurf: Netzkonzept, VLAN/IP-Plan, Firewall-Matrix, Nutzwertanalyse', 'Implementierung: Konfigurationsschritte (Auszüge, keine Kennwörter)', 'Abnahme und Tests: Testfälle, Ergebnisse, Abnahmeprotokoll', 'Fazit: Soll-Ist-Vergleich, Lessons Learned, Ausblick', 'Anhang: Netzpläne, Testprotokolle, Kundendokumentation, Glossar'] },
       { h: 'Musterabschnitt 3.2 Wirtschaftlichkeitsbetrachtung (Auszug)' },
-      { p: 'Ein Internetausfall stoppt im Ingenieurbüro Cloud-Synchronisation, Telefonie und Lizenzprüfung. Bei 18 Mitarbeitenden und angenommenen internen Kosten von 60 € je Stunde (PW) kostet eine Ausfallstunde rund 1.080 €. Der LTE/5G-Failover senkt die rechnerische Ausfallzeit von 57,7 h auf 14,9 h pro Jahr (vgl. D15). Die vermiedenen Kosten betragen damit theoretisch bis zu 42,8 h × 1.080 € ≈ 46.200 € pro Jahr. Dem stehen 400 € Investition und 180 € Tarifkosten pro Jahr gegenüber; die Maßnahme amortisiert sich daher bereits mit der ersten vermiedenen Ausfallstunde. Annahme: Ein Ausfall betrifft alle Mitarbeitenden vollständig – in der Praxis ist der Effekt kleiner, das Ergebnis bleibt aber eindeutig.' }
+      { p: 'Ein Internetausfall stoppt im Ingenieurbüro Cloud-Synchronisation, Telefonie und Lizenzprüfung. Bei 18 Mitarbeitenden und angenommenen internen Kosten von 60 € je Stunde (PW) kostet eine Ausfallstunde rund 1.080 €. Der LTE/5G-Failover senkt die rechnerische Ausfallzeit von 57,7 h auf 14,9 h pro Jahr (vgl. D16). Die vermiedenen Kosten betragen damit theoretisch bis zu 42,8 h × 1.080 € ≈ 46.200 € pro Jahr. Dem stehen 400 € Investition und 180 € Tarifkosten pro Jahr gegenüber; die Maßnahme amortisiert sich daher bereits mit der ersten vermiedenen Ausfallstunde. Annahme: Ein Ausfall betrifft alle Mitarbeitenden vollständig – in der Praxis ist der Effekt kleiner, das Ergebnis bleibt aber eindeutig.' }
     ] },
 
   { id: 'ihkfragen', ph: 'ihk', t: ['پرسش‌های گفت‌وگوی تخصصی', 'Fachgespräch: Leitfragen', 'Expert interview: guiding questions'], title: 'Präsentation und Fachgespräch: typische Leitfragen',

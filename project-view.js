@@ -15,17 +15,18 @@ const PH = [
   ['plan', ['مرحلهٔ ۳: برنامه‌ریزی (Planung)', 'Phase 3: Planung', 'Phase 3: Planning']],
   ['steu', ['مرحلهٔ ۴: کنترل و اجرا (Steuerung)', 'Phase 4: Steuerung', 'Phase 4: Control']],
   ['abs', ['مرحلهٔ ۵: پایان (Abschluss)', 'Phase 5: Abschluss', 'Phase 5: Closure']],
-  ['ihk', ['آزمون IHK: پروژهٔ عملی', 'IHK-Prüfung: betriebliche Projektarbeit', 'IHK exam: company project']]
+  ['ihk', ['آزمون IHK آلمان: پروژهٔ عملی', 'IHK-Prüfung (DE): betriebliche Projektarbeit', 'IHK exam (Germany): company project']],
+  ['cmp', ['مقایسهٔ چهار نوع شبکه', 'Vergleich der vier Netztypen', 'Comparison of the four network types']]
 ];
 const TX = {
-  fa: { folder: 'پوشهٔ پروژه', docs: 'سندها', facts: 'مشخصات پروژه', sample: 'نمونهٔ کامل', tpl: 'قالب خالی برای تمرین', printDoc: 'چاپ یا PDF این سند', printAll: 'چاپ کل پوشه', why: 'این سند چرا لازم است و به چه دقت کنی؟', done: 'این سند را کامل خواندم و فهمیدم', prev: 'سند قبلی', next: 'سند بعدی', back: 'بازگشت به دوره', of: 'از', read: 'سند خوانده شد', lang: 'سندهای پروژه مثل کار واقعی و آزمون IHK به آلمانی‌اند؛ توضیح‌ها به زبان برنامه.', pw: 'PW = مقدار برنامه‌ریزی/تخمین برای تمرین؛ در پروژهٔ واقعی با پیشنهاد قیمت جایگزین شود. R = قیمت جست‌وجوشده با تاریخ و منبع.', fill: 'اینجا خودت بنویس …', draw: 'نقشهٔ شبکه را اینجا بکش (مثلاً با draw.io) و ضمیمه کن.', sources: 'منابع', overview: 'فهرست سندها' },
-  de: { folder: 'Projektmappe', docs: 'Dokumente', facts: 'Projektdaten', sample: 'Musterlösung', tpl: 'Vorlage zum Ausfüllen', printDoc: 'Dokument drucken / als PDF', printAll: 'Ganze Mappe drucken', why: 'Wozu dient dieses Dokument und worauf achtest du?', done: 'Dokument durchgearbeitet und verstanden', prev: 'Vorheriges Dokument', next: 'Nächstes Dokument', back: 'Zurück zur Lernstrecke', of: 'von', read: 'Dokumenten durchgearbeitet', lang: 'Projektunterlagen sind wie im Berufsalltag und in der IHK-Prüfung auf Deutsch; Erklärungen in der App-Sprache.', pw: 'PW = Planwert/Schätzung für die Übung – im echten Projekt durch Angebote ersetzen. R = recherchierter Richtpreis mit Datum und Quelle.', fill: 'Hier eigenen Text eintragen …', draw: 'Netzplan hier zeichnen (z. B. mit draw.io) und beilegen.', sources: 'Quellen', overview: 'Dokumentenübersicht' },
-  en: { folder: 'Project folder', docs: 'Documents', facts: 'Project data', sample: 'Model solution', tpl: 'Blank template', printDoc: 'Print / save this document as PDF', printAll: 'Print whole folder', why: 'What is this document for and what should you watch?', done: 'I have worked through and understood this document', prev: 'Previous document', next: 'Next document', back: 'Back to course', of: 'of', read: 'documents worked through', lang: 'Project documents are in German, as in real work and the IHK exam; explanations follow the app language.', pw: 'PW = planning value/estimate for the exercise – replace with real quotes in a real project. R = researched reference price with date and source.', fill: 'Write your own text here …', draw: 'Draw the network plan here (e.g. with draw.io) and attach it.', sources: 'Sources', overview: 'Document overview' }
+  fa: { goLab: 'سند کامل در پوشه:', folder: 'پوشهٔ پروژه', docs: 'سندها', facts: 'مشخصات پروژه', sample: 'نمونهٔ کامل', tpl: 'قالب خالی برای تمرین', printDoc: 'چاپ یا PDF این سند', printAll: 'چاپ کل پوشه', why: 'این سند چرا لازم است و به چه دقت کنی؟', done: 'این سند را کامل خواندم و فهمیدم', prev: 'سند قبلی', next: 'سند بعدی', back: 'بازگشت به دوره', of: 'از', read: 'سند خوانده شد', lang: 'سندهای پروژه مثل کار واقعی و آزمون IHK به آلمانی‌اند؛ توضیح‌ها به زبان برنامه.', pw: 'PW = مقدار برنامه‌ریزی/تخمین برای تمرین؛ در پروژهٔ واقعی با پیشنهاد قیمت جایگزین شود. R = قیمت جست‌وجوشده با تاریخ و منبع.', fill: 'اینجا خودت بنویس …', draw: 'نقشهٔ شبکه را اینجا بکش (مثلاً با draw.io) و ضمیمه کن.', sources: 'منابع', overview: 'فهرست سندها' },
+  de: { goLab: 'Ausführlich in der Mappe:', folder: 'Projektmappe', docs: 'Dokumente', facts: 'Projektdaten', sample: 'Musterlösung', tpl: 'Vorlage zum Ausfüllen', printDoc: 'Dokument drucken / als PDF', printAll: 'Ganze Mappe drucken', why: 'Wozu dient dieses Dokument und worauf achtest du?', done: 'Dokument durchgearbeitet und verstanden', prev: 'Vorheriges Dokument', next: 'Nächstes Dokument', back: 'Zurück zur Lernstrecke', of: 'von', read: 'Dokumenten durchgearbeitet', lang: 'Projektunterlagen sind wie im Berufsalltag und in der IHK-Prüfung auf Deutsch; Erklärungen in der App-Sprache.', pw: 'PW = Planwert/Schätzung für die Übung – im echten Projekt durch Angebote ersetzen. R = recherchierter Richtpreis mit Datum und Quelle.', fill: 'Hier eigenen Text eintragen …', draw: 'Netzplan hier zeichnen (z. B. mit draw.io) und beilegen.', sources: 'Quellen', overview: 'Dokumentenübersicht' },
+  en: { goLab: 'Full document in the folder:', folder: 'Project folder', docs: 'Documents', facts: 'Project data', sample: 'Model solution', tpl: 'Blank template', printDoc: 'Print / save this document as PDF', printAll: 'Print whole folder', why: 'What is this document for and what should you watch?', done: 'I have worked through and understood this document', prev: 'Previous document', next: 'Next document', back: 'Back to course', of: 'of', read: 'documents worked through', lang: 'Project documents are in German, as in real work and the IHK exam; explanations follow the app language.', pw: 'PW = planning value/estimate for the exercise – replace with real quotes in a real project. R = researched reference price with date and source.', fill: 'Write your own text here …', draw: 'Draw the network plan here (e.g. with draw.io) and attach it.', sources: 'Sources', overview: 'Document overview' }
 };
 const T = () => TX[L()] || TX.de;
 
 const NUM = /^[−+≈-]?\s?[\d.]+(,\d+)?\s?(€|%|h|W|AT|TB|Mbit\/s)?$/, SUM = /^(Summe|Nutzwert$)/;
-/* Blöcke: {h} {p} {ul} {ol} {t:[kopf], r:[[...]], keep:n (Vorlage behält n Spalten), cap} {kv:[[k,v]]} {topo} {note} {pre} {sig:[rolle,...]} */
+/* Blöcke: {h} {p} {ul} {ol} {t:[kopf], r:[[...]], keep:n (Vorlage behält n Spalten), cap} {kv:[[k,v]]} {topo} {note} {pre} {sig:[rolle,...]} {go:[[text, '#ziel']]} */
 function block(b, tpl, title) {
   const t = T();
   if (b.h) return `<h3>${esc(b.h)}</h3>`;
@@ -42,6 +43,7 @@ function block(b, tpl, title) {
   }
   if (b.topo) return tpl ? `<div class="pv-draw">${esc(t.draw)}</div>` : `<figure class="pv-topo">${window.ArefiTopo ? window.ArefiTopo.svg(b.topo, title) : ''}</figure>`;
   if (b.pre) return tpl ? `<p class="pv-fill">${esc(t.fill)}</p>` : `<pre class="pv-pre" dir="ltr"><code>${esc(b.pre)}</code></pre>`;
+  if (b.go) return `<p class="pv-go"><span>${esc(TX.de.goLab)}</span>${b.go.map(([l, h]) => `<a href="${esc(h)}">${esc(l)}</a>`).join('')}</p>`;
   if (b.sig) return `<div class="pv-sig">${b.sig.map(r => `<div><span></span><small>${esc(r)}</small></div>`).join('')}</div>`;
   return '';
 }
@@ -50,6 +52,14 @@ function docBody(P, d, tpl) {
 }
 function numbered(P) { let k = 0; P.docs.forEach(d => { k += 1; d.no = 'D' + String(k).padStart(2, '0'); }); }
 
+// Rückverweis: Methodenmodul, das dieses Dokument erklärt
+function methodLink(d, cfg) {
+  const C = window.ArefiKPlan; if (!C || !C.modules) return '';
+  const m = C.modules.find(x => (x.see || []).some(r => r.split('--')[1] === d.id));
+  if (!m) return '';
+  const lab = ['روش این سند را در این درس یاد بگیر:', 'Die Methode zu diesem Dokument lernst du in der Lektion:', 'Learn the method behind this document in the lesson:'][I()];
+  return `<p class="pv-method">${esc(lab)} <a href="#${cfg.hash}/${esc(m.id)}">${esc(m.title[I()])}</a></p>`;
+}
 function view(P, cfg, docId) {
   numbered(P);
   const t = T(), i = I(), st = load()[P.id] || {}, tpl = !!st.tpl, done = st.d || {};
@@ -69,7 +79,7 @@ function view(P, cfg, docId) {
 <div class="pv-tools"><div class="pv-seg" role="group"><button type="button" data-pv-mode="0" aria-pressed="${!tpl}">${esc(t.sample)}</button><button type="button" data-pv-mode="1" aria-pressed="${tpl}">${esc(t.tpl)}</button></div><button type="button" class="btn secondary" data-pv-print="doc">${esc(t.printDoc)}</button><button type="button" class="btn secondary" data-pv-print="all">${esc(t.printAll)}</button></div>
 <p class="micro">${num(cnt)} ${esc(t.of)} ${num(P.docs.length)} ${esc(t.read)} · ${esc(t.lang)}</p></header>
 <div class="pv-grid"><nav class="pv-nav" aria-label="${esc(t.overview)}"><ol>${nav}</ol></nav>
-<div class="pv-main"><section class="pv-why"><h2>${esc(t.why)}</h2><p>${esc(d.why[i])}</p><p class="micro"><bdi dir="ltr">${esc(d.no)}</bdi> · <bdi>${esc(PH.find(p => p[0] === d.ph)[1][i])}</bdi></p></section>
+<div class="pv-main"><section class="pv-why"><h2>${esc(t.why)}</h2><p>${esc(d.why[i])}</p><p class="micro"><bdi dir="ltr">${esc(d.no)}</bdi> · <bdi>${esc(PH.find(p => p[0] === d.ph)[1][i])}</bdi></p>${methodLink(d, cfg)}</section>
 ${d.cost ? `<p class="pv-note pv-pw">${esc(t.pw)}</p>` : ''}
 <div id="pv-doc">${docBody(P, d, tpl)}</div>
 <label class="pv-done"><input type="checkbox" data-pv-done ${done[d.id] ? 'checked' : ''}> ${esc(t.done)}</label>

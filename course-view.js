@@ -77,6 +77,21 @@ function catHtml() {
   return `<section class="axk-cat" aria-labelledby="axk-h"><h2 id="axk-h">${esc(c.title)} <small>${num(K.items.length)} ${esc(c.count)}</small></h2><p class="micro">${esc(c.intro)}</p><div class="axk-chips" role="group" aria-label="${esc(c.title)}">${chips}</div><ul class="axk-list">${items}</ul></section>`;
 }
 
+// Verweise eines Moduls auf Dokumente der Projektmappen (Lernstrecke Netzplanung)
+function seeHtml(m) {
+  if (!m.see || !m.see.length || !window.ArefiPlanProjects) return '';
+  const i = ({ fa: 0, de: 1, en: 2 }[L()] ?? 0);
+  const items = m.see.map(ref => {
+    const [pid, did] = ref.split('--');
+    const P = window.ArefiPlanProjects.find(p => p.id === pid); if (!P) return '';
+    const d = (P.docs || []).find(x => x.id === did); if (!d) return '';
+    return `<li><a href="#k-plan/${esc(ref)}">${esc(d.t[i])}</a> <span class="micro">(${esc(P.title[i].split(':')[0])})</span></li>`;
+  }).join('');
+  if (!items) return '';
+  const h = ['در پروژهٔ نمونه ببین', 'Im Musterprojekt ansehen', 'See it in the sample project'][i];
+  const sub = ['همین روش در یک پوشهٔ پروژهٔ واقعی با عددها و جدول‌های کامل:', 'Dieselbe Methode in einer echten Projektmappe mit vollständigen Zahlen und Tabellen:', 'The same method in a real project folder with complete figures and tables:'][i];
+  return `<section class="card wsc-sec wsc-see"><h2>${esc(h)}</h2><p class="micro">${esc(sub)}</p><ul class="wsc-src">${items}</ul></section>`;
+}
 function quizHtml(m) {
   const t = T(), i = I(), qs = quizOf(m); if (!qs.length) return '';
   const r = qres(m.id);
@@ -143,7 +158,7 @@ function moduleView(id) {
 ${m.lab.checks[i].map((c, j) => `<label class="wsc-check"><input type="checkbox" data-wsc-check="${j}" ${s.c[j] ? 'checked' : ''}><span>${esc(c)}</span></label>`).join('')}
 <p class="wsc-done" id="wsc-done" role="status"${pr === tot ? '' : ' hidden'}>${esc(t.allDone)}</p></section>
 ${m.trouble && m.trouble.length ? `<section class="card wsc-sec wsc-trouble"><h2>${esc(t.trouble)}</h2><p class="micro">${esc(t.troubleSub)}</p>${m.trouble.map(q => `<div class="wsc-tr"><p class="wsc-sym"><b>${esc(t.symptom)}:</b> ${esc(q[0][i])}</p><p class="wsc-fix"><b>${esc(t.fix)}:</b> ${esc(q[1][i])}</p></div>`).join('')}</section>` : ''}${m.decide && m.decide.length ? `<section class="card wsc-sec wsc-decide"><h2>${esc(t.decide)}</h2><dl>${m.decide.map(q => `<div><dt>${esc(q[0][i])}</dt><dd>${esc(q[1][i])}</dd></div>`).join('')}</dl></section>` : ''}<section class="card wsc-sec"><h2>${esc(t.pitfalls)}</h2><ul class="wsc-pit">${m.pitfalls.map(x => `<li>${esc(x[i])}</li>`).join('')}</ul></section>
-<section class="card wsc-sec"><h2>${esc(t.iv)}</h2>${m.iv.map(q => `<details class="wsc-iv"><summary>${esc(q[0][i])}</summary><p><b>${esc(t.answer)}:</b> ${esc(q[1][i])}</p></details>`).join('')}</section>
+${seeHtml(m)}<section class="card wsc-sec"><h2>${esc(t.iv)}</h2>${m.iv.map(q => `<details class="wsc-iv"><summary>${esc(q[0][i])}</summary><p><b>${esc(t.answer)}:</b> ${esc(q[1][i])}</p></details>`).join('')}</section>
 ${quizHtml(m)}<nav class="wsc-nav">${prev ? `<a class="btn secondary" href="#${cfg.hash}/${prev.id}">${esc(t.prev)}</a>` : '<span></span>'}<a class="btn secondary" href="#${cfg.hash}">${esc(t.back)}</a>${next ? `<a class="btn" href="#${cfg.hash}/${next.id}">${esc(t.next)}</a>` : '<span></span>'}</nav>
 </div><aside class="wsc-aside">
 <section class="card wsc-sec"><h2>${esc(t.book)}</h2><label class="note-label" for="wsc-page">${esc(t.bookPage)}</label><input id="wsc-page" class="wsc-input" maxlength="40" value="${esc(s.page)}" placeholder="${esc(t.bookPh)}">
