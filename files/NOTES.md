@@ -1,15 +1,9 @@
-## Arefi ITPraxis 2.16.6 (Vorabversion)
+## Arefi ITPraxis 2.16.7 (Vorabversion / Pre-release)
 
-Enthält auch 2.16.4 und 2.16.5.
+**Deutsch:** Eigener Bereich „Englisch im IT-Job“ (Kapitel 8.4), getrennt von „Deutsch im IT-Job“: 53 Sätze in 12 Situationen (Anruf, erst nachfragen, Herstellersupport, Team-Meeting, Wartung, Übergabe, Bewerbungsgespräch, typische Fehler), 4 englische E-Mail-Vorlagen, Wortschatz-Test und Wortliste mit 50 Begriffen und eigenem Lernstand. Die Lektions-Fachbegriffe heißen jetzt „Fachbegriffe der Lektionen (Englisch und Deutsch)“. Die Suche findet die Sätze beider Sprachbereiche.
 
-**Deutsch**
-- **Fehler sofort lösen:** Neues Suchfeld auf der Startseite. Fehlermeldung oder Code eingeben (z. B. „Zugriff verweigert“, 0x80070005, AADSTS53003, 169.254) – das Störungshandbuch öffnet den passenden Fall oben mit den ersten drei Prüfschritten samt Befehl und Ablesehinweis. Auch überall mit Strg+K.
-- **Neue Fälle:** AADSTS53003 (Anmeldung durch bedingten Zugriff blockiert, mit Anmeldeprotokoll und What-If) und Linux „No space left on device“ (ENOSPC: Platz oder Inodes voll, gelöschte offene Dateien, Journal).
-- **Erweitert:** Remotedesktop-Fall mit Fehler 0x204 und RD-Gateway; Suchbegriffe NXDOMAIN, 0x204, „فایل حذف شده“.
-- Jetzt 50 Alltagsfälle mit 233 Reparaturschritten, Modus „Selbst lösen“ und druckbaren Blättern.
+**English:** Separate area "English for IT jobs" (chapter 8.4), apart from "German for IT jobs": 53 phrases in 12 situations, 4 English email templates, vocabulary test and word list with 50 terms and their own progress. Search finds the phrases of both language areas.
 
-**فارسی**
-- کادر «حل فوری خطا» در صفحهٔ اصلی، موردهای تازهٔ AADSTS53003 و ENOSPC لینوکس، و خطای 0x204 در مورد Remote Desktop.
+**فارسی:** بخش جداگانهٔ «انگلیسی در محیط کار IT» (فصل ۸٫۴)، جدا از «آلمانی در محیط کار IT»: ۵۳ جمله در ۱۲ موقعیت، ۴ نمونه ایمیل انگلیسی، آزمون و فهرست ۵۰ واژه با پیشرفت جداگانه.
 
-**English**
-- "Fix an error now" search on the start page, new cases AADSTS53003 and Linux ENOSPC, RDP error 0x204.
+Diese Version ist eine Vorabversion und wird erst auf ausdrückliche Freigabe offiziell.
