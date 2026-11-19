@@ -151,6 +151,10 @@ html[data-theme=dark] .pf-doc h2{border-bottom:1px solid #2b3a50}
 html[data-theme=dark] .pf-doc footer{color:#acb9cd}}
 html[data-theme=dark] body.printing-portfolio{background:#151f2e!important}
 html[data-theme=dark] #pwa-update .btn{background:#2b331f;color:#c9e5ed}
+html[data-theme=dark] .work-run{background:#202525}
+html[data-theme=dark] .work-run-do{border:1px solid #2b5043;background:#151f2e}
+html[data-theme=dark] .work-run-where{background:#202926;border-bottom:1px solid #2b5042}
+html[data-theme=dark] .work-run-look{color:#b1c8c4;border-inline-start:3px solid #2b502d}
 /* lesson.css */
 html[data-theme=dark] .lv{--lv-ink:#cce3eb;--lv-soft:#aec6cb;--lv-mist:#212a28;--lv-ok-bg:#1e2e23;--lv-line:#2b4750}
 html[data-theme=dark] .lv-meta li{background:#151f2e}

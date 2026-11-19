@@ -44,7 +44,7 @@ const index = () => {
   ((window.LAB && window.LAB.workCases) || []).forEach(c => {
     const d = c[['fa', 'de', 'en'][i]] || c.de;
     if (!d) return;
-    const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1]];
+    const parts = [[d.t, 6], [d.msg, 2], [(d.steps || []).join(' \n '), 2], [d.fix, 2], [(d.ask || []).join(' \n '), 1], [c.cmd || '', 1], [((((window.LAB || {}).workRun || {})[c.id]) || []).map(r => (typeof r[1] === 'string' ? r[1] : r[1][i === 0 ? 2 : i - 1]) + ' ' + r[2][i === 0 ? 2 : i - 1]).join(' \n '), 1]];
     list.push({ hash: 'support/' + c.id, title: d.t, course: ['مشکلات روزمرهٔ پشتیبانی', 'Alltagsfälle im Support', 'Everyday support cases'][i], parts: parts.map(([t, w]) => [t, norm(t), w]) });
   });
   // Wissenskapitel „Was Firmen erwarten“ (z. B. ITIL, Österreich)

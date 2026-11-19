@@ -49,6 +49,19 @@ const dirAttr = () => lang() === 'fa' ? ' dir="rtl"' : '';
 
 /* ---------- page: everyday support cases ---------- */
 function casesProgress() { const w = ws(); const n = CASES.filter(c => w.cases[c.id]).length; return { n, total: CASES.length }; }
+/* „Genau so reparierst du es“: wo, was eingeben, worauf achten (Daten in work-run.js) */
+function runHtml(c) {
+ const rows = ((window.LAB || {}).workRun || {})[c.id], W = (window.LAB || {}).workRunWhere || {};
+ if (!rows || !rows.length) return '';
+ const pick = a => T(a[2], a[0], a[1]);
+ return `<section class="work-run"><h3>${T('دقیقاً چطور تعمیر کنی: کجا، چه بنویسی، به چه نگاه کنی', 'Genau so reparierst du es: wo, was eingeben, worauf achten', 'Exactly how to fix it: where, what to enter, what to look for')}</h3>
+<p class="micro">${T('نام‌ها، نشانی‌ها و شماره‌ها نمونه‌اند؛ آن‌ها را با محیط خودت عوض کن. فرمان‌هایی را که چیزی را تغییر می‌دهند فقط با مجوز و تأیید اجرا کن.', 'Namen, Adressen und Nummern sind Beispiele – an deine Umgebung anpassen. Befehle, die etwas ändern, nur mit Berechtigung und Freigabe ausführen.', 'Names, addresses and numbers are examples – adapt them to your environment. Run commands that change something only with permission and approval.')}</p>
+<ol class="work-run-list">${(() => { const seen = new Set(); return rows.map(([w, inp, look]) => {
+  const full = W[w] ? pick(W[w]) : w, where = seen.has(w) ? full.split(' – ')[0] : full; seen.add(w);
+  const body = typeof inp === 'string' ? command(inp, where) : `<div class="work-run-do"><span class="work-run-where">${E(where)}</span><p>${E(pick(inp))}</p></div>`;
+  return `<li>${body}<p class="work-run-look"><b>${T('به این نگاه کن:', 'Darauf achten:', 'Look for:')}</b> ${E(pick(look))}</p></li>`;
+ }).join(''); })()}</ol></section>`;
+}
 function caseCard(c, open) {
  const d = L(c), w = ws(), done = !!w.cases[c.id];
  const lessons = (c.lessons || []).filter(id => D.modules.some(m => m.id === id));
@@ -60,7 +73,7 @@ function caseCard(c, open) {
 <section><h3>${T('۱. اول بپرس', '1. Zuerst nachfragen', '1. Ask first')}</h3><ul>${d.ask.map(x => `<li>${E(x)}</li>`).join('')}</ul></section>
 <section><h3>${T('۲. قدم‌به‌قدم بررسی کن', '2. Schritt für Schritt prüfen', '2. Check step by step')}</h3><ol>${d.steps.map(x => `<li>${E(x)}</li>`).join('')}</ol></section>
 </div>
-${c.cmd ? command(c.cmd, T('فرمان‌های نمونه · نام‌ها را با محیط خودت تطبیق بده', 'Beispielbefehle · Namen an deine Umgebung anpassen', 'Example commands · adapt names to your environment')) : ''}
+${runHtml(c) || (c.cmd ? command(c.cmd, T('فرمان‌های نمونه · نام‌ها را با محیط خودت تطبیق بده', 'Beispielbefehle · Namen an deine Umgebung anpassen', 'Example commands · adapt names to your environment')) : '')}
 <div class="work-grid">
 <section><h3>${T('۳. علت و راه‌حل', '3. Ursache und Lösung', '3. Cause and fix')}</h3><p>${E(d.fix)}</p></section>
 <section><h3>${T('۴. نتیجه را بسنج', '4. Ergebnis prüfen', '4. Verify the result')}</h3><p>${E(d.verify)}</p></section>
@@ -151,7 +164,7 @@ function interviewPage() {
  const kinds = Object.keys(J.kinds);
  return `<div class="eyebrow">${T('آمادگی برای گفت‌وگوی استخدامی', 'Vorbereitung auf das Vorstellungsgespräch', 'Preparing for the job interview')}</div>
 <h1>${T('درخواست کار و مصاحبه', 'Bewerbung und Vorstellungsgespräch', 'Applying and interviews')}</h1>
-<p class="page-description">${T('این پرسش‌ها در مصاحبهٔ پشتیبانی و مدیریت سیستم رایج‌اند. اول خودت بلند جواب بده، بعد پاسخ نمونه را باز کن و آن را با کلمات خودت و با یک مثال از آزمایشگاهت بگو. پاسخ نمونه را حفظ نکن.', 'Diese Fragen sind in Gesprächen für Support und Systemadministration üblich. Antworte zuerst laut selbst, öffne dann die Musterantwort und formuliere sie mit eigenen Worten und einem Beispiel aus deinem Lab. Lerne die Musterantwort nicht auswendig.', 'These questions are common in support and system administration interviews. Answer out loud yourself first, then open the sample answer and say it in your own words with an example from your lab. Do not memorise the sample.')}</p>
+<p class="page-description">${T('این پرسش‌ها در مصاحبهٔ پشتیبانی و مدیریت سیستم رایج‌اند. اول خودت بلند جواب بده، بعد پاسخ نمونه را باز کن و آن را با کلمات خودت و با یک مثال از آزمایشگاهت بگو. در پرسش‌های خرابی، پاسخ خوب با پرسش شروع می‌شود (از کی؟ چه کسانی گرفتارند؟ چه چیزی تغییر کرده؟)؛ در مصاحبه می‌توانی این پرسش‌ها را بلند از مصاحبه‌کننده هم بپرسی. پاسخ نمونه را حفظ نکن.', 'Diese Fragen sind in Gesprächen für Support und Systemadministration üblich. Antworte zuerst laut selbst, öffne dann die Musterantwort und formuliere sie mit eigenen Worten und einem Beispiel aus deinem Lab. Bei Störungsfragen beginnt eine gute Antwort mit Rückfragen (Seit wann? Wer ist betroffen? Was wurde geändert?); im Gespräch darfst du sie auch laut stellen: „Darf ich zuerst kurz nachfragen …?“ Lerne die Musterantwort nicht auswendig.', 'These questions are common in support and system administration interviews. Answer out loud yourself first, then open the sample answer and say it in your own words with an example from your lab. For fault questions a good answer starts with questions (Since when? Who is affected? What changed?); in the interview you may ask them out loud: "May I ask a few questions first?" Do not memorise the sample.')}</p>
 <p class="work-progress" role="status">${T(`${num(done)} از ${num(qs.length)} پرسش تمرین شده`, `${done} von ${qs.length} Fragen geübt`, `${done} of ${qs.length} questions practised`)}</p>
 ${kinds.map(k => `<h2 class="work-section-title">${E(L(J.kinds[k]))}</h2>${qs.filter(q => q.kind === k).map(q => { const d = L(q); return `<details class="card work-iv${w.iv[q.id] ? ' done' : ''}" id="iv-${q.id}"><summary><span class="work-iv-q">${E(d.q)}</span></summary><div class="work-case-body"><p class="micro"><b>${T('چه چیزی سنجیده می‌شود:', 'Das will der Arbeitgeber prüfen:', 'What the employer checks:')}</b> ${E(d.want)}</p><section class="work-say"><h3>${T('پاسخ نمونه', 'Musterantwort', 'Sample answer')}</h3><p>${E(d.a)}</p></section>${q.link ? `<p class="work-links"><b>${T('بیشتر:', 'Vertiefen:', 'Go deeper:')}</b> ${linkFor(q.link)}</p>` : ''}<label class="work-check"><input type="checkbox" data-work-iv="${q.id}" ${w.iv[q.id] ? 'checked' : ''}> ${T('این را بلند و با مثال خودم تمرین کردم.', 'Ich habe das laut und mit eigenem Beispiel geübt.', 'I practised this out loud with my own example.')}</label></div></details>`; }).join('')}`).join('')}
 ${window.ArefiTraining ? window.ArefiTraining.portfolioCard() : ''}
