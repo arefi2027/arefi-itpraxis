@@ -1,14 +1,12 @@
-## Arefi ITPraxis 2.16.14 (Vorabversion)
+## Arefi ITPraxis 2.16.15 (Vorabversion)
 
 **Neu**
-- „Mein Lernplan“ (unter Beruf und Prüfung, auf der Startseite und in jedem Wegweiser):
-  - Zielberuf wählen (Helpdesk, Vor-Ort-Technik, Systemadministration, FISI-Prüfung, Netzwerktechnik), Lernzeit pro Woche und optional einen Zieltermin.
-  - Konkreter Wochenplan für die nächsten vier Wochen: Module in der Reihenfolge der Lernpfade, tägliche Wiederholung und eine passende Übung je Zielberuf.
-  - Bereitschaft je Lernpfad aus erledigten Modulen (50 %), sicheren Karten in „Heute wiederholen“ (30 %) und der letzten Abschlussprüfung (20 %).
-  - Voraussichtliches Enddatum und Abgleich mit dem Zieltermin (nötige Stunden pro Woche).
-- Der Plan rückt automatisch weiter, sobald ein Modul erledigt ist; alles bleibt lokal im Browser.
-
-**Verbessert**
-- Kapitel „Einstieg: so lernst du hier“ klarer benannt und mit dem neuen Lernplan verbunden.
+- „Einsatz-Simulationen“ unter Üben: echte Fälle aus dem Alltag beim IT-Dienstleister, bei denen jede Entscheidung Folgen hat.
+  - Montagmorgen: Niemand kann sich anmelden (Kanzlei, DNS-Ausfall nach Update, SLA P1)
+  - Phishing: Der Geschäftsführer hat sein Kennwort eingegeben (M365, Weiterleitungsregel, Datenschutz-Frist)
+  - Switch-Tausch im Wartungsfenster (Arztpraxis, VLANs, Voice, Dokumentation)
+  - Neue Mitarbeiterin startet morgen (minimale Rechte, Ersatzgerät, sicheres Erstkennwort)
+- Anzeigen für Zeit, Kundenzufriedenheit und Risiko; nach jeder Entscheidung die Folge mit Bewertung; am Ende Rückblick mit dem Profi-Weg und Links zu passenden Modulen.
+- „Mein Lernplan“ schlägt für Vor-Ort-Technik eine Einsatz-Simulation pro Woche vor.
 
 **Hinweis**: Vorabversion – wird erst nach Freigabe zur offiziellen Version.
