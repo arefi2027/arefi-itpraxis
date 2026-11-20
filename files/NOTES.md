@@ -1,12 +1,14 @@
-## Arefi ITPraxis 2.16.12 (Vorabversion)
+## Arefi ITPraxis 2.16.13 (Vorabversion)
 
 **Neu**
-- Wegweiser für jeden der acht Lernpfade: Übersicht aller Pfade, Kapitel als Schritte mit Stand, grüner „Hier weitermachen“-Schritt, vorheriger und nächster Lernpfad.
-- Leiste „Du bist hier“ oben auf jeder Lernseite: Lernpfad, Kapitel, Fortschritt und Rückweg zum Wegweiser.
-- „Heute wiederholen“: tägliche Wiederholung (ca. 10 Minuten) mit Fragen aus allen Lernpfaden und verteiltem Lernen (1, 3, 7, 16, 35 Tage), Tagesserie und Wochenziel; falsche Antworten aus der Abschlussprüfung kommen automatisch dazu. Hinweis auf der Startseite.
-
-**Verbessert**
-- Handy: Navigationsleiste oben vollständig lesbar, Lernpfad-Übersicht zweispaltig.
-- Dunkler Modus und Kontraste der neuen Seiten geprüft.
+- Kurs „Arbeiten beim IT-Dienstleister (MSP)“ im Lernpfad 6 (Kapitel 6.3) mit 7 Modulen, abgeleitet aus Stellenanzeigen Wiener IT-Dienstleister:
+  - MSP-Alltag: Mandanten, SLA, RMM und PSA, eigene Systemprüfung als geplante Aufgabe
+  - Neukunden-Onboarding: Bestandsaufnahme, Dokumentation, Kennwortverwaltung
+  - Paketierung und Softwareverteilung: msiexec, Intune-Win32-Apps, winget
+  - Microsoft Graph PowerShell: Berichte zu Benutzern, Lizenzen und Geräten
+  - Hersteller-Kompass: dieselbe Aufgabe bei Cisco, HPE Aruba AOS-CX, FortiGate, Meraki und Palo Alto
+  - Server-Hardware: iLO/iDRAC, Redfish, RAID, Firmware, Garantie und RMA
+  - Vor-Ort-Einsatz und Rollout: Autopilot, Checklisten, Arbeitsbericht
+- Jedes Modul mit Labor, Fehlersuche, Entscheidungshilfe, Interviewfragen und Wissenscheck; die Fragen fließen in „Heute wiederholen“ und die Abschlussprüfung ein.
 
 **Hinweis**: Vorabversion – wird erst nach Freigabe zur offiziellen Version.
